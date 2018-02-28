@@ -95,7 +95,7 @@ namespace Fizzle
                     else
                         return 3f - (2 * 1f / Mathf.PI) * phase;
                 case OscType.Noise:
-                    var index = Mathf.FloorToInt((phase / 100) * noiseBuffer.Length);
+                    var index = Mathf.FloorToInt((phase / TWOPI) * noiseBuffer.Length);
                     return noiseBuffer[index % noiseBuffer.Length];
                 default:
                     return 0;
