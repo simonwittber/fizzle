@@ -39,7 +39,7 @@ namespace Fizzle
             rect.x += rect.width;
             EditorGUI.PropertyField(rect, property.FindPropertyRelative("bias"), new GUIContent("B", "Bias"));
             rect.x += rect.width;
-            EditorGUI.PropertyField(rect, property.FindPropertyRelative("multiply"), new GUIContent("M", "Multiply Signal"));
+            EditorGUI.PropertyField(rect, property.FindPropertyRelative("multiply"), new GUIContent("*", "Multiply Signal"));
             rect.x += rect.width / 2;
             EditorGUI.PropertyField(rect, property.FindPropertyRelative("add"), new GUIContent("+", "Add Signal"));
             rect.x += rect.width / 2;

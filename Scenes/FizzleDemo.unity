@@ -220,7 +220,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 815144714}
+  m_audioClip: {fileID: 421963228}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -344,6 +344,29 @@ MonoBehaviour:
       connectedId: 0
     output:
       id: -1673697103
+  - superSample: 1
+    type: 1
+    shape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    frequency:
+      connectedId: 0
+      localValue: 13
+    gain:
+      connectedId: 0
+      localValue: 800
+    bias:
+      connectedId: 0
+      localValue: 840
+    multiply:
+      connectedId: 0
+    add:
+      connectedId: 0
+    output:
+      id: -1853998977
   samplers:
   - sampleIndex: 0
     output:
@@ -375,15 +398,15 @@ MonoBehaviour:
     output:
       id: 180920752
   filters:
-  - type: 2
+  - type: 1
     input:
       connectedId: 180920752
     cutoff:
-      connectedId: 0
+      connectedId: -1853998977
       localValue: 500
     q:
       connectedId: 0
-      localValue: 1
+      localValue: 2
     output:
       id: 293172498
   delays:
@@ -403,8 +426,8 @@ MonoBehaviour:
       connectedId: -63874885
     monitor:
       connectedId: 0
-  activeJackOuts: b1683d9cb0a1c80a12757911bb5831fc
-  cpuTime: 7
+  activeJackOuts: b1683d9cb0a1c80a7f387e9112757911bb5831fc
+  cpuTime: 9
 --- !u!4 &268081888
 Transform:
   m_ObjectHideFlags: 0
@@ -418,7 +441,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!83 &815144714
+--- !u!83 &421963228
 AudioClip:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}

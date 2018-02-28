@@ -41,13 +41,13 @@ namespace Fizzle
             lock (typeof(JackDrawer))
             {
                 JackDrawer.BeginJackDrawers();
-                DrawRack(fa.envelopes, serializedObject.FindProperty("envelopes"), Color.cyan);
-                DrawRack(fa.samplers, serializedObject.FindProperty("samplers"), Color.magenta);
-                DrawRack(fa.oscillators, serializedObject.FindProperty("oscillators"), Color.green);
-                DrawRack(fa.filters, serializedObject.FindProperty("filters"), Color.red);
-                DrawRack(fa.delays, serializedObject.FindProperty("delays"), Color.blue);
-                DrawRack(fa.equalizers, serializedObject.FindProperty("equalizers"), Color.yellow);
-                DrawRack(fa.mixers, serializedObject.FindProperty("mixers"), Color.black);
+                DrawRack(ref fa.envelopes, serializedObject.FindProperty("envelopes"), Color.cyan);
+                DrawRack(ref fa.samplers, serializedObject.FindProperty("samplers"), Color.magenta);
+                DrawRack(ref fa.oscillators, serializedObject.FindProperty("oscillators"), Color.green);
+                DrawRack(ref fa.filters, serializedObject.FindProperty("filters"), Color.red);
+                DrawRack(ref fa.delays, serializedObject.FindProperty("delays"), Color.blue);
+                DrawRack(ref fa.equalizers, serializedObject.FindProperty("equalizers"), Color.yellow);
+                DrawRack(ref fa.mixers, serializedObject.FindProperty("mixers"), Color.black);
                 EditorGUILayout.PropertyField(serializedObject.FindProperty("inputAudio"), new GUIContent("Audio Out"));
                 fa.activeJackOuts = JackDrawer.EndJackDrawers();
             }
@@ -70,9 +70,9 @@ namespace Fizzle
 
         }
 
-        private void DrawRack<T>(List<T> items, SerializedProperty property, Color c) where T : new()
+        private void DrawRack<T>(ref T[] items, SerializedProperty property, Color c) where T : new()
         {
-            var height = (items.Count * 18) + 18;
+            var height = (items.Length * 18) + 18;
             var position = GUILayoutUtility.GetRect(EditorGUIUtility.fieldWidth, height);
             c.a = 0.025f;
             Handles.DrawSolidRectangleWithOutline(position, c, Color.white * 0.25f);
@@ -81,7 +81,7 @@ namespace Fizzle
             rect.width = 16;
             if (GUI.Button(rect, new GUIContent("", "Add"), "radio"))
             {
-                AddRackItem(items, property, new T());
+                AddRackItem(ref items, property, new T());
             }
             rect.x += 32;
             rect.width = position.width - 128;
@@ -91,7 +91,7 @@ namespace Fizzle
             rect.y += rect.height;
             var toRemove = -1;
             var toDuplicate = -1;
-            for (var i = 0; i < items.Count; i++)
+            for (var i = 0; i < items.Length; i++)
             {
                 var brect = rect;
                 brect.width = 16;
@@ -122,13 +122,13 @@ namespace Fizzle
             }
             if (toDuplicate >= 0)
             {
-                AddRackItem(items, property, items[toDuplicate]);
+                AddRackItem(ref items, property, items[toDuplicate]);
                 property.serializedObject.ApplyModifiedProperties();
             }
 
         }
 
-        private static T AddRackItem<T>(List<T> items, SerializedProperty property, T item) where T : new()
+        private static T AddRackItem<T>(ref T[] items, SerializedProperty property, T item) where T : new()
         {
             Undo.RecordObject(property.serializedObject.targetObject, "Add");
             var guidItem = item as IHasGUID;
@@ -137,7 +137,8 @@ namespace Fizzle
             var initItem = item as IHasInit;
             if (initItem != null)
                 initItem.Init();
-            items.Add(item);
+            System.Array.Resize(ref items, Mathf.Max(1, items.Length + 1));
+            items[items.Length - 1] = item;
             property.serializedObject.Update();
             return item;
         }

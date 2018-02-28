@@ -15,13 +15,13 @@ namespace Fizzle
         public bool realtime = true;
         public float duration = 5;
         public AudioClip[] sampleBank;
-        public List<Envelope> envelopes = new List<Envelope>();
-        public List<Sampler> samplers = new List<Sampler>();
-        public List<Osc> oscillators = new List<Osc>();
-        public List<Filter> filters = new List<Filter>();
-        public List<DelayLine> delays = new List<DelayLine>();
-        public List<Equalizer> equalizers = new List<Equalizer>();
-        public List<Mixer> mixers = new List<Mixer>();
+        public Envelope[] envelopes = new Envelope[0];
+        public Sampler[] samplers = new Sampler[0];
+        public Osc[] oscillators = new Osc[0];
+        public Filter[] filters = new Filter[0];
+        public DelayLine[] delays = new DelayLine[0];
+        public Equalizer[] equalizers = new Equalizer[0];
+        public Mixer[] mixers = new Mixer[0];
         public AudioOut inputAudio = new AudioOut();
         public int[] activeJackOuts;
         public long cpuTime;
@@ -96,18 +96,7 @@ namespace Fizzle
 
         public AudioClip Generate()
         {
-            // if (realtime)
-            {
-                return AudioClip.Create("Fizzle", Mathf.FloorToInt(sampleRate * duration), 2, sampleRate, true, ReadAudio);
-            }
-            // else
-            // {
-            //     duration = Mathf.Min(duration, 180);
-            //     var clip = AudioClip.Create("Fizzle", Mathf.FloorToInt(sampleRate * duration), 2, sampleRate, false);
-            //     var data = GetData();
-            //     clip.SetData(data, 0);
-            //     return clip;
-            // }
+            return AudioClip.Create("Fizzle", Mathf.FloorToInt(sampleRate * duration), 2, sampleRate, true, ReadAudio);
         }
 
         bool JackOutIsUsed(int index)
