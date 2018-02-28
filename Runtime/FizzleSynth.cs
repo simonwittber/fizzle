@@ -50,7 +50,7 @@ namespace Fizzle
         public void Play(bool refresh = false)
         {
             audio = GetComponent<AudioSource>();
-            readIndex = 0;
+            sample = 0;
             Init();
             if (audio.clip == null || refresh) audio.clip = Generate();
             abort = false;
@@ -124,24 +124,23 @@ namespace Fizzle
             if (abort) return;
             try
             {
-                var sampleLength = 1f / sampleRate;
                 for (var i = 0; i < data.Length; i += 2)
                 {
-                    readIndex++;
-                    var seconds = (readIndex * sampleLength) % 1f;
+                    sample++;
+
                     foreach (var e in envelopes)
                         if (e.output != null && JackOutIsUsed(e.output.id))
-                            e.Sample(seconds, sampleLength, duration);
+                            e.Sample(sample);
                     foreach (var s in samplers)
                         if (s.output != null && JackOutIsUsed(s.output.id))
                         {
                             s.channels = sampleChannels[s.sampleIndex];
                             s.data = sampleData[s.sampleIndex];
-                            s.Sample(readIndex, sampleLength, duration);
+                            s.Sample(sample);
                         }
                     foreach (var o in oscillators)
                         if (o.output != null && JackOutIsUsed(o.output.id))
-                            o.Sample(seconds, sampleLength, duration);
+                            o.Sample(sample);
                     foreach (var d in delays)
                         d.Update();
                     foreach (var f in filters)
@@ -165,6 +164,6 @@ namespace Fizzle
             clock.Reset();
         }
         bool abort = false;
-        int readIndex = 0;
+        int sample = 0;
     }
 }

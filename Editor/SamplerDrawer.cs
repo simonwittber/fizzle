@@ -27,7 +27,8 @@ namespace Fizzle
             var indexes = Enumerable.Range(0, clipNames.Length).ToArray();
             clipProperty.intValue = EditorGUI.IntPopup(rect, clipProperty.intValue, clipNames, indexes);
             rect.x += rect.width;
-            EditorGUI.PropertyField(rect, property.FindPropertyRelative("channel"));
+            rect.width = 32;
+            EditorGUI.PropertyField(rect, property.FindPropertyRelative("channel"), new GUIContent("C", "Channel"));
             using (var cc = new EditorGUI.ChangeCheckScope())
             {
 

@@ -16,6 +16,9 @@ namespace Fizzle
     [System.Serializable]
     public class Osc : IHasGUID, IHasInit
     {
+        public const float TWOPI = Mathf.PI * 2;
+        public const int SAMPLERATE = 44100;
+
         public bool superSample = true;
 
         public enum OscType
@@ -25,7 +28,11 @@ namespace Fizzle
             Tan,
             Noise,
             Square,
-            Algo1
+            Saw,
+            Triangle,
+            PWM1,
+            PWM2,
+            PWM3
         }
 
         public OscType type;
@@ -34,69 +41,72 @@ namespace Fizzle
         public JackIn frequency = new JackIn();
         public JackIn gain = new JackIn();
         public JackIn bias = new JackIn();
+        public JackSignal multiply = new JackSignal();
+        public JackSignal add = new JackSignal();
         public JackOut output = new JackOut();
 
         public int ID { get { return output.id; } set { output.id = value; } }
 
         float[] noiseBuffer;
-        bool isReady = false;
+        protected bool isReady = false;
+        protected float phase;
 
 
-        public virtual float Sample(float t, float dt, float duration)
+        public virtual float Sample(int t)
         {
-            var smp = 0f;
-            if (superSample)
-            {
-                for (var x = -1f; x <= 0f; x += 0.125f)
-                {
-                    var v = _Sample(t * (frequency + (x * dt)), dt, duration);
-                    smp += 0.125f * v;
-                }
-            }
-            else
-            {
-                smp = _Sample(t * frequency, dt, duration);
-            }
+            if (!isReady) return 0;
+
+            var smp = _Sample(phase);
+            if (multiply.connectedId != 0)
+                smp *= multiply;
+            if (add.connectedId != 0)
+                smp += add;
+            phase = phase + ((TWOPI * frequency) / SAMPLERATE);
+            if (phase > TWOPI)
+                phase = phase - TWOPI;
             smp = bias + (smp * gain);
             output.Value = smp;
             return smp;
         }
 
-        protected float _Sample(float t, float dt, float duration)
+        protected float _Sample(float phase)
         {
-            if (!isReady) return 0;
-            if (Mathf.Abs(t) < Mathf.Epsilon) t = Mathf.Epsilon * Mathf.Sign(t);
             switch (type)
             {
                 case OscType.Sin:
-                    return Mathf.Sin(t / Mathf.Deg2Rad);
+                    return Mathf.Sin(phase);
                 case OscType.WaveShape:
-                    return shape.Evaluate(Mathf.Max(0, t));
+                    return shape.Evaluate(phase / TWOPI);
                 case OscType.Square:
-                    return Mathf.Sin(Mathf.PI * 2 * t) > 0 ? 0.5f : -0.5f;
+                    return phase < Mathf.PI ? 1f : -1f;
+                case OscType.PWM1:
+                    return phase < Mathf.PI / 2 ? 1f : -1f;
+                case OscType.PWM2:
+                    return phase < Mathf.PI / 4 ? 1f : -1f;
+                case OscType.PWM3:
+                    return phase < Mathf.PI / 8 ? 1f : -1f;
                 case OscType.Tan:
-                    return Mathf.Clamp(Mathf.Tan(Mathf.PI * t), -1, 1);
+                    return Mathf.Clamp(Mathf.Tan(phase / 2), -1, 1);
+                case OscType.Saw:
+                    return 1f - (1f / Mathf.PI * phase);
+                case OscType.Triangle:
+                    if (phase < Mathf.PI)
+                        return -1f + (2 * 1f / Mathf.PI) * phase;
+                    else
+                        return 3f - (2 * 1f / Mathf.PI) * phase;
                 case OscType.Noise:
-                    var index = Mathf.Max(0, Mathf.FloorToInt(Mathf.PI * 2 * t) % noiseBuffer.Length);
-                    return noiseBuffer[index];
-                case OscType.Algo1:
-                    {
-                        var x = (byte)Mathf.FloorToInt(t / 8192);
-                        return (Mathf.InverseLerp(0, 255, (x & x % 255) - (x * 3 & x >> 13 & x >> 6))) * 0.5f - 1;
-                    }
+                    var index = Mathf.FloorToInt((phase / 100) * noiseBuffer.Length);
+                    return noiseBuffer[index % noiseBuffer.Length];
+                default:
+                    return 0;
             }
-            return 0f;
         }
 
         public void Init()
         {
-            // if (type == OscType.WaveShape && shape.postWrapMode == WrapMode.ClampForever)
-            //     shape.postWrapMode = WrapMode.Loop;
-            noiseBuffer = new float[1024 * 1024];
+            noiseBuffer = new float[SAMPLERATE];
             for (var i = 0; i < noiseBuffer.Length; i++)
-            {
                 noiseBuffer[i] = Mathf.Lerp(-1, 1, Random.value);
-            }
             isReady = true;
         }
     }

@@ -32,13 +32,17 @@ namespace Fizzle
             using (new EditorGUI.DisabledGroupScope(typeProperty.enumValueIndex > 0))
                 EditorGUI.PropertyField(rect, property.FindPropertyRelative("shape"), GUIContent.none);
             rect.x += rect.width;
-            rect.width = (position.width - 64 - 16 - 16) / 3;
+            rect.width = (position.width - 64 - 16 - 16) / 4;
             EditorGUI.PropertyField(rect, property.FindPropertyRelative("frequency"), new GUIContent("F", "Frequency"));
             rect.x += rect.width;
             EditorGUI.PropertyField(rect, property.FindPropertyRelative("gain"), new GUIContent("A", "Amplitude"));
             rect.x += rect.width;
             EditorGUI.PropertyField(rect, property.FindPropertyRelative("bias"), new GUIContent("B", "Bias"));
             rect.x += rect.width;
+            EditorGUI.PropertyField(rect, property.FindPropertyRelative("multiply"), new GUIContent("M", "Multiply Signal"));
+            rect.x += rect.width / 2;
+            EditorGUI.PropertyField(rect, property.FindPropertyRelative("add"), new GUIContent("+", "Add Signal"));
+            rect.x += rect.width / 2;
             rect.width = 16;
             EditorGUI.PropertyField(rect, property.FindPropertyRelative("output"), GUIContent.none);
         }

@@ -220,7 +220,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 329314215}
+  m_audioClip: {fileID: 1755668598}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -318,62 +318,224 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   realtime: 1
-  duration: 3
+  duration: 30
   sampleBank: []
-  envelopes: []
-  samplers: []
-  oscillators:
-  - superSample: 0
-    type: 1
+  envelopes:
+  - superSample: 1
+    type: 0
     shape:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.49938965
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
       m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    frequency:
-      connectedId: -792762321
-      localValue: 5940
-    gain:
-      connectedId: 0
-      localValue: 0.9
-    bias:
-      connectedId: 0
-      localValue: 0
-    output:
-      id: -2100701243
-  - superSample: 0
-    type: 1
-    shape:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
+      m_PostInfinity: 0
       m_RotationOrder: 4
     frequency:
       connectedId: 0
-      localValue: 2
+      localValue: 30
     gain:
       connectedId: 0
       localValue: 1
     bias:
       connectedId: 0
-      localValue: 440
+      localValue: 0
+    multiply:
+      connectedId: 0
+    add:
+      connectedId: 0
     output:
-      id: -792762321
-  filters: []
-  delays: []
+      id: -354036761
+  - superSample: 1
+    type: 1
+    shape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 1
+      m_RotationOrder: 4
+    frequency:
+      connectedId: 0
+      localValue: 7.5
+    gain:
+      connectedId: 0
+      localValue: 0.25
+    bias:
+      connectedId: 0
+      localValue: 0.5
+    multiply:
+      connectedId: 0
+    add:
+      connectedId: 0
+    output:
+      id: -1755710727
+  samplers: []
+  oscillators:
+  - superSample: 1
+    type: 3
+    shape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 1
+      m_RotationOrder: 4
+    frequency:
+      connectedId: 0
+      localValue: 880
+    gain:
+      connectedId: -1755710727
+      localValue: 1
+    bias:
+      connectedId: 0
+      localValue: 0
+    multiply:
+      connectedId: 0
+    add:
+      connectedId: 0
+    output:
+      id: -814518817
+  filters:
+  - type: 2
+    input:
+      connectedId: -814518817
+    cutoff:
+      connectedId: 0
+      localValue: 440
+    q:
+      connectedId: 0
+      localValue: 0.3
+    output:
+      id: -874681037
+  - type: 2
+    input:
+      connectedId: -814518817
+    cutoff:
+      connectedId: 0
+      localValue: 440
+    q:
+      connectedId: 0
+      localValue: 0.3
+    output:
+      id: -2125058568
+  delays:
+  - input:
+      connectedId: -2125058568
+    delay:
+      connectedId: 0
+      localValue: 0.5
+    output:
+      id: 327716041
   equalizers: []
-  mixers: []
+  mixers:
+  - inputA:
+      connectedId: -874681037
+    inputB:
+      connectedId: 0
+    inputC:
+      connectedId: 0
+    inputD:
+      connectedId: 0
+    inputE:
+      connectedId: 0
+    inputF:
+      connectedId: 0
+    inputG:
+      connectedId: 0
+    inputH:
+      connectedId: 0
+    gainA:
+      connectedId: -354036761
+      localValue: 1
+    gainB:
+      connectedId: 0
+      localValue: 1
+    gainC:
+      connectedId: 0
+      localValue: 1
+    gainD:
+      connectedId: 0
+      localValue: 1
+    gainE:
+      connectedId: 0
+      localValue: 1
+    gainF:
+      connectedId: 0
+      localValue: 1
+    gainG:
+      connectedId: 0
+      localValue: 1
+    gainH:
+      connectedId: 0
+      localValue: 1
+    output:
+      id: -1193591129
+  - inputA:
+      connectedId: 327716041
+    inputB:
+      connectedId: 0
+    inputC:
+      connectedId: 0
+    inputD:
+      connectedId: 0
+    inputE:
+      connectedId: 0
+    inputF:
+      connectedId: 0
+    inputG:
+      connectedId: 0
+    inputH:
+      connectedId: 0
+    gainA:
+      connectedId: -354036761
+      localValue: 1
+    gainB:
+      connectedId: 0
+      localValue: 1
+    gainC:
+      connectedId: 0
+      localValue: 1
+    gainD:
+      connectedId: 0
+      localValue: 1
+    gainE:
+      connectedId: 0
+      localValue: 1
+    gainF:
+      connectedId: 0
+      localValue: 1
+    gainG:
+      connectedId: 0
+      localValue: 1
+    gainH:
+      connectedId: 0
+      localValue: 1
+    output:
+      id: 2101514940
   inputAudio:
     left:
-      connectedId: -2100701243
+      connectedId: -1193591129
     right:
-      connectedId: -2100701243
+      connectedId: 2101514940
     monitor:
       connectedId: 0
-  activeJackOuts: 2f68bfd0c5d7c982
-  cpuTime: 5
+  activeJackOuts: f9fa5997df6d73cff82d5681336dddcbe7d3e5eac98c8813a73edbb8bc92427d
+  cpuTime: 17
 --- !u!4 &268081888
 Transform:
   m_ObjectHideFlags: 0
@@ -387,33 +549,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!83 &329314215
-AudioClip:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Fizzle
-  m_LoadType: 0
-  m_Channels: 2
-  m_Frequency: 44100
-  m_BitsPerSample: 32
-  m_Length: 0
-  m_IsTrackerFormat: 0
-  m_Ambisonic: 0
-  m_SubsoundIndex: 0
-  m_PreloadAudioData: 1
-  m_LoadInBackground: 0
-  m_Legacy3D: 0
-  m_Resource:
-    m_Source: 
-    m_Offset: 0
-    m_Size: 0
-  m_CompressionFormat: 0
-  m_EditorResource:
-    m_Source: 
-    m_Offset: 0
-    m_Size: 0
-  m_EditorCompressionFormat: 0
 --- !u!1 &1138821202
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,3 +614,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!83 &1755668598
+AudioClip:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Fizzle
+  m_LoadType: 0
+  m_Channels: 2
+  m_Frequency: 44100
+  m_BitsPerSample: 32
+  m_Length: 0
+  m_IsTrackerFormat: 0
+  m_Ambisonic: 0
+  m_SubsoundIndex: 0
+  m_PreloadAudioData: 1
+  m_LoadInBackground: 0
+  m_Legacy3D: 0
+  m_Resource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_CompressionFormat: 0
+  m_EditorResource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_EditorCompressionFormat: 0

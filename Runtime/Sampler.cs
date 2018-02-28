@@ -16,7 +16,7 @@ namespace Fizzle
         internal float[] data;
         public int channels;
 
-        public float Sample(int sample, float dt, float duration)
+        public float Sample(int sample)
         {
             if (data == null || data.Length == 0 || channels == 0) return 0;
             var smp = data[(sample + channel) % (data.Length / channels)];
