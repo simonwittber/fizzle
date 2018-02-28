@@ -46,10 +46,11 @@ namespace Fizzle
                     outputsInUse.Add(id);
                     var distance = (10) + ((rect.center - src.center).magnitude * 0.1f);
                     Handles.DrawBezier(rect.center, src.center, rect.center + Vector2.down * distance, src.center + Vector2.up * distance, Color.black * 0.75f, null, 5);
-                    Handles.DrawBezier(rect.center, src.center, rect.center + Vector2.down * distance, src.center + Vector2.up * distance, PatchCableColor.GetColor(id), null, 3);
-                    Handles.color = Color.yellow * 0.5f;
-                    Handles.DrawSolidDisc(rect.center - Vector2.right, Vector3.forward, 2);
-                    Handles.DrawSolidDisc(src.center - Vector2.right, Vector3.forward, 2);
+                    var patchColor = PatchCableColor.GetColor(id);
+                    Handles.DrawBezier(rect.center, src.center, rect.center + Vector2.down * distance, src.center + Vector2.up * distance, patchColor, null, 3);
+                    Handles.color = patchColor * 0.5f;
+                    Handles.DrawSolidDisc(rect.center - new Vector2(1, -1), Vector3.forward, 2);
+                    Handles.DrawSolidDisc(src.center - new Vector2(1, -1), Vector3.forward, 2);
                 }
             }
             if (Event.current.keyCode == KeyCode.Escape)
@@ -105,7 +106,7 @@ namespace Fizzle
             else if (property.name.StartsWith("gain"))
                 GUI.color = Color.blue;
             else if (property.name.StartsWith("output"))
-                GUI.color = Color.green;
+                GUI.color = Color.cyan;
             else
                 GUI.color = Color.white;
             if (DrawJackButton(rect, idProperty.intValue, property))

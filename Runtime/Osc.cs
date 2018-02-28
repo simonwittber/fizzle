@@ -19,8 +19,6 @@ namespace Fizzle
         public const float TWOPI = Mathf.PI * 2;
         public const int SAMPLERATE = 44100;
 
-        public bool superSample = true;
-
         public enum OscType
         {
             WaveShape,
@@ -37,7 +35,7 @@ namespace Fizzle
 
         public OscType type;
         public AnimationCurve shape = new AnimationCurve();
-        public JackIn phaseOffset = new JackIn();
+        public JackIn detune = new JackIn();
         public JackIn frequency = new JackIn();
         public JackIn gain = new JackIn();
         public JackIn bias = new JackIn();
@@ -52,9 +50,12 @@ namespace Fizzle
         protected float phase;
 
         public bool bandlimited = true;
+        public bool superSample = true;
 
 
         float[] xv = new float[2], yv = new float[2];
+
+        float ph;
 
         float BandLimit(float smp)
         {
@@ -70,17 +71,32 @@ namespace Fizzle
         {
             if (!isReady) return 0;
 
-            var smp = _Sample(phase);
+            var smp = 0f;
+            if (superSample)
+            {
+                var s = (1f / SAMPLERATE) / 8;
+                var p = ph;
+                for (var i = 0; i < 8; i++)
+                {
+                    smp += _Sample(p);
+                    p += s;
+                    if (p > TWOPI)
+                        p -= TWOPI;
+                }
+                smp /= 8;
+            }
+            else
+                smp = _Sample(phase);
             if (bandlimited) smp = BandLimit(smp);
 
             if (multiply.connectedId != 0)
                 smp *= multiply;
             if (add.connectedId != 0)
                 smp += add;
-
-            phase = phase + ((TWOPI * frequency) / SAMPLERATE);
+            ph = phase;
+            phase = phase + ((TWOPI * (frequency + detune)) / SAMPLERATE);
             if (phase > TWOPI)
-                phase = phase - TWOPI;
+                phase -= TWOPI;
             smp = bias + (smp * gain);
 
             output.Value = smp;

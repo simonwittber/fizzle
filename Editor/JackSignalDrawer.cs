@@ -19,6 +19,13 @@ namespace Fizzle
             {
                 jackRects[rect] = id;
             }
+            Handles.color = Color.red;
+            if (property.FindPropertyRelative("xMulMinusOne").boolValue)
+                Handles.DrawSolidDisc(rect.center - new Vector2(1, -1), Vector3.forward, 8);
+            Handles.color = Color.white;
+            if (property.FindPropertyRelative("oneMinusX").boolValue)
+                Handles.DrawSolidDisc(rect.center - new Vector2(1, -1), Vector3.forward, 7);
+
             return GUI.Button(rect, new GUIContent("", id.ToString()), "radio");
         }
 
@@ -40,6 +47,23 @@ namespace Fizzle
             var idProperty = GetIdProperty(property);
             idProperty.intValue = 0;
             property.serializedObject.ApplyModifiedProperties();
+        }
+
+        protected override void OnContext(SerializedProperty property)
+        {
+            var menu = new GenericMenu();
+            menu.AddItem(new GUIContent("= X * -1"), property.FindPropertyRelative("xMulMinusOne").boolValue, () =>
+            {
+                property.FindPropertyRelative("xMulMinusOne").boolValue = !property.FindPropertyRelative("xMulMinusOne").boolValue;
+                property.serializedObject.ApplyModifiedProperties();
+            });
+            menu.AddItem(new GUIContent("= 1 - X"), property.FindPropertyRelative("oneMinusX").boolValue, () =>
+            {
+                property.FindPropertyRelative("oneMinusX").boolValue = !property.FindPropertyRelative("oneMinusX").boolValue;
+                property.serializedObject.ApplyModifiedProperties();
+            });
+
+            menu.ShowAsContext();
         }
     }
 }

@@ -9,10 +9,7 @@ namespace Fizzle
 
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
-            if (Event.current.type == EventType.MouseDown && Event.current.button == 1 && position.Contains(Event.current.mousePosition))
-            {
-                OnContextMenu(position, property, label);
-            }
+
         }
 
         public virtual void OnContextMenu(Rect position, SerializedProperty property, GUIContent label)

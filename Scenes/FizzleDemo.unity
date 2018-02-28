@@ -220,7 +220,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 1406922345}
+  m_audioClip: {fileID: 1028574732}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -319,128 +319,523 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   realtime: 1
   duration: 5
-  sampleBank:
-  - {fileID: 8300000, guid: 0f950ff8ae2c3493489a2f5ca0d0d951, type: 3}
+  sampleBank: []
   envelopes:
-  - superSample: 1
-    type: 1
+  - type: 9
     shape:
       serializedVersion: 2
       m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    phaseOffset:
+    detune:
       connectedId: 0
       localValue: 0
+      oneMinusX: 0
+      xMulMinusOne: 0
     frequency:
-      connectedId: 0
-      localValue: 7
+      connectedId: -1302307323
+      localValue: 9.3
+      oneMinusX: 0
+      xMulMinusOne: 0
     gain:
-      connectedId: 0
-      localValue: 0.25
-    bias:
-      connectedId: 0
-      localValue: 0.75
-    multiply:
-      connectedId: 0
-    add:
-      connectedId: 0
-    output:
-      id: -1673697103
-  - superSample: 1
-    type: 1
-    shape:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    phaseOffset:
-      connectedId: 0
-      localValue: 0
-    frequency:
-      connectedId: 0
-      localValue: 4
-    gain:
-      connectedId: 0
-      localValue: 100
-    bias:
       connectedId: 0
       localValue: 440
+      oneMinusX: 0
+      xMulMinusOne: 0
+    bias:
+      connectedId: 0
+      localValue: 880
+      oneMinusX: 0
+      xMulMinusOne: 0
     multiply:
+      oneMinusX: 0
+      xMulMinusOne: 0
       connectedId: 0
     add:
+      oneMinusX: 0
+      xMulMinusOne: 0
       connectedId: 0
     output:
-      id: -1853998977
-  samplers:
-  - sampleIndex: 0
-    output:
-      id: -78621756
-    channel: 0
-    channels: 1
-  oscillators:
-  - superSample: 1
-    type: 3
+      id: -961896798
+    bandlimited: 1
+    superSample: 1
+  - type: 3
     shape:
       serializedVersion: 2
       m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    phaseOffset:
+    detune:
       connectedId: 0
       localValue: 0
+      oneMinusX: 0
+      xMulMinusOne: 0
     frequency:
       connectedId: 0
-      localValue: 0.2
+      localValue: 19000
+      oneMinusX: 0
+      xMulMinusOne: 0
     gain:
-      connectedId: -1673697103
-      localValue: 1
+      connectedId: 0
+      localValue: 440
+      oneMinusX: 0
+      xMulMinusOne: 0
+    bias:
+      connectedId: 0
+      localValue: 880
+      oneMinusX: 0
+      xMulMinusOne: 0
+    multiply:
+      oneMinusX: 0
+      xMulMinusOne: 0
+      connectedId: 0
+    add:
+      oneMinusX: 0
+      xMulMinusOne: 0
+      connectedId: 0
+    output:
+      id: 194657262
+    bandlimited: 1
+    superSample: 1
+  - type: 3
+    shape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    detune:
+      connectedId: 0
+      localValue: 0
+      oneMinusX: 0
+      xMulMinusOne: 0
+    frequency:
+      connectedId: 0
+      localValue: 10000
+      oneMinusX: 0
+      xMulMinusOne: 0
+    gain:
+      connectedId: 0
+      localValue: 7
+      oneMinusX: 0
+      xMulMinusOne: 0
+    bias:
+      connectedId: 0
+      localValue: 13
+      oneMinusX: 0
+      xMulMinusOne: 0
+    multiply:
+      oneMinusX: 0
+      xMulMinusOne: 0
+      connectedId: 0
+    add:
+      oneMinusX: 0
+      xMulMinusOne: 0
+      connectedId: 0
+    output:
+      id: -1302307323
+    bandlimited: 1
+    superSample: 1
+  samplers: []
+  oscillators:
+  - type: 3
+    shape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    detune:
+      connectedId: 0
+      localValue: 0
+      oneMinusX: 0
+      xMulMinusOne: 0
+    frequency:
+      connectedId: 194657262
+      localValue: 220
+      oneMinusX: 0
+      xMulMinusOne: 0
+    gain:
+      connectedId: 0
+      localValue: 0.5
+      oneMinusX: 0
+      xMulMinusOne: 0
     bias:
       connectedId: 0
       localValue: 0
+      oneMinusX: 0
+      xMulMinusOne: 0
     multiply:
+      oneMinusX: 0
+      xMulMinusOne: 0
       connectedId: 0
     add:
+      oneMinusX: 0
+      xMulMinusOne: 0
       connectedId: 0
     output:
-      id: 180920752
+      id: 384046843
+    bandlimited: 1
+    superSample: 1
+  - type: 3
+    shape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    detune:
+      connectedId: 0
+      localValue: 5
+      oneMinusX: 0
+      xMulMinusOne: 0
+    frequency:
+      connectedId: 194657262
+      localValue: 220
+      oneMinusX: 0
+      xMulMinusOne: 0
+    gain:
+      connectedId: 0
+      localValue: 0.5
+      oneMinusX: 0
+      xMulMinusOne: 0
+    bias:
+      connectedId: 0
+      localValue: 0
+      oneMinusX: 0
+      xMulMinusOne: 0
+    multiply:
+      oneMinusX: 0
+      xMulMinusOne: 0
+      connectedId: 0
+    add:
+      oneMinusX: 0
+      xMulMinusOne: 0
+      connectedId: 384046843
+    output:
+      id: 1281737980
+    bandlimited: 1
+    superSample: 1
+  - type: 3
+    shape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    detune:
+      connectedId: 0
+      localValue: -5
+      oneMinusX: 0
+      xMulMinusOne: 0
+    frequency:
+      connectedId: 194657262
+      localValue: 220
+      oneMinusX: 0
+      xMulMinusOne: 0
+    gain:
+      connectedId: 0
+      localValue: 0.5
+      oneMinusX: 0
+      xMulMinusOne: 0
+    bias:
+      connectedId: 0
+      localValue: 0
+      oneMinusX: 0
+      xMulMinusOne: 0
+    multiply:
+      oneMinusX: 0
+      xMulMinusOne: 0
+      connectedId: 0
+    add:
+      oneMinusX: 0
+      xMulMinusOne: 0
+      connectedId: 1281737980
+    output:
+      id: -933974116
+    bandlimited: 1
+    superSample: 1
   filters:
   - type: 2
     input:
-      connectedId: -78621756
+      oneMinusX: 0
+      xMulMinusOne: 0
+      connectedId: -933974116
     cutoff:
-      connectedId: -1853998977
-      localValue: 500
+      connectedId: -961896798
+      localValue: 1900
+      oneMinusX: 0
+      xMulMinusOne: 0
     q:
       connectedId: 0
       localValue: 2
+      oneMinusX: 0
+      xMulMinusOne: 0
     output:
-      id: 293172498
+      id: -344460494
+  - type: 2
+    input:
+      oneMinusX: 0
+      xMulMinusOne: 0
+      connectedId: -755189236
+    cutoff:
+      connectedId: 0
+      localValue: 880
+      oneMinusX: 0
+      xMulMinusOne: 0
+    q:
+      connectedId: 0
+      localValue: 2
+      oneMinusX: 0
+      xMulMinusOne: 0
+    output:
+      id: -1668256837
   delays:
   - input:
-      connectedId: 293172498
+      oneMinusX: 0
+      xMulMinusOne: 0
+      connectedId: -344460494
     delay:
       connectedId: 0
-      localValue: 0.5
+      localValue: 0.75
+      oneMinusX: 0
+      xMulMinusOne: 0
     feedback:
       connectedId: 0
-      localValue: 0
+      localValue: 0.81
+      oneMinusX: 0
+      xMulMinusOne: 0
     output:
-      id: -63874885
-  equalizers: []
-  mixers: []
+      id: -755189236
+  equalizers:
+  - input:
+      oneMinusX: 0
+      xMulMinusOne: 0
+      connectedId: 721753827
+    lg:
+      connectedId: 0
+      localValue: 1
+      oneMinusX: 0
+      xMulMinusOne: 0
+    mg:
+      connectedId: 0
+      localValue: 1
+      oneMinusX: 0
+      xMulMinusOne: 0
+    hg:
+      connectedId: 0
+      localValue: 0.5
+      oneMinusX: 0
+      xMulMinusOne: 0
+    lowFreq:
+      connectedId: 0
+      localValue: 120
+      oneMinusX: 0
+      xMulMinusOne: 0
+    highFreq:
+      connectedId: 0
+      localValue: 1720
+      oneMinusX: 0
+      xMulMinusOne: 0
+    output:
+      id: 712527026
+  - input:
+      oneMinusX: 0
+      xMulMinusOne: 0
+      connectedId: -938309250
+    lg:
+      connectedId: 0
+      localValue: 1
+      oneMinusX: 0
+      xMulMinusOne: 0
+    mg:
+      connectedId: 0
+      localValue: 0.5
+      oneMinusX: 0
+      xMulMinusOne: 0
+    hg:
+      connectedId: 0
+      localValue: 1
+      oneMinusX: 0
+      xMulMinusOne: 0
+    lowFreq:
+      connectedId: 0
+      localValue: 120
+      oneMinusX: 0
+      xMulMinusOne: 0
+    highFreq:
+      connectedId: 0
+      localValue: 1720
+      oneMinusX: 0
+      xMulMinusOne: 0
+    output:
+      id: -990285338
+  mixers:
+  - inputA:
+      oneMinusX: 0
+      xMulMinusOne: 0
+      connectedId: -344460494
+    inputB:
+      oneMinusX: 0
+      xMulMinusOne: 0
+      connectedId: 0
+    inputC:
+      oneMinusX: 0
+      xMulMinusOne: 0
+      connectedId: 0
+    inputD:
+      oneMinusX: 0
+      xMulMinusOne: 0
+      connectedId: 0
+    inputE:
+      oneMinusX: 0
+      xMulMinusOne: 0
+      connectedId: 0
+    inputF:
+      oneMinusX: 0
+      xMulMinusOne: 0
+      connectedId: 0
+    inputG:
+      oneMinusX: 0
+      xMulMinusOne: 0
+      connectedId: 0
+    inputH:
+      oneMinusX: 0
+      xMulMinusOne: 0
+      connectedId: 0
+    gainA:
+      connectedId: 0
+      localValue: 1
+      oneMinusX: 0
+      xMulMinusOne: 0
+    gainB:
+      connectedId: 0
+      localValue: 1
+      oneMinusX: 0
+      xMulMinusOne: 0
+    gainC:
+      connectedId: 0
+      localValue: 1
+      oneMinusX: 0
+      xMulMinusOne: 0
+    gainD:
+      connectedId: 0
+      localValue: 1
+      oneMinusX: 0
+      xMulMinusOne: 0
+    gainE:
+      connectedId: 0
+      localValue: 1
+      oneMinusX: 0
+      xMulMinusOne: 0
+    gainF:
+      connectedId: 0
+      localValue: 1
+      oneMinusX: 0
+      xMulMinusOne: 0
+    gainG:
+      connectedId: 0
+      localValue: 1
+      oneMinusX: 0
+      xMulMinusOne: 0
+    gainH:
+      connectedId: 0
+      localValue: 1
+      oneMinusX: 0
+      xMulMinusOne: 0
+    output:
+      id: 721753827
+  - inputA:
+      oneMinusX: 0
+      xMulMinusOne: 0
+      connectedId: -1668256837
+    inputB:
+      oneMinusX: 0
+      xMulMinusOne: 0
+      connectedId: 0
+    inputC:
+      oneMinusX: 0
+      xMulMinusOne: 0
+      connectedId: 0
+    inputD:
+      oneMinusX: 0
+      xMulMinusOne: 0
+      connectedId: 0
+    inputE:
+      oneMinusX: 0
+      xMulMinusOne: 0
+      connectedId: 0
+    inputF:
+      oneMinusX: 0
+      xMulMinusOne: 0
+      connectedId: 0
+    inputG:
+      oneMinusX: 0
+      xMulMinusOne: 0
+      connectedId: 0
+    inputH:
+      oneMinusX: 0
+      xMulMinusOne: 0
+      connectedId: 0
+    gainA:
+      connectedId: 0
+      localValue: 1
+      oneMinusX: 0
+      xMulMinusOne: 0
+    gainB:
+      connectedId: 0
+      localValue: 1
+      oneMinusX: 0
+      xMulMinusOne: 0
+    gainC:
+      connectedId: 0
+      localValue: 1
+      oneMinusX: 0
+      xMulMinusOne: 0
+    gainD:
+      connectedId: 0
+      localValue: 1
+      oneMinusX: 0
+      xMulMinusOne: 0
+    gainE:
+      connectedId: 0
+      localValue: 1
+      oneMinusX: 0
+      xMulMinusOne: 0
+    gainF:
+      connectedId: 0
+      localValue: 1
+      oneMinusX: 0
+      xMulMinusOne: 0
+    gainG:
+      connectedId: 0
+      localValue: 1
+      oneMinusX: 0
+      xMulMinusOne: 0
+    gainH:
+      connectedId: 0
+      localValue: 1
+      oneMinusX: 0
+      xMulMinusOne: 0
+    output:
+      id: -938309250
   inputAudio:
     left:
-      connectedId: 293172498
+      oneMinusX: 0
+      xMulMinusOne: 0
+      connectedId: 712527026
     right:
-      connectedId: -63874885
+      oneMinusX: 0
+      xMulMinusOne: 0
+      connectedId: -990285338
     monitor:
+      oneMinusX: 0
+      xMulMinusOne: 0
       connectedId: 0
-  activeJackOuts: b1683d9cc45350fb7f387e9112757911bb5831fc
-  cpuTime: 9
+  activeJackOuts: 055e60b2ee3b9a0bfb16e416fcc4654c9caf54c8a29eaac60cbafcd232f377ebe316052b7e8912c8bb6b909cb24c782ae671f9c4
+  cpuTime: 39
 --- !u!4 &268081888
 Transform:
   m_ObjectHideFlags: 0
@@ -454,6 +849,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!83 &1028574732
+AudioClip:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Fizzle
+  m_LoadType: 0
+  m_Channels: 2
+  m_Frequency: 44100
+  m_BitsPerSample: 32
+  m_Length: 0
+  m_IsTrackerFormat: 0
+  m_Ambisonic: 0
+  m_SubsoundIndex: 0
+  m_PreloadAudioData: 1
+  m_LoadInBackground: 0
+  m_Legacy3D: 0
+  m_Resource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_CompressionFormat: 0
+  m_EditorResource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_EditorCompressionFormat: 0
 --- !u!1 &1138821202
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,30 +941,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!83 &1406922345
-AudioClip:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Fizzle
-  m_LoadType: 0
-  m_Channels: 2
-  m_Frequency: 44100
-  m_BitsPerSample: 32
-  m_Length: 0
-  m_IsTrackerFormat: 0
-  m_Ambisonic: 0
-  m_SubsoundIndex: 0
-  m_PreloadAudioData: 1
-  m_LoadInBackground: 0
-  m_Legacy3D: 0
-  m_Resource:
-    m_Source: 
-    m_Offset: 0
-    m_Size: 0
-  m_CompressionFormat: 0
-  m_EditorResource:
-    m_Source: 
-    m_Offset: 0
-    m_Size: 0
-  m_EditorCompressionFormat: 0

@@ -26,7 +26,10 @@ namespace Fizzle
             rect.height = 16;
             rect.width = 64;
             var typeProperty = property.FindPropertyRelative("type");
+            if (Event.current.type == EventType.MouseDown && Event.current.button == 1 && rect.Contains(Event.current.mousePosition))
+                OnContextMenu(position, property, label);
             EditorGUI.PropertyField(rect, typeProperty, GUIContent.none);
+
             rect.x += rect.width;
             rect.width = 16;
             using (new EditorGUI.DisabledGroupScope(typeProperty.enumValueIndex > 0))
@@ -39,7 +42,7 @@ namespace Fizzle
             rect.x += rect.width;
             EditorGUI.PropertyField(rect, property.FindPropertyRelative("bias"), new GUIContent("B", "Bias"));
             rect.x += rect.width;
-            EditorGUI.PropertyField(rect, property.FindPropertyRelative("phaseOffset"), new GUIContent("P", "Phase Offset"));
+            EditorGUI.PropertyField(rect, property.FindPropertyRelative("detune"), new GUIContent("D", "Detune"));
             rect.x += rect.width;
             EditorGUI.PropertyField(rect, property.FindPropertyRelative("multiply"), new GUIContent("*", "Multiply Signal"));
             rect.x += rect.width / 2;
