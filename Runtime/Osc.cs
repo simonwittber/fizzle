@@ -37,7 +37,7 @@ namespace Fizzle
 
         public OscType type;
         public AnimationCurve shape = new AnimationCurve();
-
+        public JackIn phaseOffset = new JackIn();
         public JackIn frequency = new JackIn();
         public JackIn gain = new JackIn();
         public JackIn bias = new JackIn();
@@ -51,20 +51,38 @@ namespace Fizzle
         protected bool isReady = false;
         protected float phase;
 
+        public bool bandlimited = true;
+
+
+        float[] xv = new float[2], yv = new float[2];
+
+        float BandLimit(float smp)
+        {
+            //This is a LPF at 22049hz.
+            xv[0] = xv[1];
+            xv[1] = smp / 1.000071238f;
+            yv[0] = yv[1];
+            yv[1] = (xv[0] + xv[1]) + (-0.9998575343f * yv[0]);
+            return yv[1];
+        }
 
         public virtual float Sample(int t)
         {
             if (!isReady) return 0;
 
             var smp = _Sample(phase);
+            if (bandlimited) smp = BandLimit(smp);
+
             if (multiply.connectedId != 0)
                 smp *= multiply;
             if (add.connectedId != 0)
                 smp += add;
+
             phase = phase + ((TWOPI * frequency) / SAMPLERATE);
             if (phase > TWOPI)
                 phase = phase - TWOPI;
             smp = bias + (smp * gain);
+
             output.Value = smp;
             return smp;
         }
@@ -109,7 +127,7 @@ namespace Fizzle
                 noiseBuffer[i] = Mathf.Lerp(-1, 1, Random.value);
             isReady = true;
         }
-    }
 
+    }
 
 }

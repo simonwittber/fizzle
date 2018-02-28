@@ -12,7 +12,8 @@ namespace Fizzle
             Highpass,
             Lowpass,
             Bandpass,
-            Notch
+            Bandstop,
+            Allpass
         }
 
         public FilterType type;
@@ -54,8 +55,11 @@ namespace Fizzle
                 case FilterType.Bandpass:
                     bqFilter.SetBandPass(cutoff.Value, q.Value);
                     return bqFilter.Update(smp);
-                case FilterType.Notch:
-                    bqFilter.SetNotch(cutoff.Value, q.Value);
+                case FilterType.Bandstop:
+                    bqFilter.SetBandStop(cutoff.Value, q.Value);
+                    return bqFilter.Update(smp);
+                case FilterType.Allpass:
+                    bqFilter.SetAllPass(cutoff.Value, q.Value);
                     return bqFilter.Update(smp);
             }
             return 0f;

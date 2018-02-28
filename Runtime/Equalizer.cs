@@ -6,7 +6,7 @@ namespace Fizzle
     [System.Serializable]
     public class Equalizer : IHasGUID
     {
-        const int sampleRate = 44100;
+        const int sampleRate = Osc.SAMPLERATE;
 
         public JackSignal input = new JackSignal();
         public JackIn lg = new JackIn();

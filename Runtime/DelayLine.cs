@@ -7,6 +7,7 @@ namespace Fizzle
     {
         public JackSignal input = new JackSignal();
         public JackIn delay = new JackIn(0.5f);
+        public JackIn feedback = new JackIn(0.5f);
         public JackOut output = new JackOut();
 
         public int ID { get { return output.id; } set { output.id = value; } }
@@ -21,14 +22,14 @@ namespace Fizzle
                 output.Value = 0;
                 return 0;
             }
-            var length = Mathf.FloorToInt((1f / (1f / 44100)) * delay);
+            var length = Mathf.FloorToInt((1f / (1f / Osc.SAMPLERATE)) * delay);
             if (length <= 0) length = 1;
             if (length != buffer.Length)
                 buffer = new float[length];
             if (++position >= (buffer.Length))
                 position = 0;
             var last = buffer[position];
-            buffer[position] = input.Value;
+            buffer[position] = input + (last * feedback);
             output.Value = last;
             return last;
         }

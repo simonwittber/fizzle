@@ -72,6 +72,11 @@ namespace Fizzle
 
         }
 
+        protected virtual void OnContext(SerializedProperty property)
+        {
+
+        }
+
         protected virtual void OnClick(SerializedProperty property)
         {
 
@@ -103,9 +108,11 @@ namespace Fizzle
                 GUI.color = Color.green;
             else
                 GUI.color = Color.white;
-            if (DrawJackButton(rect, idProperty.intValue))
+            if (DrawJackButton(rect, idProperty.intValue, property))
             {
-                if (Event.current.button != 0)
+                if (Event.current.button == 1)
+                    OnContext(property);
+                else if (Event.current.button == 2)
                     OnReset(property);
                 else
                     OnClick(property);
@@ -121,7 +128,7 @@ namespace Fizzle
             throw new NotImplementedException();
         }
 
-        protected virtual bool DrawJackButton(Rect rect, int id)
+        protected virtual bool DrawJackButton(Rect rect, int id, SerializedProperty property)
         {
             return GUI.Button(rect, GUIContent.none, "radio");
         }

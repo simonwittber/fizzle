@@ -220,7 +220,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 421963228}
+  m_audioClip: {fileID: 1406922345}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -319,7 +319,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   realtime: 1
   duration: 5
-  sampleBank: []
+  sampleBank:
+  - {fileID: 8300000, guid: 0f950ff8ae2c3493489a2f5ca0d0d951, type: 3}
   envelopes:
   - superSample: 1
     type: 1
@@ -329,6 +330,9 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+    phaseOffset:
+      connectedId: 0
+      localValue: 0
     frequency:
       connectedId: 0
       localValue: 7
@@ -352,15 +356,18 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+    phaseOffset:
+      connectedId: 0
+      localValue: 0
     frequency:
       connectedId: 0
-      localValue: 13
+      localValue: 4
     gain:
       connectedId: 0
-      localValue: 800
+      localValue: 100
     bias:
       connectedId: 0
-      localValue: 840
+      localValue: 440
     multiply:
       connectedId: 0
     add:
@@ -372,7 +379,7 @@ MonoBehaviour:
     output:
       id: -78621756
     channel: 0
-    channels: 0
+    channels: 1
   oscillators:
   - superSample: 1
     type: 3
@@ -382,6 +389,9 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+    phaseOffset:
+      connectedId: 0
+      localValue: 0
     frequency:
       connectedId: 0
       localValue: 0.2
@@ -398,9 +408,9 @@ MonoBehaviour:
     output:
       id: 180920752
   filters:
-  - type: 1
+  - type: 2
     input:
-      connectedId: 180920752
+      connectedId: -78621756
     cutoff:
       connectedId: -1853998977
       localValue: 500
@@ -415,6 +425,9 @@ MonoBehaviour:
     delay:
       connectedId: 0
       localValue: 0.5
+    feedback:
+      connectedId: 0
+      localValue: 0
     output:
       id: -63874885
   equalizers: []
@@ -426,7 +439,7 @@ MonoBehaviour:
       connectedId: -63874885
     monitor:
       connectedId: 0
-  activeJackOuts: b1683d9cb0a1c80a7f387e9112757911bb5831fc
+  activeJackOuts: b1683d9cc45350fb7f387e9112757911bb5831fc
   cpuTime: 9
 --- !u!4 &268081888
 Transform:
@@ -441,33 +454,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!83 &421963228
-AudioClip:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Fizzle
-  m_LoadType: 0
-  m_Channels: 2
-  m_Frequency: 44100
-  m_BitsPerSample: 32
-  m_Length: 0
-  m_IsTrackerFormat: 0
-  m_Ambisonic: 0
-  m_SubsoundIndex: 0
-  m_PreloadAudioData: 1
-  m_LoadInBackground: 0
-  m_Legacy3D: 0
-  m_Resource:
-    m_Source: 
-    m_Offset: 0
-    m_Size: 0
-  m_CompressionFormat: 0
-  m_EditorResource:
-    m_Source: 
-    m_Offset: 0
-    m_Size: 0
-  m_EditorCompressionFormat: 0
 --- !u!1 &1138821202
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,3 +519,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!83 &1406922345
+AudioClip:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Fizzle
+  m_LoadType: 0
+  m_Channels: 2
+  m_Frequency: 44100
+  m_BitsPerSample: 32
+  m_Length: 0
+  m_IsTrackerFormat: 0
+  m_Ambisonic: 0
+  m_SubsoundIndex: 0
+  m_PreloadAudioData: 1
+  m_LoadInBackground: 0
+  m_Legacy3D: 0
+  m_Resource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_CompressionFormat: 0
+  m_EditorResource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_EditorCompressionFormat: 0

@@ -23,7 +23,9 @@ namespace Fizzle
             rect.width = 16;
             EditorGUI.PropertyField(rect, property.FindPropertyRelative("input"), GUIContent.none);
             rect.x += rect.width;
-            rect.width = (position.width - 16 - 16);
+            rect.width = (position.width - 32) / 2;
+            EditorGUI.PropertyField(rect, property.FindPropertyRelative("feedback"), new GUIContent("f", "Feedback"));
+            rect.x += rect.width;
             EditorGUI.PropertyField(rect, property.FindPropertyRelative("delay"), new GUIContent("D", "delay"));
             rect.x += rect.width;
             rect.width = 16;

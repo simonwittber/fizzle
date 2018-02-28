@@ -32,12 +32,14 @@ namespace Fizzle
             using (new EditorGUI.DisabledGroupScope(typeProperty.enumValueIndex > 0))
                 EditorGUI.PropertyField(rect, property.FindPropertyRelative("shape"), GUIContent.none);
             rect.x += rect.width;
-            rect.width = (position.width - 64 - 16 - 16) / 4;
+            rect.width = (position.width - 64 - 16 - 16) / 5;
             EditorGUI.PropertyField(rect, property.FindPropertyRelative("frequency"), new GUIContent("F", "Frequency"));
             rect.x += rect.width;
             EditorGUI.PropertyField(rect, property.FindPropertyRelative("gain"), new GUIContent("A", "Amplitude"));
             rect.x += rect.width;
             EditorGUI.PropertyField(rect, property.FindPropertyRelative("bias"), new GUIContent("B", "Bias"));
+            rect.x += rect.width;
+            EditorGUI.PropertyField(rect, property.FindPropertyRelative("phaseOffset"), new GUIContent("P", "Phase Offset"));
             rect.x += rect.width;
             EditorGUI.PropertyField(rect, property.FindPropertyRelative("multiply"), new GUIContent("*", "Multiply Signal"));
             rect.x += rect.width / 2;
@@ -53,6 +55,11 @@ namespace Fizzle
             menu.AddItem(new GUIContent("Super Sample?"), property.FindPropertyRelative("superSample").boolValue, () =>
             {
                 property.FindPropertyRelative("superSample").boolValue = !property.FindPropertyRelative("superSample").boolValue;
+                property.serializedObject.ApplyModifiedProperties();
+            });
+            menu.AddItem(new GUIContent("Band Limited?"), property.FindPropertyRelative("bandlimited").boolValue, () =>
+            {
+                property.FindPropertyRelative("bandlimited").boolValue = !property.FindPropertyRelative("bandlimited").boolValue;
                 property.serializedObject.ApplyModifiedProperties();
             });
             menu.ShowAsContext();

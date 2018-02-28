@@ -9,6 +9,8 @@ namespace Fizzle
 
         public int connectedId;
         public float localValue;
+        public bool oneMinusX = false;
+        public bool xMulMinusOne = false;
 
         public JackIn(float defaultValue = 0f)
         {
@@ -21,7 +23,10 @@ namespace Fizzle
             get
             {
                 if (connectedId == 0) return localValue;
-                return Jack.GetValue(connectedId);
+                var value = Jack.GetValue(connectedId);
+                if (xMulMinusOne) value *= -1;
+                if (oneMinusX) value = 1 - value;
+                return value;
             }
             set
             {

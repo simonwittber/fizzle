@@ -11,7 +11,7 @@ namespace Fizzle
     [RequireComponent(typeof(AudioSource))]
     public class FizzleSynth : MonoBehaviour
     {
-        const int sampleRate = 44100;
+        const int sampleRate = Osc.SAMPLERATE;
         public bool realtime = true;
         public float duration = 5;
         public AudioClip[] sampleBank;

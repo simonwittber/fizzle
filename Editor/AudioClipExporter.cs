@@ -121,7 +121,7 @@ namespace Fizzle
         static void WriteHeader(FileStream fileStream, float[] data)
         {
 
-            var hz = 44100;
+            var hz = Osc.SAMPLERATE;
             var channels = 2;
             var samples = data.Length;
 
@@ -153,7 +153,7 @@ namespace Fizzle
             byte[] sampleRate = BitConverter.GetBytes(hz);
             fileStream.Write(sampleRate, 0, 4);
 
-            byte[] byteRate = BitConverter.GetBytes(hz * channels * 2); // sampleRate * bytesPerSample*number of channels, here 44100*2*2
+            byte[] byteRate = BitConverter.GetBytes(hz * channels * 2); // sampleRate * bytesPerSample*number of channels, here Osc.SAMPLERATE*2*2
             fileStream.Write(byteRate, 0, 4);
 
             UInt16 blockAlign = (ushort)(channels * 2);

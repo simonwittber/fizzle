@@ -13,7 +13,7 @@ namespace Fizzle
             base.OnGUI(position, property, label);
         }
 
-        protected override bool DrawJackButton(Rect rect, int id)
+        protected override bool DrawJackButton(Rect rect, int id, SerializedProperty property)
         {
             if (id != 0)
             {

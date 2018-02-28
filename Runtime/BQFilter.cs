@@ -8,7 +8,7 @@ namespace Fizzle
 
     public class BQFilter
     {
-        const int sampleRate = 44100;
+        const int sampleRate = Osc.SAMPLERATE;
 
         float a0, a1, a2, a3, a4;
         float x1 = 0, x2 = 0, y1 = 0, y2 = 0;
@@ -34,7 +34,7 @@ namespace Fizzle
 
         public void SetLowPass(float freq, float q)
         {
-            freq = Mathf.Clamp(freq, Mathf.Epsilon, 44100 / 4);
+            freq = Mathf.Clamp(freq, Mathf.Epsilon, Osc.SAMPLERATE / 4);
             if (q <= 0.01f) q = 0.01f;
             var w0 = 2 * Mathf.PI * freq / sampleRate;
             var cosw0 = Mathf.Cos(w0);
@@ -50,7 +50,7 @@ namespace Fizzle
 
         public void SetHighPass(float freq, float q)
         {
-            freq = Mathf.Clamp(freq, Mathf.Epsilon, 44100 / 4);
+            freq = Mathf.Clamp(freq, Mathf.Epsilon, Osc.SAMPLERATE / 4);
             if (q <= 0.01f) q = 0.01f;
             var w0 = 2 * Mathf.PI * freq / sampleRate;
             var cosw0 = Mathf.Cos(w0);
@@ -67,7 +67,7 @@ namespace Fizzle
 
         public void SetBandPass(float freq, float q)
         {
-            freq = Mathf.Clamp(freq, Mathf.Epsilon, 44100 / 4);
+            freq = Mathf.Clamp(freq, Mathf.Epsilon, Osc.SAMPLERATE / 4);
             if (q <= 0.01f) q = 0.01f;
             var w0 = 2 * Mathf.PI * freq / sampleRate;
             var cosw0 = Mathf.Cos(w0);
@@ -82,9 +82,9 @@ namespace Fizzle
             SetCoeff(a0, a1, a2, b0, b1, b2);
         }
 
-        public void SetNotch(float freq, float q)
+        public void SetBandStop(float freq, float q)
         {
-            freq = Mathf.Clamp(freq, Mathf.Epsilon, 44100 / 4);
+            freq = Mathf.Clamp(freq, Mathf.Epsilon, Osc.SAMPLERATE / 4);
             if (q <= 0.01f) q = 0.01f;
             var w0 = 2 * Mathf.PI * freq / sampleRate;
             var cosw0 = Mathf.Cos(w0);
@@ -94,6 +94,23 @@ namespace Fizzle
             var b0 = 1;
             var b1 = -2 * cosw0;
             var b2 = 1;
+            var a0 = 1 + alpha;
+            var a1 = -2 * cosw0;
+            var a2 = 1 - alpha;
+            SetCoeff(a0, a1, a2, b0, b1, b2);
+        }
+
+        public void SetAllPass(float freq, float q)
+        {
+            //H(s) = (s^2 - s/Q + 1) / (s^2 + s/Q + 1)
+            var w0 = 2 * Mathf.PI * freq / sampleRate;
+            var cosw0 = Mathf.Cos(w0);
+            var sinw0 = Mathf.Sin(w0);
+            var alpha = sinw0 / (2 * q);
+
+            var b0 = 1 - alpha;
+            var b1 = -2 * cosw0;
+            var b2 = 1 + alpha;
             var a0 = 1 + alpha;
             var a1 = -2 * cosw0;
             var a2 = 1 - alpha;
