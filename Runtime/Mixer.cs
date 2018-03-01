@@ -39,7 +39,8 @@ namespace Fizzle
             smp += inputF.Value * gainF.Value;
             smp += inputG.Value * gainG.Value;
             smp += inputH.Value * gainH.Value;
-            output.Value = Mathf.Clamp(smp, -1, 1);
+
+            output.Value = smp;
             return smp;
         }
     }

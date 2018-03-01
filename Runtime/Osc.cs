@@ -3,15 +3,6 @@ using UnityEngine;
 
 namespace Fizzle
 {
-    public interface IHasInit
-    {
-        void Init();
-    }
-
-    public interface IHasGUID
-    {
-        int ID { get; set; }
-    }
 
     [System.Serializable]
     public class Osc : IHasGUID, IHasInit
@@ -51,6 +42,7 @@ namespace Fizzle
 
         public bool bandlimited = true;
         public bool superSample = true;
+
 
 
         float[] xv = new float[2], yv = new float[2];

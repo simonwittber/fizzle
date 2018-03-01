@@ -25,7 +25,6 @@ namespace Fizzle
             Handles.color = Color.white;
             if (property.FindPropertyRelative("oneMinusX").boolValue)
                 Handles.DrawSolidDisc(rect.center - new Vector2(1, -1), Vector3.forward, 7);
-
             return GUI.Button(rect, new GUIContent("", id.ToString()), "radio");
         }
 

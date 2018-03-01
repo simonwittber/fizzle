@@ -15,31 +15,21 @@ namespace Fizzle
         public bool realtime = true;
         public float duration = 5;
         public AudioClip[] sampleBank;
+        public Sequencer[] sequencers = new Sequencer[0];
         public Envelope[] envelopes = new Envelope[0];
         public Sampler[] samplers = new Sampler[0];
         public Osc[] oscillators = new Osc[0];
         public Filter[] filters = new Filter[0];
         public DelayLine[] delays = new DelayLine[0];
-        public Equalizer[] equalizers = new Equalizer[0];
         public Mixer[] mixers = new Mixer[0];
+
         public AudioOut inputAudio = new AudioOut();
         public int[] activeJackOuts;
-        public long cpuTime;
+        public float cpuTime;
 
         Dictionary<int, float[]> sampleData = new Dictionary<int, float[]>();
         int[] sampleChannels;
         new AudioSource audio;
-
-        [ContextMenu("Dump Jacks")]
-        public void DumpJacks()
-        {
-            foreach (var j in JackIn.instances)
-                Debug.Log(j);
-            foreach (var j in JackSignal.instances)
-                Debug.Log(j);
-            foreach (var j in JackOut.instances)
-                Debug.Log(j);
-        }
 
         [ContextMenu("Play")]
         public void _Play()
@@ -117,27 +107,30 @@ namespace Fizzle
                 {
                     sample++;
 
+                    foreach (var s in sequencers)
+                        if (s != null && JackOutIsUsed(s.output.id))
+                            s.Sample(sample);
                     foreach (var e in envelopes)
-                        if (e.output != null && JackOutIsUsed(e.output.id))
+                        if (e != null && e.output != null && JackOutIsUsed(e.output.id))
                             e.Sample(sample);
                     foreach (var s in samplers)
-                        if (s.output != null && JackOutIsUsed(s.output.id))
+                        if (s != null && JackOutIsUsed(s.output.id))
                         {
                             s.channels = sampleChannels[s.sampleIndex];
                             s.data = sampleData[s.sampleIndex];
                             s.Sample(sample);
                         }
                     foreach (var o in oscillators)
-                        if (o.output != null && JackOutIsUsed(o.output.id))
+                        if (o != null && JackOutIsUsed(o.output.id))
                             o.Sample(sample);
                     foreach (var d in delays)
-                        d.Update();
+                        if (d != null && JackOutIsUsed(d.output.id))
+                            d.Update();
                     foreach (var f in filters)
-                        f.Update();
-                    foreach (var e in equalizers)
-                        e.Update();
+                        if (f != null && JackOutIsUsed(f.output.id))
+                            f.Update();
                     foreach (var m in mixers)
-                        if (JackOutIsUsed(m.output.id))
+                        if (m != null && JackOutIsUsed(m.output.id))
                             m.Update();
                     data[i] = inputAudio.left.Value;
                     data[i + 1] = inputAudio.right.Value;
@@ -149,7 +142,9 @@ namespace Fizzle
                 abort = true;
             }
             clock.Stop();
-            cpuTime = clock.ElapsedTicks / data.Length;
+            //max time of 226.757 ticks per sample for 44100 sample rate.
+            cpuTime = Mathf.Lerp(cpuTime, (clock.ElapsedTicks / data.Length), 0.1f) / 226.757f;
+
             clock.Reset();
         }
         bool abort = false;

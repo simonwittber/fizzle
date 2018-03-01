@@ -1,0 +1,726 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!181963792 &2655988077585873504
+Preset:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: SpaceLullaby
+  m_TargetType:
+    m_NativeTypeID: 114
+    m_ManagedTypePPtr: {fileID: 11500000, guid: a9d6bfe2154904187802065a46f3448e,
+      type: 3}
+    m_ManagedTypeFallback: 
+  m_Properties:
+  - target: {fileID: 0}
+    propertyPath: m_Enabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorHideFlags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_Name
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorClassIdentifier
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: realtime
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: duration
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sampleBank.Array.size
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.size
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].type
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].frequency.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].frequency.localValue
+    value: 120
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].frequency.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].frequency.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.size
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[0].time
+    value: 0.0013275146
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[0].value
+    value: 0.0015716553
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[0].inSlope
+    value: 5.5249844
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[0].outSlope
+    value: 5.5249844
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[0].tangentMode
+    value: 34
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[0].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[0].inWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[0].outWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[1].time
+    value: 0.16385485
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[1].value
+    value: 0.8995326
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[1].inSlope
+    value: -1.012077
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[1].outSlope
+    value: -1.012077
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[1].tangentMode
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[1].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[1].inWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[1].outWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[2].time
+    value: 0.31705344
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[2].value
+    value: 0.6501212
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[2].inSlope
+    value: -1.0867556
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[2].outSlope
+    value: -1.0867556
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[2].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[2].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[2].inWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[2].outWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[3].time
+    value: 0.9904175
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[3].value
+    value: 0.009159088
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[3].inSlope
+    value: -0.9518805
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[3].outSlope
+    value: -0.9518805
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[3].tangentMode
+    value: 34
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[3].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[3].inWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[3].outWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_PreInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_PostInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_RotationOrder
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].gain.connectedId
+    value: 460288608
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].gain.localValue
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].gain.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].gain.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].bias.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].bias.localValue
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].bias.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].bias.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].code
+    value: A4,C4,E4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelopeOutput.id
+    value: 795319676
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].output.id
+    value: 795319675
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].type
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].frequency.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].frequency.localValue
+    value: 15
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].frequency.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].frequency.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_Curve.Array.size
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_Curve.Array.data[0].time
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_Curve.Array.data[0].value
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_Curve.Array.data[0].inSlope
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_Curve.Array.data[0].outSlope
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_Curve.Array.data[0].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_Curve.Array.data[0].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_Curve.Array.data[0].inWeight
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_Curve.Array.data[0].outWeight
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_Curve.Array.data[1].time
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_Curve.Array.data[1].value
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_Curve.Array.data[1].inSlope
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_Curve.Array.data[1].outSlope
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_Curve.Array.data[1].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_Curve.Array.data[1].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_Curve.Array.data[1].inWeight
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_Curve.Array.data[1].outWeight
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_PreInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_PostInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_RotationOrder
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].gain.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].gain.localValue
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].gain.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].gain.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].bias.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].bias.localValue
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].bias.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].bias.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].code
+    value: 1,2,3,1,0.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelopeOutput.id
+    value: 460288609
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].output.id
+    value: 460288608
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].type
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].shape.m_Curve.Array.size
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].shape.m_PreInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].shape.m_PostInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].shape.m_RotationOrder
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].detune.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].detune.localValue
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].detune.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].detune.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].frequency.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].frequency.localValue
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].frequency.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].frequency.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].gain.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].gain.localValue
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].gain.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].gain.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].bias.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].bias.localValue
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].bias.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].bias.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].multiply.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].multiply.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].multiply.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].add.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].add.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].add.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].output.id
+    value: 662473980
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].bandlimited
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].superSample
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: samplers.Array.size
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].type
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].shape.m_Curve.Array.size
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].shape.m_PreInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].shape.m_PostInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].shape.m_RotationOrder
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].detune.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].detune.localValue
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].detune.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].detune.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].frequency.connectedId
+    value: 795319675
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].frequency.localValue
+    value: 440
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].frequency.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].frequency.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].gain.connectedId
+    value: 795319676
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].gain.localValue
+    value: 0.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].gain.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].gain.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].bias.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].bias.localValue
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].bias.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].bias.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].multiply.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].multiply.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].multiply.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].add.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].add.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].add.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].output.id
+    value: 1811867464
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].bandlimited
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].superSample
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.size
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: delays.Array.size
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: equalizers.Array.size
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.size
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputAudio.left.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputAudio.left.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputAudio.left.connectedId
+    value: 1811867464
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputAudio.right.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputAudio.right.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputAudio.right.connectedId
+    value: 1811867464
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputAudio.monitor.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputAudio.monitor.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputAudio.monitor.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: activeJackOuts.Array.size
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: activeJackOuts.Array.data[0]
+    value: 460288608
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: activeJackOuts.Array.data[1]
+    value: 795319675
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: activeJackOuts.Array.data[2]
+    value: 795319676
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: activeJackOuts.Array.data[3]
+    value: 1811867464
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: cpuTime
+    value: 0.0044275876
+    objectReference: {fileID: 0}

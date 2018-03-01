@@ -41,12 +41,12 @@ namespace Fizzle
             lock (typeof(JackDrawer))
             {
                 JackDrawer.BeginJackDrawers();
+                DrawRack(ref fa.sequencers, serializedObject.FindProperty("sequencers"), Color.white);
                 DrawRack(ref fa.envelopes, serializedObject.FindProperty("envelopes"), Color.cyan);
                 DrawRack(ref fa.samplers, serializedObject.FindProperty("samplers"), Color.magenta);
                 DrawRack(ref fa.oscillators, serializedObject.FindProperty("oscillators"), Color.green);
                 DrawRack(ref fa.filters, serializedObject.FindProperty("filters"), Color.red);
                 DrawRack(ref fa.delays, serializedObject.FindProperty("delays"), Color.blue);
-                DrawRack(ref fa.equalizers, serializedObject.FindProperty("equalizers"), Color.yellow);
                 DrawRack(ref fa.mixers, serializedObject.FindProperty("mixers"), Color.black);
                 EditorGUILayout.PropertyField(serializedObject.FindProperty("inputAudio"), new GUIContent("Audio Out"));
                 fa.activeJackOuts = JackDrawer.EndJackDrawers();
@@ -63,6 +63,9 @@ namespace Fizzle
             if (GUILayout.Button("Save"))
                 AudioClipExporter.Save("Fizzle.wav", fa.GetData());
             GUILayout.EndHorizontal();
+
+            GUILayout.Label($"CPU: {fa.cpuTime * 100}%");
+
             // var rect = GUILayoutUtility.GetRect(EditorGUIUtility.currentViewWidth - 32, 32);
             // oscilloscope.duration = fa.duration;
             // if (fa.inputAudio.monitor.connectedId != 0)

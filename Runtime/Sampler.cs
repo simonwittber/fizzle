@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Fizzle
 {
+
     [System.Serializable]
     public class Sampler : IHasGUID
     {
