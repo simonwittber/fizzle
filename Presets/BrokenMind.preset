@@ -41,6 +41,10 @@ Preset:
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
+    propertyPath: sequencers.Array.size
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
     propertyPath: envelopes.Array.size
     value: 2
     objectReference: {fileID: 0}
@@ -813,202 +817,6 @@ Preset:
     value: -755189236
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: equalizers.Array.size
-    value: 2
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[0].input.oneMinusX
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[0].input.xMulMinusOne
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[0].input.connectedId
-    value: 721753827
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[0].lg.connectedId
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[0].lg.localValue
-    value: 1
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[0].lg.oneMinusX
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[0].lg.xMulMinusOne
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[0].mg.connectedId
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[0].mg.localValue
-    value: 1
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[0].mg.oneMinusX
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[0].mg.xMulMinusOne
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[0].hg.connectedId
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[0].hg.localValue
-    value: 0.5
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[0].hg.oneMinusX
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[0].hg.xMulMinusOne
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[0].lowFreq.connectedId
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[0].lowFreq.localValue
-    value: 120
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[0].lowFreq.oneMinusX
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[0].lowFreq.xMulMinusOne
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[0].highFreq.connectedId
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[0].highFreq.localValue
-    value: 1720
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[0].highFreq.oneMinusX
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[0].highFreq.xMulMinusOne
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[0].output.id
-    value: 712527026
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[1].input.oneMinusX
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[1].input.xMulMinusOne
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[1].input.connectedId
-    value: -938309250
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[1].lg.connectedId
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[1].lg.localValue
-    value: 1
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[1].lg.oneMinusX
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[1].lg.xMulMinusOne
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[1].mg.connectedId
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[1].mg.localValue
-    value: 0.5
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[1].mg.oneMinusX
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[1].mg.xMulMinusOne
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[1].hg.connectedId
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[1].hg.localValue
-    value: 1
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[1].hg.oneMinusX
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[1].hg.xMulMinusOne
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[1].lowFreq.connectedId
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[1].lowFreq.localValue
-    value: 120
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[1].lowFreq.oneMinusX
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[1].lowFreq.xMulMinusOne
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[1].highFreq.connectedId
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[1].highFreq.localValue
-    value: 1720
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[1].highFreq.oneMinusX
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[1].highFreq.xMulMinusOne
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: equalizers.Array.data[1].output.id
-    value: -990285338
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
     propertyPath: mixers.Array.size
     value: 2
     objectReference: {fileID: 0}
@@ -1478,7 +1286,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: inputAudio.left.connectedId
-    value: 712527026
+    value: 721753827
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: inputAudio.right.oneMinusX
@@ -1490,7 +1298,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: inputAudio.right.connectedId
-    value: -990285338
+    value: -938309250
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: inputAudio.monitor.oneMinusX
@@ -1506,7 +1314,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: activeJackOuts.Array.size
-    value: 12
+    value: 10
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: activeJackOuts.Array.data[0]
@@ -1538,25 +1346,17 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: activeJackOuts.Array.data[7]
-    value: 721753827
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: activeJackOuts.Array.data[8]
-    value: -938309250
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: activeJackOuts.Array.data[9]
     value: -1668256837
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: activeJackOuts.Array.data[10]
-    value: 712527026
+    propertyPath: activeJackOuts.Array.data[8]
+    value: 721753827
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: activeJackOuts.Array.data[11]
-    value: -990285338
+    propertyPath: activeJackOuts.Array.data[9]
+    value: -938309250
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: cpuTime
-    value: 24
+    value: 0.009296162
     objectReference: {fileID: 0}
