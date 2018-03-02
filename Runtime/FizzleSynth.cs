@@ -19,6 +19,7 @@ namespace Fizzle
         public Envelope[] envelopes = new Envelope[0];
         public Sampler[] samplers = new Sampler[0];
         public Osc[] oscillators = new Osc[0];
+        public CrossFader[] crossFaders = new CrossFader[0];
         public Filter[] filters = new Filter[0];
         public DelayLine[] delays = new DelayLine[0];
         public Mixer[] mixers = new Mixer[0];
@@ -123,6 +124,9 @@ namespace Fizzle
                     foreach (var o in oscillators)
                         if (o != null && JackOutIsUsed(o.output.id))
                             o.Sample(sample);
+                    foreach (var c in crossFaders)
+                        if (c != null && JackOutIsUsed(c.output.id))
+                            c.Sample(sample);
                     foreach (var d in delays)
                         if (d != null && JackOutIsUsed(d.output.id))
                             d.Update();

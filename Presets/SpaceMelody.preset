@@ -34,7 +34,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: duration
-    value: 30
+    value: 120
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: sampleBank.Array.size
@@ -358,7 +358,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: sequencers.Array.data[1].gain.localValue
-    value: 2
+    value: 0.5
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: sequencers.Array.data[1].gain.oneMinusX
@@ -386,7 +386,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: sequencers.Array.data[1].code
-    value: 1,2,3,1,0.5
+    value: 1,2,3,1,4
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: sequencers.Array.data[1].envelopeOutput.id
@@ -986,7 +986,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: oscillators.Array.data[0].add.connectedId
-    value: 1661444687
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: oscillators.Array.data[0].output.id
@@ -1106,7 +1106,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: oscillators.Array.data[1].add.connectedId
-    value: -1767367525
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: oscillators.Array.data[1].output.id
@@ -1242,11 +1242,75 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: oscillators.Array.data[3].type
-    value: 9
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: oscillators.Array.data[3].shape.m_Curve.Array.size
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[3].shape.m_Curve.Array.data[0].time
     value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[3].shape.m_Curve.Array.data[0].value
+    value: -0.99976945
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[3].shape.m_Curve.Array.data[0].inSlope
+    value: 1.9997694
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[3].shape.m_Curve.Array.data[0].outSlope
+    value: 1.9997694
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[3].shape.m_Curve.Array.data[0].tangentMode
+    value: 34
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[3].shape.m_Curve.Array.data[0].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[3].shape.m_Curve.Array.data[0].inWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[3].shape.m_Curve.Array.data[0].outWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[3].shape.m_Curve.Array.data[1].time
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[3].shape.m_Curve.Array.data[1].value
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[3].shape.m_Curve.Array.data[1].inSlope
+    value: 1.9997694
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[3].shape.m_Curve.Array.data[1].outSlope
+    value: 1.9997694
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[3].shape.m_Curve.Array.data[1].tangentMode
+    value: 34
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[3].shape.m_Curve.Array.data[1].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[3].shape.m_Curve.Array.data[1].inWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[3].shape.m_Curve.Array.data[1].outWeight
+    value: 0.33333334
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: oscillators.Array.data[3].shape.m_PreInfinity
@@ -1254,7 +1318,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: oscillators.Array.data[3].shape.m_PostInfinity
-    value: 2
+    value: 1
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: oscillators.Array.data[3].shape.m_RotationOrder
@@ -1346,7 +1410,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: oscillators.Array.data[3].add.connectedId
-    value: 650075409
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: oscillators.Array.data[3].output.id
@@ -1418,7 +1482,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: oscillators.Array.data[4].gain.localValue
-    value: 1
+    value: 0.2
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: oscillators.Array.data[4].gain.oneMinusX
@@ -1482,7 +1546,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: filters.Array.size
-    value: 2
+    value: 3
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: filters.Array.data[0].type
@@ -1589,6 +1653,58 @@ Preset:
     value: 1680665672
     objectReference: {fileID: 0}
   - target: {fileID: 0}
+    propertyPath: filters.Array.data[2].type
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[2].input.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[2].input.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[2].input.connectedId
+    value: 1661444687
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[2].cutoff.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[2].cutoff.localValue
+    value: 880
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[2].cutoff.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[2].cutoff.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[2].q.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[2].q.localValue
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[2].q.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[2].q.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[2].output.id
+    value: -1292880559
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
     propertyPath: delays.Array.size
     value: 1
     objectReference: {fileID: 0}
@@ -1678,7 +1794,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: mixers.Array.data[0].inputC.connectedId
-    value: 0
+    value: 1661444687
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: mixers.Array.data[0].inputD.oneMinusX
@@ -1778,7 +1894,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: mixers.Array.data[0].gainC.localValue
-    value: 1
+    value: 0.05
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: mixers.Array.data[0].gainC.oneMinusX
@@ -1894,7 +2010,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: mixers.Array.data[1].inputB.connectedId
-    value: -1767367525
+    value: -1292880559
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: mixers.Array.data[1].inputC.oneMinusX
@@ -1990,7 +2106,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: mixers.Array.data[1].gainB.localValue
-    value: 0.15
+    value: 0.1
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: mixers.Array.data[1].gainB.oneMinusX
@@ -2138,7 +2254,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: activeJackOuts.Array.size
-    value: 17
+    value: 16
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: activeJackOuts.Array.data[0]
@@ -2154,61 +2270,57 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: activeJackOuts.Array.data[3]
-    value: 1661444687
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: activeJackOuts.Array.data[4]
     value: 495291315
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: activeJackOuts.Array.data[5]
+    propertyPath: activeJackOuts.Array.data[4]
     value: 495291316
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: activeJackOuts.Array.data[6]
-    value: -1767367525
+    propertyPath: activeJackOuts.Array.data[5]
+    value: 1661444687
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: activeJackOuts.Array.data[7]
+    propertyPath: activeJackOuts.Array.data[6]
     value: 1619497325
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: activeJackOuts.Array.data[8]
-    value: 650075409
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: activeJackOuts.Array.data[9]
+    propertyPath: activeJackOuts.Array.data[7]
     value: 1811867464
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: activeJackOuts.Array.data[10]
+    propertyPath: activeJackOuts.Array.data[8]
     value: 662473980
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: activeJackOuts.Array.data[11]
+    propertyPath: activeJackOuts.Array.data[9]
     value: -221467645
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: activeJackOuts.Array.data[12]
+    propertyPath: activeJackOuts.Array.data[10]
     value: 1680665672
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: activeJackOuts.Array.data[13]
+    propertyPath: activeJackOuts.Array.data[11]
     value: 549076416
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: activeJackOuts.Array.data[14]
+    propertyPath: activeJackOuts.Array.data[12]
     value: -1236379455
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: activeJackOuts.Array.data[15]
+    propertyPath: activeJackOuts.Array.data[13]
+    value: -1292880559
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: activeJackOuts.Array.data[14]
     value: 1080507935
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: activeJackOuts.Array.data[16]
+    propertyPath: activeJackOuts.Array.data[15]
     value: -756167486
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: cpuTime
-    value: 0.017710328
+    value: 0.015941046
     objectReference: {fileID: 0}

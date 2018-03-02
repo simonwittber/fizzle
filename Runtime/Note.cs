@@ -9,11 +9,20 @@ namespace Fizzle
     {
         static Dictionary<string, int> notes = new Dictionary<string, int>(108);
         static Dictionary<int, float> noteNumbers = new Dictionary<int, float>(108);
+        static Dictionary<float, int> freqToNoteNumber = new Dictionary<float, int>(108);
 
         public static int Number(string name)
         {
             int n;
             if (notes.TryGetValue(name, out n))
+                return n;
+            return -1;
+        }
+
+        public static int Number(float frequency)
+        {
+            int n;
+            if (freqToNoteNumber.TryGetValue(frequency, out n))
                 return n;
             return -1;
         }
@@ -42,6 +51,7 @@ namespace Fizzle
             {
                 notes.Add(name, count);
                 noteNumbers.Add(count, freq);
+                freqToNoteNumber[freq] = count;
                 count++;
             };
             Add("Z", 0);

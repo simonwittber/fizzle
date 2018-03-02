@@ -18,6 +18,8 @@ namespace Fizzle
             Handles.DrawSolidRectangleWithOutline(position, Color.white * 0.125f, Color.white * 0.5f);
             EditorGUI.indentLevel = 0;
             EditorGUIUtility.labelWidth = 16;
+            DrawOutputJacks(position, property);
+            position.width -= 32;
             var rect = position;
             rect.height = 16;
             rect.width = 128;
@@ -29,13 +31,6 @@ namespace Fizzle
             rect.x += rect.width;
             rect.width = 32;
             EditorGUI.PropertyField(rect, property.FindPropertyRelative("channel"), new GUIContent("C", "Channel"));
-            using (var cc = new EditorGUI.ChangeCheckScope())
-            {
-
-            }
-            rect.x = position.width + 16;
-            rect.width = 16;
-            EditorGUI.PropertyField(rect, property.FindPropertyRelative("output"), GUIContent.none);
         }
     }
 }

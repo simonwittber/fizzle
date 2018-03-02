@@ -4,7 +4,6 @@ using UnityEngine;
 namespace Fizzle
 {
 
-
     [CustomPropertyDrawer(typeof(Mixer))]
     public class MixerDrawer : FizzleDrawer
     {
@@ -20,6 +19,8 @@ namespace Fizzle
             // EditorGUI.PropertyField(position, property, label, true);
             EditorGUI.indentLevel = 0;
             EditorGUIUtility.labelWidth = 16;
+            DrawOutputJacks(position, property);
+            position.width -= 32;
             var rect = position;
             rect.height = 16;
             var w = 16;
@@ -47,11 +48,8 @@ namespace Fizzle
             rect.x += rect.width;
             rect.width = w * 3 + space;
             EditorGUI.PropertyField(rect, property.FindPropertyRelative("gainD"), GUIContent.none);
-            rect.x += rect.width;
-            rect.width = w;
-            rect.x = position.width + 16;
-            rect.width = 16;
-            EditorGUI.PropertyField(rect, property.FindPropertyRelative("output"), GUIContent.none);
+
+
 
         }
     }

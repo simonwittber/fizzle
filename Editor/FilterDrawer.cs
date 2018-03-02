@@ -19,6 +19,8 @@ namespace Fizzle
             EditorGUI.indentLevel = 0;
             // position.width = EditorGUIUtility.currentViewWidth;
             EditorGUIUtility.labelWidth = 16;
+            DrawOutputJacks(position, property);
+            position.width -= 32;
             var rect = position;
             rect.height = position.height - 2;
             rect.y += 1;
@@ -35,9 +37,7 @@ namespace Fizzle
             rect.width = 128;
             EditorGUI.PropertyField(rect, property.FindPropertyRelative("q"), new GUIContent("Q", "Resonance"));
 
-            rect.x = position.width + 16;
-            rect.width = 16;
-            EditorGUI.PropertyField(rect, property.FindPropertyRelative("output"), GUIContent.none);
+
         }
     }
 }

@@ -11,6 +11,10 @@ namespace Fizzle
         public float localValue;
         public bool oneMinusX = false;
         public bool xMulMinusOne = false;
+        public bool attenuate = false;
+        public bool amplify = false;
+
+
 
         public JackIn(float defaultValue = 0f)
         {
@@ -26,6 +30,8 @@ namespace Fizzle
                 var value = Jack.GetValue(connectedId);
                 if (xMulMinusOne) value *= -1;
                 if (oneMinusX) value = 1 - value;
+                if (attenuate) value *= 0.5f;
+                if (amplify) value *= 2f;
                 return value;
             }
             set

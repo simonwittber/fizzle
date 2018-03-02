@@ -21,7 +21,8 @@ namespace Fizzle
 
         public JackIn cutoff = new JackIn(22050);
         public JackIn q = new JackIn(0);
-
+        public JackSignal multiply = new JackSignal();
+        public JackSignal add = new JackSignal();
         public JackOut output = new JackOut();
 
         BQFilter bqFilter = new BQFilter();
@@ -36,7 +37,10 @@ namespace Fizzle
                 return 0;
             }
             var smp = _Update(input.Value);
-            if (float.IsNaN(smp)) smp = 0f;
+            if (multiply.connectedId != 0)
+                smp *= multiply;
+            if (add.connectedId != 0)
+                smp += add;
             output.Value = smp;
             return smp;
         }

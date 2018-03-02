@@ -15,9 +15,10 @@ namespace Fizzle
         }
 
         public SequencerType type;
-        public JackIn frequency = new JackIn();
+        public JackIn frequency = new JackIn(120);
         public AnimationCurve envelope = AnimationCurve.Constant(0, 1, 1);
-        public JackIn gain = new JackIn();
+        public JackIn response = new JackIn(1);
+        public JackIn gain = new JackIn(1);
         public JackIn bias = new JackIn();
         public string code = "";
         public JackOut envelopeOutput = new JackOut();
@@ -94,11 +95,20 @@ namespace Fizzle
             }
         }
 
+        float outputFreq = 0f;
         float _Sample(float phase)
         {
             var N = (phase / Osc.TWOPI);
             envelopeOutput.Value = envelope.Evaluate(N);
-            return pitches[index % pitches.Length];
+            var f = pitches[index % pitches.Length];
+            if (bias.Value != 0)
+            {
+                var number = Note.Number(f);
+                if (number > 0)
+                    f = Note.Frequency(number + Mathf.FloorToInt(bias.Value));
+            }
+            outputFreq = Mathf.Lerp(outputFreq, f, response);
+            return outputFreq;
         }
 
         void Reverse()

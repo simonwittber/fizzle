@@ -25,7 +25,7 @@ namespace Fizzle
             Handles.color = Color.white;
             if (property.FindPropertyRelative("oneMinusX").boolValue)
                 Handles.DrawSolidDisc(rect.center - new Vector2(1, -1), Vector3.forward, 7);
-            return GUI.Button(rect, new GUIContent("", id.ToString()), "radio");
+            return GUI.Button(rect, new GUIContent("", property.displayName), "radio");
         }
 
         protected override SerializedProperty GetIdProperty(SerializedProperty property)
@@ -51,18 +51,21 @@ namespace Fizzle
         protected override void OnContext(SerializedProperty property)
         {
             var menu = new GenericMenu();
-            menu.AddItem(new GUIContent("= X * -1"), property.FindPropertyRelative("xMulMinusOne").boolValue, () =>
-            {
-                property.FindPropertyRelative("xMulMinusOne").boolValue = !property.FindPropertyRelative("xMulMinusOne").boolValue;
-                property.serializedObject.ApplyModifiedProperties();
-            });
-            menu.AddItem(new GUIContent("= 1 - X"), property.FindPropertyRelative("oneMinusX").boolValue, () =>
-            {
-                property.FindPropertyRelative("oneMinusX").boolValue = !property.FindPropertyRelative("oneMinusX").boolValue;
-                property.serializedObject.ApplyModifiedProperties();
-            });
-
+            CreateToggleMenuItem(menu, "Transform/= X * -1", property, "xMulMinusOne");
+            CreateToggleMenuItem(menu, "Transform/= 1 - X", property, "oneMinusX");
+            CreateToggleMenuItem(menu, "Gain/Half", property, "attenuate");
+            CreateToggleMenuItem(menu, "Gain/Double", property, "amplify");
             menu.ShowAsContext();
+        }
+
+        void CreateToggleMenuItem(GenericMenu menu, string path, SerializedProperty property, string propertyName)
+        {
+            var p = property.FindPropertyRelative(propertyName);
+            menu.AddItem(new GUIContent(path), p.boolValue, () =>
+            {
+                p.boolValue = !p.boolValue;
+                property.serializedObject.ApplyModifiedProperties();
+            });
         }
     }
 }

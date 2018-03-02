@@ -4,6 +4,7 @@ using UnityEngine;
 namespace Fizzle
 {
 
+
     [System.Serializable]
     public class Mixer : IHasGUID
     {
@@ -24,6 +25,8 @@ namespace Fizzle
         public JackIn gainG = new JackIn(1);
         public JackIn gainH = new JackIn(1);
 
+        public JackSignal multiply = new JackSignal();
+        public JackSignal add = new JackSignal();
         public JackOut output = new JackOut();
 
         public int ID { get { return output.id; } set { output.id = value; } }
@@ -39,7 +42,10 @@ namespace Fizzle
             smp += inputF.Value * gainF.Value;
             smp += inputG.Value * gainG.Value;
             smp += inputH.Value * gainH.Value;
-
+            if (multiply.connectedId != 0)
+                smp *= multiply;
+            if (add.connectedId != 0)
+                smp += add;
             output.Value = smp;
             return smp;
         }

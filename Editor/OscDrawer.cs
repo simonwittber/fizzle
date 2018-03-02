@@ -43,13 +43,7 @@ namespace Fizzle
             EditorGUI.PropertyField(rect, property.FindPropertyRelative("bias"), new GUIContent("B", "Bias"));
             rect.x += rect.width;
             EditorGUI.PropertyField(rect, property.FindPropertyRelative("detune"), new GUIContent("D", "Detune"));
-            rect.x += rect.width;
-            EditorGUI.PropertyField(rect, property.FindPropertyRelative("multiply"), new GUIContent("*", "Multiply Signal"));
-            rect.x += rect.width / 2;
-            EditorGUI.PropertyField(rect, property.FindPropertyRelative("add"), new GUIContent("+", "Add Signal"));
-            rect.x += rect.width / 2;
-            rect.width = 16;
-            EditorGUI.PropertyField(rect, property.FindPropertyRelative("output"), GUIContent.none);
+            DrawOutputJacks(position, property);
         }
 
         public override void OnContextMenu(Rect position, SerializedProperty property, GUIContent label)

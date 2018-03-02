@@ -8,6 +8,8 @@ namespace Fizzle
         public JackSignal input = new JackSignal();
         public JackIn delay = new JackIn(0.5f);
         public JackIn feedback = new JackIn(0.5f);
+        public JackSignal multiply = new JackSignal();
+        public JackSignal add = new JackSignal();
         public JackOut output = new JackOut();
 
         public int ID { get { return output.id; } set { output.id = value; } }
@@ -30,6 +32,10 @@ namespace Fizzle
                 position = 0;
             var last = buffer[position];
             buffer[position] = input + (last * feedback);
+            if (multiply.connectedId != 0)
+                last *= multiply;
+            if (add.connectedId != 0)
+                last += add;
             output.Value = last;
             return last;
         }
