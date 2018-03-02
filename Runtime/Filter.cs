@@ -13,12 +13,13 @@ namespace Fizzle
             Lowpass,
             Bandpass,
             Bandstop,
-            Allpass
+            Allpass,
+            Waveshaper
         }
 
         public FilterType type;
         public JackSignal input = new JackSignal();
-
+        public AnimationCurve waveshaper = AnimationCurve.Linear(0, 0, 1, 1);
         public JackIn cutoff = new JackIn(22050);
         public JackIn q = new JackIn(0);
         public JackSignal multiply = new JackSignal();
@@ -65,6 +66,8 @@ namespace Fizzle
                 case FilterType.Allpass:
                     bqFilter.SetAllPass(cutoff.Value, q.Value);
                     return bqFilter.Update(smp);
+                case FilterType.Waveshaper:
+                    return waveshaper.Evaluate(smp);
             }
             return 0f;
         }
