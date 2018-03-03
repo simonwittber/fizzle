@@ -8,7 +8,7 @@ namespace Fizzle
     {
         public static readonly HashSet<JackOut> instances = new HashSet<JackOut>();
 
-        public int id;
+        public uint id;
 
         public JackOut()
         {
@@ -19,7 +19,7 @@ namespace Fizzle
         {
             set
             {
-                Jack.SetValue(id, value);
+                Jack.values[id] = value;
             }
         }
 

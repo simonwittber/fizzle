@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 
@@ -22,14 +23,16 @@ namespace Fizzle
         public AnimationCurve waveshaper = AnimationCurve.Linear(0, 0, 1, 1);
         public JackIn cutoff = new JackIn(22050);
         public JackIn q = new JackIn(0);
+        public JackIn gain = new JackIn(0.5f);
+        public JackIn bias = new JackIn();
         public JackSignal multiply = new JackSignal();
         public JackSignal add = new JackSignal();
         public JackOut output = new JackOut();
 
         BQFilter bqFilter = new BQFilter();
 
-        public int ID { get { return output.id; } set { output.id = value; } }
-
+        public uint ID { get { return output.id; } set { output.id = value; } }
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public float Update()
         {
             if (input.connectedId == 0)
@@ -39,13 +42,14 @@ namespace Fizzle
             }
             var smp = _Update(input.Value);
             if (multiply.connectedId != 0)
-                smp *= multiply;
+                smp *= multiply.Value;
             if (add.connectedId != 0)
-                smp += add;
+                smp += add.Value;
+            smp = bias.Value + (smp * gain.Value);
             output.Value = smp;
             return smp;
         }
-
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         float _Update(float smp)
         {
             switch (type)

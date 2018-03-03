@@ -6,9 +6,19 @@ namespace Fizzle
     [CustomPropertyDrawer(typeof(JackSignal))]
     public class JackSignalDrawer : JackDrawer
     {
-
+        GUIStyle jackStyle;
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
+            jackStyle = new GUIStyle("radio");
+            jackStyle.fontSize = 6;
+            jackStyle.contentOffset = new Vector2(0, 0);
+            jackStyle.padding = new RectOffset(0, 0, 0, 0);
+            jackStyle.alignment = TextAnchor.MiddleCenter;
+            jackStyle.normal.textColor = Color.white;
+            jackStyle.imagePosition = ImagePosition.TextOnly;
+            jackStyle.richText = false;
+            jackStyle.fontStyle = FontStyle.Bold;
+            jackStyle.margin = new RectOffset(0, 0, 0, 0);
             // jackIns.Add(property);
             base.OnGUI(position, property, label);
         }
@@ -25,7 +35,7 @@ namespace Fizzle
             Handles.color = Color.white;
             if (property.FindPropertyRelative("oneMinusX").boolValue)
                 Handles.DrawSolidDisc(rect.center - new Vector2(1, -1), Vector3.forward, 7);
-            return GUI.Button(rect, new GUIContent("", property.displayName), "radio");
+            return GUI.Button(rect, new GUIContent(property.displayName[0].ToString(), property.displayName), jackStyle);
         }
 
         protected override SerializedProperty GetIdProperty(SerializedProperty property)

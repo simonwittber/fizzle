@@ -12,30 +12,23 @@ namespace Fizzle
         public bool attenuate = false;
         public bool amplify = false;
 
-
         public JackSignal()
         {
             instances.Add(this);
         }
 
-        public int connectedId;
+        public uint connectedId;
         public float Value
         {
             get
             {
-                var value = Jack.GetValue(connectedId);
+                var value = Jack.values[connectedId];
                 if (xMulMinusOne) value *= -1;
                 if (oneMinusX) value = 1 - value;
                 if (attenuate) value *= 0.5f;
                 if (amplify) value *= 2f;
                 return value;
             }
-        }
-
-        public static implicit operator float(JackSignal j)
-        {
-            if (j == null) return 0f;
-            return j.Value;
         }
 
         public override string ToString()

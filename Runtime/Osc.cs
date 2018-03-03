@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 
@@ -28,13 +29,13 @@ namespace Fizzle
         public AnimationCurve shape = new AnimationCurve();
         public JackIn detune = new JackIn();
         public JackIn frequency = new JackIn();
-        public JackIn gain = new JackIn();
+        public JackIn gain = new JackIn(0.5f);
         public JackIn bias = new JackIn();
         public JackSignal multiply = new JackSignal();
         public JackSignal add = new JackSignal();
         public JackOut output = new JackOut();
 
-        public int ID { get { return output.id; } set { output.id = value; } }
+        public uint ID { get { return output.id; } set { output.id = value; } }
 
         float[] noiseBuffer;
         protected bool isReady = false;
@@ -49,6 +50,7 @@ namespace Fizzle
 
         float ph;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         float BandLimit(float smp)
         {
             //This is a LPF at 22049hz.
@@ -58,7 +60,7 @@ namespace Fizzle
             yv[1] = (xv[0] + xv[1]) + (-0.9998575343f * yv[0]);
             return yv[1];
         }
-
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public virtual float Sample(int t)
         {
             if (!isReady) return 0;
@@ -82,19 +84,19 @@ namespace Fizzle
             if (bandlimited) smp = BandLimit(smp);
 
             if (multiply.connectedId != 0)
-                smp *= multiply;
+                smp *= multiply.Value;
             if (add.connectedId != 0)
-                smp += add;
+                smp += add.Value;
             ph = phase;
-            phase = phase + ((TWOPI * (frequency + detune)) / SAMPLERATE);
+            phase = phase + ((TWOPI * (frequency.Value + detune.Value)) / SAMPLERATE);
             if (phase > TWOPI)
                 phase -= TWOPI;
-            smp = bias + (smp * gain);
+            smp = bias.Value + (smp * gain.Value);
 
             output.Value = smp;
             return smp;
         }
-
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected float _Sample(float phase)
         {
             switch (type)

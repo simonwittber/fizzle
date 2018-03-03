@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 namespace Fizzle
 {
@@ -7,13 +8,12 @@ namespace Fizzle
     {
         public static readonly HashSet<JackIn> instances = new HashSet<JackIn>();
 
-        public int connectedId;
+        public uint connectedId;
         public float localValue;
         public bool oneMinusX = false;
         public bool xMulMinusOne = false;
         public bool attenuate = false;
         public bool amplify = false;
-
 
 
         public JackIn(float defaultValue = 0f)
@@ -27,7 +27,7 @@ namespace Fizzle
             get
             {
                 if (connectedId == 0) return localValue;
-                var value = Jack.GetValue(connectedId);
+                var value = Jack.values[connectedId];
                 if (xMulMinusOne) value *= -1;
                 if (oneMinusX) value = 1 - value;
                 if (attenuate) value *= 0.5f;
@@ -38,12 +38,6 @@ namespace Fizzle
             {
                 localValue = value;
             }
-        }
-
-        public static implicit operator float(JackIn j)
-        {
-            if (j == null) return 0f;
-            return j.Value;
         }
 
         public override string ToString()

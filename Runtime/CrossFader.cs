@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 namespace Fizzle
@@ -6,7 +7,7 @@ namespace Fizzle
     public class CrossFader : IHasGUID
     {
         public JackIn position = new JackIn();
-        public JackIn gain = new JackIn();
+        public JackIn gain = new JackIn(0.5f);
         public AnimationCurve ramp = AnimationCurve.Linear(0, 0, 1, 1);
         public bool quant = false;
 
@@ -23,12 +24,12 @@ namespace Fizzle
         public JackSignal add = new JackSignal();
         public JackOut output = new JackOut();
 
-        public int ID { get { return output.id; } set { output.id = value; } }
-
+        public uint ID { get { return output.id; } set { output.id = value; } }
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public float Sample(int t)
         {
             var smp = 0f;
-            var apos = ramp.Evaluate(position);
+            var apos = ramp.Evaluate(position.Value);
             var fpos = (apos * 8) % 8;
             var ipos = Mathf.FloorToInt(fpos);
             var frac = fpos - ipos;
@@ -49,11 +50,11 @@ namespace Fizzle
             smp += inputH.Value * (ipos == 7 ? omf : ipos == 6 ? frac : 0);
 
             if (multiply.connectedId != 0)
-                smp *= multiply;
+                smp *= multiply.Value;
             if (add.connectedId != 0)
-                smp += add;
+                smp += add.Value;
 
-            smp *= gain;
+            smp *= gain.Value;
             output.Value = smp;
             return smp;
         }

@@ -6,43 +6,16 @@ namespace Fizzle
     [CustomPropertyDrawer(typeof(Sequencer))]
     public class SequencerDrawer : FizzleDrawer
     {
-        public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
-        {
-            return 16;
-        }
-
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
-            position.height += 1;
-            Handles.DrawSolidRectangleWithOutline(position, Color.white * 0.125f, Color.white * 0.5f);
-            EditorGUI.indentLevel = 0;
-            EditorGUIUtility.labelWidth = 16;
+            position.width -= DrawOutputJacks(position, property);
             var rect = position;
-            rect.height = 16;
-            rect.width = 64;
-            var typeProperty = property.FindPropertyRelative("type");
-            EditorGUI.PropertyField(rect, typeProperty, GUIContent.none);
+            rect.width /= 2;
             rect.x += rect.width;
-            rect.width = 16;
-            EditorGUI.PropertyField(rect, property.FindPropertyRelative("envelope"), GUIContent.none);
-            rect.x += rect.width;
-            rect.width = 64;
-            EditorGUI.PropertyField(rect, property.FindPropertyRelative("frequency"), new GUIContent("B", "BPM"));
-            rect.x += rect.width;
-            EditorGUI.PropertyField(rect, property.FindPropertyRelative("gain"), new GUIContent("O", "Frequency Multiplier"));
-            rect.x += rect.width;
-            EditorGUI.PropertyField(rect, property.FindPropertyRelative("bias"), new GUIContent("T", "Transpose"));
-            rect.x += rect.width;
-            EditorGUI.PropertyField(rect, property.FindPropertyRelative("response"), new GUIContent("G", "Glide"));
-            rect.x += rect.width;
-            rect.width = (position.xMax - rect.xMax) + 16;
-            EditorGUI.PropertyField(rect, property.FindPropertyRelative("code"), new GUIContent("I", "Sequence Instructions"));
-            rect.x = position.width;
-            rect.width = 16;
-            EditorGUI.PropertyField(rect, property.FindPropertyRelative("envelopeOutput"), GUIContent.none);
-            rect.x = position.width + 16;
-            rect.width = 16;
-            EditorGUI.PropertyField(rect, property.FindPropertyRelative("output"), GUIContent.none);
+            EditorGUIUtility.labelWidth = 16;
+            EditorGUI.PropertyField(rect, property.FindPropertyRelative("code"), new GUIContent("S", "Sequence"));
+            rect.x -= rect.width;
+            DrawInputProperties(rect, property, "type", "envelope", "bpm", "glide", "frequencyMultiply", "transpose", "outputEnvelope");
         }
     }
 }

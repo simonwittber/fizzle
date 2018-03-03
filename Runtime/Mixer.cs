@@ -1,9 +1,9 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 
 namespace Fizzle
 {
-
 
     [System.Serializable]
     public class Mixer : IHasGUID
@@ -12,40 +12,33 @@ namespace Fizzle
         public JackSignal inputB = new JackSignal();
         public JackSignal inputC = new JackSignal();
         public JackSignal inputD = new JackSignal();
-        public JackSignal inputE = new JackSignal();
-        public JackSignal inputF = new JackSignal();
-        public JackSignal inputG = new JackSignal();
-        public JackSignal inputH = new JackSignal();
+
         public JackIn gainA = new JackIn(1);
         public JackIn gainB = new JackIn(1);
         public JackIn gainC = new JackIn(1);
         public JackIn gainD = new JackIn(1);
-        public JackIn gainE = new JackIn(1);
-        public JackIn gainF = new JackIn(1);
-        public JackIn gainG = new JackIn(1);
-        public JackIn gainH = new JackIn(1);
 
+        public JackIn gain = new JackIn(0.5f);
+        public JackIn bias = new JackIn();
         public JackSignal multiply = new JackSignal();
         public JackSignal add = new JackSignal();
         public JackOut output = new JackOut();
 
-        public int ID { get { return output.id; } set { output.id = value; } }
+        public uint ID { get { return output.id; } set { output.id = value; } }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public float Update()
         {
             var smp = 0f;
-            smp += inputA.Value * gainA.Value;
-            smp += inputB.Value * gainB.Value;
-            smp += inputC.Value * gainC.Value;
-            smp += inputD.Value * gainD.Value;
-            smp += inputE.Value * gainE.Value;
-            smp += inputF.Value * gainF.Value;
-            smp += inputG.Value * gainG.Value;
-            smp += inputH.Value * gainH.Value;
+            if (inputA.connectedId != 0) smp += inputA.Value * gainA.Value;
+            if (inputB.connectedId != 0) smp += inputB.Value * gainB.Value;
+            if (inputC.connectedId != 0) smp += inputC.Value * gainC.Value;
+            if (inputD.connectedId != 0) smp += inputD.Value * gainD.Value;
             if (multiply.connectedId != 0)
-                smp *= multiply;
+                smp *= multiply.Value;
             if (add.connectedId != 0)
-                smp += add;
+                smp += add.Value;
+            smp = bias.Value + (smp * gain.Value);
             output.Value = smp;
             return smp;
         }

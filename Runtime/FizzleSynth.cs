@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Profiling;
 
@@ -19,6 +20,7 @@ namespace Fizzle
         public Envelope[] envelopes = new Envelope[0];
         public Sampler[] samplers = new Sampler[0];
         public Osc[] oscillators = new Osc[0];
+        public KarplusStrong[] karplusStrongModules = new KarplusStrong[0];
         public CrossFader[] crossFaders = new CrossFader[0];
         public Filter[] filters = new Filter[0];
         public DelayLine[] delays = new DelayLine[0];
@@ -32,18 +34,56 @@ namespace Fizzle
         int[] sampleChannels;
         new AudioSource audio;
 
-        [ContextMenu("Play")]
-        public void _Play()
+        public List<uint> freeJackID;
+        float[] sharedValues;
+
+        public uint TakeJackID()
         {
-            Play(refresh: true);
+            var id = freeJackID[freeJackID.Count - 1];
+            freeJackID.RemoveAt(freeJackID.Count - 1);
+            return id;
         }
 
-        public void Play(bool refresh = false)
+        public void FreeJackID(uint id)
+        {
+            freeJackID.Add(id);
+        }
+
+        void Reset()
+        {
+            freeJackID = new List<uint>();
+            freeJackID.AddRange(from i in Enumerable.Range(0, 128) select (uint)i);
+        }
+
+        IEnumerator Start()
+        {
+            yield return new WaitForSeconds(1);
+            _Benchmark();
+            yield return new WaitForSeconds(1);
+            _Benchmark();
+        }
+
+        [ContextMenu("Benchmark")]
+        void _Benchmark()
+        {
+            var data = new float[44100 * 2];
+            var clock = new System.Diagnostics.Stopwatch();
+            for (var i = 0; i < 10; i++)
+            {
+                clock.Start();
+                ReadAudio(data);
+                clock.Stop();
+            }
+            Debug.Log($"10 seconds of audio generated in : {clock.ElapsedMilliseconds} ms ({clock.ElapsedMilliseconds / 1000.0 * 10}%)");
+        }
+
+        [ContextMenu("Play")]
+        public void Play()
         {
             audio = GetComponent<AudioSource>();
             sample = 0;
             Init();
-            if (audio.clip == null || refresh) audio.clip = Generate();
+            audio.clip = Generate();
             abort = false;
             audio.Play();
         }
@@ -60,6 +100,7 @@ namespace Fizzle
 
         public void Init()
         {
+            sharedValues = new float[256];
             foreach (var o in oscillators)
                 o.Init();
             foreach (var e in envelopes)
@@ -73,13 +114,11 @@ namespace Fizzle
                 sampleChannels[i] = sampleBank[i].channels;
             }
             audio = GetComponent<AudioSource>();
-            audio.clip = Generate();
         }
 
         public float[] GetData()
         {
             var lengthSamples = Mathf.FloorToInt(sampleRate * duration);
-
             var data = new float[lengthSamples * 2];
             ReadAudio(data);
             return data;
@@ -90,7 +129,7 @@ namespace Fizzle
             return AudioClip.Create("Fizzle", Mathf.FloorToInt(sampleRate * duration), 2, sampleRate, true, ReadAudio);
         }
 
-        bool JackOutIsUsed(int index)
+        bool JackOutIsUsed(uint index)
         {
             if (activeJackOuts == null) return false;
             foreach (var i in activeJackOuts) if (i == index) return true;
@@ -100,45 +139,54 @@ namespace Fizzle
         System.Diagnostics.Stopwatch clock = new System.Diagnostics.Stopwatch();
         void ReadAudio(float[] data)
         {
+            clock.Reset();
             clock.Start();
             if (abort) return;
             try
             {
+
+                Jack.values = sharedValues;
                 for (var i = 0; i < data.Length; i += 2)
                 {
                     sample++;
-
+                    // Profiler.BeginSample("ReadAudio");
                     foreach (var s in sequencers)
-                        if (s != null && JackOutIsUsed(s.output.id))
+                        if (s != null)
                             s.Sample(sample);
                     foreach (var e in envelopes)
-                        if (e != null && e.output != null && JackOutIsUsed(e.output.id))
+                        if (e != null)
                             e.Sample(sample);
                     foreach (var s in samplers)
-                        if (s != null && JackOutIsUsed(s.output.id))
+                        if (s != null)
                         {
                             s.channels = sampleChannels[s.sampleIndex];
                             s.data = sampleData[s.sampleIndex];
                             s.Sample(sample);
                         }
                     foreach (var o in oscillators)
-                        if (o != null && JackOutIsUsed(o.output.id))
+                        if (o != null)
+                            o.Sample(sample);
+                    foreach (var o in karplusStrongModules)
+                        if (o != null)
                             o.Sample(sample);
                     foreach (var c in crossFaders)
-                        if (c != null && JackOutIsUsed(c.output.id))
+                        if (c != null)
                             c.Sample(sample);
                     foreach (var d in delays)
-                        if (d != null && JackOutIsUsed(d.output.id))
+                        if (d != null)
                             d.Update();
                     foreach (var f in filters)
-                        if (f != null && JackOutIsUsed(f.output.id))
+                        if (f != null)
                             f.Update();
                     foreach (var m in mixers)
-                        if (m != null && JackOutIsUsed(m.output.id))
+                        if (m != null)
                             m.Update();
                     data[i] = inputAudio.left.Value;
                     data[i + 1] = inputAudio.right.Value;
+                    // Profiler.EndSample();
                 }
+                Jack.values = null;
+
             }
             catch (System.Exception e)
             {
@@ -146,10 +194,11 @@ namespace Fizzle
                 abort = true;
             }
             clock.Stop();
-            //max time of 226.757 ticks per sample for 44100 sample rate.
-            cpuTime = Mathf.Lerp(cpuTime, (clock.ElapsedTicks / data.Length), 0.1f) / 226.757f;
 
-            clock.Reset();
+
+            var maxTime = (data.Length * 0.02267573696f);
+
+            cpuTime = Mathf.Round(((clock.ElapsedMilliseconds) / maxTime) * 1000) / 10;
         }
         bool abort = false;
         int sample = 0;

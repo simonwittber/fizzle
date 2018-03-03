@@ -6,17 +6,12 @@ namespace Fizzle
     [CustomPropertyDrawer(typeof(Envelope))]
     public class EnvelopeDrawer : FizzleDrawer
     {
-        public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
-        {
-            return 18;
-        }
-
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
             // position.height += 1;
             Handles.DrawSolidRectangleWithOutline(position, Color.white * 0.125f, Color.white * 0.5f);
             // EditorGUI.PropertyField(position, property, label, true);
-            EditorGUI.indentLevel = 0;
+            // EditorGUI.indentLevel = 0;
             // position.width = EditorGUIUtility.currentViewWidth;
             EditorGUIUtility.labelWidth = 16;
             var rect = position;
@@ -32,11 +27,11 @@ namespace Fizzle
                 EditorGUI.PropertyField(rect, property.FindPropertyRelative("shape"), GUIContent.none);
             rect.x += rect.width;
             rect.width = (position.width - 64 - 16 - 16) / 3;
-            EditorGUI.PropertyField(rect, property.FindPropertyRelative("frequency"), new GUIContent("L", "Length"));
+            EditorGUI.PropertyField(rect, property.FindPropertyRelative("frequency"), GUIContent.none);
             rect.x += rect.width;
-            EditorGUI.PropertyField(rect, property.FindPropertyRelative("gain"), new GUIContent("A", "Amplitude"));
+            EditorGUI.PropertyField(rect, property.FindPropertyRelative("gain"), GUIContent.none);
             rect.x += rect.width;
-            EditorGUI.PropertyField(rect, property.FindPropertyRelative("bias"), new GUIContent("B", "Bias"));
+            EditorGUI.PropertyField(rect, property.FindPropertyRelative("bias"), GUIContent.none);
             rect.x += rect.width;
             rect.width = 16;
             EditorGUI.PropertyField(rect, property.FindPropertyRelative("output"), GUIContent.none);

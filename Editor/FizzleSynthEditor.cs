@@ -45,6 +45,7 @@ namespace Fizzle
                 DrawRack(ref fa.envelopes, serializedObject.FindProperty("envelopes"), Color.cyan);
                 DrawRack(ref fa.samplers, serializedObject.FindProperty("samplers"), Color.magenta);
                 DrawRack(ref fa.oscillators, serializedObject.FindProperty("oscillators"), Color.green);
+                DrawRack(ref fa.karplusStrongModules, serializedObject.FindProperty("karplusStrongModules"), Color.green);
                 DrawRack(ref fa.crossFaders, serializedObject.FindProperty("crossFaders"), Color.gray);
                 DrawRack(ref fa.filters, serializedObject.FindProperty("filters"), Color.red);
                 DrawRack(ref fa.delays, serializedObject.FindProperty("delays"), Color.blue);
@@ -65,13 +66,12 @@ namespace Fizzle
                 AudioClipExporter.Save("Fizzle.wav", fa.GetData());
             GUILayout.EndHorizontal();
 
-            GUILayout.Label($"CPU: {fa.cpuTime * 100}%");
+            GUILayout.Label($"CPU: {fa.cpuTime}%");
 
             // var rect = GUILayoutUtility.GetRect(EditorGUIUtility.currentViewWidth - 32, 32);
             // oscilloscope.duration = fa.duration;
             // if (fa.inputAudio.monitor.connectedId != 0)
             //     oscilloscope.Update(rect, Color.white, fa.Monitor);
-
         }
 
         private void DrawRack<T>(ref T[] items, SerializedProperty property, Color c) where T : new()
@@ -121,23 +121,30 @@ namespace Fizzle
             }
             if (toRemove >= 0)
             {
+                var guidItem = items[toRemove] as IHasGUID;
+                if (guidItem != null)
+                {
+                    var fa = target as FizzleSynth;
+                    fa.FreeJackID(guidItem.ID);
+                }
                 property.DeleteArrayElementAtIndex(toRemove);
                 property.serializedObject.ApplyModifiedProperties();
             }
             if (toDuplicate >= 0)
             {
-                AddRackItem(ref items, property, items[toDuplicate]);
-                property.serializedObject.ApplyModifiedProperties();
+                // AddRackItem(ref items, property, items[toDuplicate]);
+                // property.serializedObject.ApplyModifiedProperties();
             }
 
         }
 
-        private static T AddRackItem<T>(ref T[] items, SerializedProperty property, T item) where T : new()
+        private T AddRackItem<T>(ref T[] items, SerializedProperty property, T item) where T : new()
         {
             Undo.RecordObject(property.serializedObject.targetObject, "Add");
+            var fa = target as FizzleSynth;
             var guidItem = item as IHasGUID;
             if (guidItem != null)
-                guidItem.ID = System.Guid.NewGuid().GetHashCode();
+                guidItem.ID = fa.TakeJackID();
             var initItem = item as IHasInit;
             if (initItem != null)
                 initItem.Init();
@@ -153,7 +160,7 @@ namespace Fizzle
             if (play)
             {
                 play = false;
-                fa.Play(refresh: true);
+                fa.Play();
             }
 
             if (stop)

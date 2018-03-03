@@ -3,13 +3,13 @@ using UnityEngine;
 
 namespace Fizzle
 {
-    [CustomPropertyDrawer(typeof(Filter))]
-    public class FilterDrawer : FizzleDrawer
+    [CustomPropertyDrawer(typeof(SynthBase), true)]
+    public class SynthBaseDrawer : FizzleDrawer
     {
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
             position.width -= DrawOutputJacks(position, property);
-            DrawInputProperties(position, property, "input", "type", "waveshaper", "cutoff", "q");
+            DrawInputProperties(position, property, "input", "gate", "pulseDecay", "delay", "feedback", "cutoff", "q");
         }
     }
 }

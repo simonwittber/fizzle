@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 namespace Fizzle
@@ -15,22 +16,23 @@ namespace Fizzle
         }
 
         public SequencerType type;
-        public JackIn frequency = new JackIn(120);
+        public JackIn bpm = new JackIn(120);
         public AnimationCurve envelope = AnimationCurve.Constant(0, 1, 1);
-        public JackIn response = new JackIn(1);
-        public JackIn gain = new JackIn(1);
-        public JackIn bias = new JackIn();
+        public JackIn glide = new JackIn(1);
+        public JackIn frequencyMultiply = new JackIn(1);
+        public JackIn transpose = new JackIn();
         public string code = "";
-        public JackOut envelopeOutput = new JackOut();
+        public JackOut outputEnvelope = new JackOut();
         public JackOut output = new JackOut();
 
-        public int ID
+        public uint ID
         {
             set
             {
                 output.id = value;
-                envelopeOutput.id = value + 1;
+                outputEnvelope.id = value + 128;
             }
+            get { return output.id; }
         }
 
         float[] pitches;
@@ -55,10 +57,10 @@ namespace Fizzle
             lastCode = code;
             lastType = type;
         }
-
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void Sample(int sample)
         {
-            if (frequency == 0)
+            if (bpm.Value == 0)
             {
                 output.Value = 0;
                 return;
@@ -66,8 +68,8 @@ namespace Fizzle
             if (pitches == null || lastCode != code || lastType != type)
                 Parse();
             var smp = _Sample(phase);
-            var bpm = frequency / 60f;
-            phase = phase + ((Osc.TWOPI * bpm) / Osc.SAMPLERATE);
+            var bpmF = bpm.Value / 60f;
+            phase = phase + ((Osc.TWOPI * bpmF) / Osc.SAMPLERATE);
             if (phase > Osc.TWOPI)
             {
                 index++;
@@ -78,10 +80,10 @@ namespace Fizzle
                 }
                 phase = phase - Osc.TWOPI;
             }
-            smp = bias + (smp * gain);
+            smp = transpose.Value + (smp * frequencyMultiply.Value);
             output.Value = smp;
         }
-
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         void ChangePitchPattern()
         {
             switch (type)
@@ -96,26 +98,27 @@ namespace Fizzle
         }
 
         float outputFreq = 0f;
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         float _Sample(float phase)
         {
             var N = (phase / Osc.TWOPI);
-            envelopeOutput.Value = envelope.Evaluate(N);
+            outputEnvelope.Value = envelope.Evaluate(N);
             var f = pitches[index % pitches.Length];
-            if (bias.Value != 0)
+            if (transpose.Value != 0)
             {
                 var number = Note.Number(f);
                 if (number > 0)
-                    f = Note.Frequency(number + Mathf.FloorToInt(bias.Value));
+                    f = Note.Frequency(number + Mathf.FloorToInt(transpose.Value));
             }
-            outputFreq = Mathf.Lerp(outputFreq, f, response);
+            outputFreq = Mathf.Lerp(outputFreq, f, glide.Value);
             return outputFreq;
         }
-
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         void Reverse()
         {
             System.Array.Reverse(pitches);
         }
-
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         void Shuffle()
         {
             int n = pitches.Length;
