@@ -29,7 +29,7 @@ namespace Fizzle
         public AnimationCurve shape = new AnimationCurve();
         public JackIn detune = new JackIn();
         public JackIn frequency = new JackIn();
-        public JackIn gain = new JackIn(0.5f);
+        public JackIn gain = new JackIn() { localValue = 0.5f };
         public JackIn bias = new JackIn();
         public JackSignal multiply = new JackSignal();
         public JackSignal add = new JackSignal();
@@ -61,7 +61,7 @@ namespace Fizzle
             return yv[1];
         }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public virtual float Sample(int t)
+        public virtual float Sample(float[] jacks, int t)
         {
             if (!isReady) return 0;
 
@@ -84,16 +84,16 @@ namespace Fizzle
             if (bandlimited) smp = BandLimit(smp);
 
             if (multiply.connectedId != 0)
-                smp *= multiply.Value;
+                smp *= multiply.Value(jacks);
             if (add.connectedId != 0)
-                smp += add.Value;
+                smp += add.Value(jacks);
             ph = phase;
-            phase = phase + ((TWOPI * (frequency.Value + detune.Value)) / SAMPLERATE);
+            phase = phase + ((TWOPI * (frequency.Value(jacks) + detune.Value(jacks))) / SAMPLERATE);
             if (phase > TWOPI)
                 phase -= TWOPI;
-            smp = bias.Value + (smp * gain.Value);
+            smp = bias.Value(jacks) + (smp * gain.Value(jacks));
 
-            output.Value = smp;
+            output.Value((jacks), smp);
             return smp;
         }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -123,7 +123,7 @@ namespace Fizzle
                     else
                         return 3f - (2 * 1f / Mathf.PI) * phase;
                 case OscType.Noise:
-                    var index = Mathf.FloorToInt((phase / TWOPI) * noiseBuffer.Length);
+                    var index = (int)((phase / TWOPI) * noiseBuffer.Length);
                     return noiseBuffer[index % noiseBuffer.Length];
                 default:
                     return 0;

@@ -7,8 +7,7 @@ namespace Fizzle
 
     public static class Jack
     {
-        [System.ThreadStatic]
-        public static float[] values;
+
     }
 
 }

@@ -7,9 +7,9 @@ namespace Fizzle
     public class DelayLine : IHasGUID
     {
         public JackSignal input = new JackSignal();
-        public JackIn delay = new JackIn(0.5f);
-        public JackIn feedback = new JackIn(0.5f);
-        public JackIn gain = new JackIn(0.5f);
+        public JackIn delay = new JackIn() { localValue = 0.5f };
+        public JackIn feedback = new JackIn() { localValue = 0.5f };
+        public JackIn gain = new JackIn() { localValue = 0.5f };
         public JackIn bias = new JackIn();
         public JackSignal multiply = new JackSignal();
         public JackSignal add = new JackSignal();
@@ -21,27 +21,27 @@ namespace Fizzle
         float[] buffer = new float[1];
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public float Update()
+        public float Update(float[] jacks)
         {
             if (input.connectedId == 0)
             {
-                output.Value = 0;
+                output.Value(jacks, 0);
                 return 0;
             }
-            var length = Mathf.FloorToInt((1f / (1f / Osc.SAMPLERATE)) * delay.Value);
+            var length = (int)((1f / (1f / Osc.SAMPLERATE)) * delay.Value(jacks));
             if (length <= 0) length = 1;
             if (length != buffer.Length)
                 buffer = new float[length];
             if (++position >= (buffer.Length))
                 position = 0;
             var last = buffer[position];
-            buffer[position] = input.Value + (last * feedback.Value);
+            buffer[position] = input.Value(jacks) + (last * feedback.Value(jacks));
             if (multiply.connectedId != 0)
-                last *= multiply.Value;
+                last *= multiply.Value(jacks);
             if (add.connectedId != 0)
-                last += add.Value;
-            last = bias.Value + (last * gain.Value);
-            output.Value = last;
+                last += add.Value(jacks);
+            last = bias.Value(jacks) + (last * gain.Value(jacks));
+            output.Value(jacks, last);
             return last;
         }
     }

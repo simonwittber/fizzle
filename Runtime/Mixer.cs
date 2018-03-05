@@ -13,12 +13,12 @@ namespace Fizzle
         public JackSignal inputC = new JackSignal();
         public JackSignal inputD = new JackSignal();
 
-        public JackIn gainA = new JackIn(1);
-        public JackIn gainB = new JackIn(1);
-        public JackIn gainC = new JackIn(1);
-        public JackIn gainD = new JackIn(1);
+        public JackIn gainA = new JackIn() { localValue = 1f };
+        public JackIn gainB = new JackIn() { localValue = 1f };
+        public JackIn gainC = new JackIn() { localValue = 1f };
+        public JackIn gainD = new JackIn() { localValue = 1f };
 
-        public JackIn gain = new JackIn(0.5f);
+        public JackIn gain = new JackIn() { localValue = 0.5f };
         public JackIn bias = new JackIn();
         public JackSignal multiply = new JackSignal();
         public JackSignal add = new JackSignal();
@@ -27,19 +27,19 @@ namespace Fizzle
         public uint ID { get { return output.id; } set { output.id = value; } }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public float Update()
+        public float Update(float[] jacks)
         {
             var smp = 0f;
-            if (inputA.connectedId != 0) smp += inputA.Value * gainA.Value;
-            if (inputB.connectedId != 0) smp += inputB.Value * gainB.Value;
-            if (inputC.connectedId != 0) smp += inputC.Value * gainC.Value;
-            if (inputD.connectedId != 0) smp += inputD.Value * gainD.Value;
+            if (inputA.connectedId != 0) smp += inputA.Value(jacks) * gainA.Value(jacks);
+            if (inputB.connectedId != 0) smp += inputB.Value(jacks) * gainB.Value(jacks);
+            if (inputC.connectedId != 0) smp += inputC.Value(jacks) * gainC.Value(jacks);
+            if (inputD.connectedId != 0) smp += inputD.Value(jacks) * gainD.Value(jacks);
             if (multiply.connectedId != 0)
-                smp *= multiply.Value;
+                smp *= multiply.Value(jacks);
             if (add.connectedId != 0)
-                smp += add.Value;
-            smp = bias.Value + (smp * gain.Value);
-            output.Value = smp;
+                smp += add.Value(jacks);
+            smp = bias.Value(jacks) + (smp * gain.Value(jacks));
+            output.Value(jacks, smp);
             return smp;
         }
     }

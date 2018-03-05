@@ -4,40 +4,32 @@ using System.Runtime.CompilerServices;
 namespace Fizzle
 {
     [System.Serializable]
-    public class JackIn
+    public struct JackIn
     {
-        public static readonly HashSet<JackIn> instances = new HashSet<JackIn>();
 
         public uint connectedId;
         public float localValue;
-        public bool oneMinusX = false;
-        public bool xMulMinusOne = false;
-        public bool attenuate = false;
-        public bool amplify = false;
+        public bool oneMinusX;
+        public bool xMulMinusOne;
+        public bool attenuate;
+        public bool amplify;
 
-
-        public JackIn(float defaultValue = 0f)
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public float Value(float[] jacks)
         {
-            localValue = defaultValue;
-            instances.Add(this);
+            if (connectedId == 0) return localValue;
+            var value = jacks[connectedId];
+            if (xMulMinusOne) value *= -1;
+            if (oneMinusX) value = 1 - value;
+            if (attenuate) value *= 0.5f;
+            if (amplify) value *= 2f;
+            return value;
         }
 
-        public float Value
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public void Value(float[] jacks, float value)
         {
-            get
-            {
-                if (connectedId == 0) return localValue;
-                var value = Jack.values[connectedId];
-                if (xMulMinusOne) value *= -1;
-                if (oneMinusX) value = 1 - value;
-                if (attenuate) value *= 0.5f;
-                if (amplify) value *= 2f;
-                return value;
-            }
-            set
-            {
-                localValue = value;
-            }
+            localValue = value;
         }
 
         public override string ToString()

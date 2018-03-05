@@ -21,10 +21,10 @@ namespace Fizzle
 
         protected void Expire(int id)
         {
-            foreach (var i in JackIn.instances)
-                if (i.connectedId == id) i.connectedId = 0;
-            foreach (var i in JackSignal.instances)
-                if (i.connectedId == id) i.connectedId = 0;
+            // foreach (var i in JackIn.instances)
+            //     if (i.connectedId == id) i.connectedId = 0;
+            // foreach (var i in JackSignal.instances)
+            //     if (i.connectedId == id) i.connectedId = 0;
         }
 
         public static void BeginJackDrawers()

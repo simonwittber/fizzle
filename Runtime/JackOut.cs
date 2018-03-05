@@ -1,26 +1,18 @@
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 namespace Fizzle
 {
     [System.Serializable]
-    public class JackOut
+    public struct JackOut
     {
-        public static readonly HashSet<JackOut> instances = new HashSet<JackOut>();
-
         public uint id;
 
-        public JackOut()
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public void Value(float[] jacks, float value)
         {
-            instances.Add(this);
-        }
-
-        public float Value
-        {
-            set
-            {
-                Jack.values[id] = value;
-            }
+            jacks[id] = value;
         }
 
         public override string ToString()

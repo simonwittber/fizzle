@@ -7,7 +7,7 @@ namespace Fizzle
     public class CrossFader : IHasGUID
     {
         public JackIn position = new JackIn();
-        public JackIn gain = new JackIn(0.5f);
+        public JackIn gain = new JackIn() { localValue = 0.5f };
         public AnimationCurve ramp = AnimationCurve.Linear(0, 0, 1, 1);
         public bool quant = false;
 
@@ -26,12 +26,12 @@ namespace Fizzle
 
         public uint ID { get { return output.id; } set { output.id = value; } }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public float Sample(int t)
+        public float Sample(float[] jacks, int t)
         {
             var smp = 0f;
-            var apos = ramp.Evaluate(position.Value);
+            var apos = ramp.Evaluate(position.Value(jacks));
             var fpos = (apos * 8) % 8;
-            var ipos = Mathf.FloorToInt(fpos);
+            var ipos = (int)(fpos);
             var frac = fpos - ipos;
             var omf = 1f - frac;
             if (quant)
@@ -39,23 +39,23 @@ namespace Fizzle
                 omf = 1;
                 frac = 0;
             }
-            output.Value = inputA.Value;
-            smp += inputA.Value * (ipos == 0 ? omf : ipos == 7 ? frac : 0);
-            smp += inputB.Value * (ipos == 1 ? omf : ipos == 0 ? frac : 0);
-            smp += inputC.Value * (ipos == 2 ? omf : ipos == 1 ? frac : 0);
-            smp += inputD.Value * (ipos == 3 ? omf : ipos == 2 ? frac : 0);
-            smp += inputE.Value * (ipos == 4 ? omf : ipos == 3 ? frac : 0);
-            smp += inputF.Value * (ipos == 5 ? omf : ipos == 4 ? frac : 0);
-            smp += inputG.Value * (ipos == 6 ? omf : ipos == 5 ? frac : 0);
-            smp += inputH.Value * (ipos == 7 ? omf : ipos == 6 ? frac : 0);
+            output.Value(jacks, inputA.Value(jacks));
+            smp += inputA.Value(jacks) * (ipos == 0 ? omf : ipos == 7 ? frac : 0);
+            smp += inputB.Value(jacks) * (ipos == 1 ? omf : ipos == 0 ? frac : 0);
+            smp += inputC.Value(jacks) * (ipos == 2 ? omf : ipos == 1 ? frac : 0);
+            smp += inputD.Value(jacks) * (ipos == 3 ? omf : ipos == 2 ? frac : 0);
+            smp += inputE.Value(jacks) * (ipos == 4 ? omf : ipos == 3 ? frac : 0);
+            smp += inputF.Value(jacks) * (ipos == 5 ? omf : ipos == 4 ? frac : 0);
+            smp += inputG.Value(jacks) * (ipos == 6 ? omf : ipos == 5 ? frac : 0);
+            smp += inputH.Value(jacks) * (ipos == 7 ? omf : ipos == 6 ? frac : 0);
 
             if (multiply.connectedId != 0)
-                smp *= multiply.Value;
+                smp *= multiply.Value(jacks);
             if (add.connectedId != 0)
-                smp += add.Value;
+                smp += add.Value(jacks);
 
-            smp *= gain.Value;
-            output.Value = smp;
+            smp *= gain.Value(jacks);
+            output.Value(jacks, smp);
             return smp;
         }
     }

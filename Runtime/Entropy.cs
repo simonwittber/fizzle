@@ -20,9 +20,9 @@ namespace Fizzle
 
         public static float Gradient(float t)
         {
-            var firstIndex = Mathf.FloorToInt(t * (values.Length - 1)) % values.Length;
+            var firstIndex = (int)(t * (values.Length - 1)) % values.Length;
             var nextIndex = (firstIndex + 1) % values.Length;
-            var frac = t - Mathf.Floor(t);
+            var frac = t - (int)(t);
             return Mathf.Lerp(values[firstIndex], values[nextIndex], frac);
         }
 

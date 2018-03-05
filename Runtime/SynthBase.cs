@@ -12,7 +12,7 @@ namespace Fizzle
 
         public JackSignal gate = new JackSignal();
 
-        public JackIn gain = new JackIn(0.5f);
+        public JackIn gain = new JackIn() { localValue = 0.5f };
         public JackIn bias = new JackIn();
 
         public JackSignal multiply = new JackSignal();
@@ -22,24 +22,24 @@ namespace Fizzle
         public uint ID { get { return output.id; } set { output.id = value; } }
 
         protected float position = 0;
-        protected bool Active
+        protected bool Active(float[] jacks)
         {
-            get { return gate.Value > 0; }
+            return gate.Value(jacks) > 0;
         }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public virtual float Sample(int t)
+        public virtual float Sample(float[] jacks, int t)
         {
             var smp = GetSample();
 
             if (multiply.connectedId != 0)
-                smp *= multiply.Value;
+                smp *= multiply.Value(jacks);
             if (add.connectedId != 0)
-                smp += add.Value;
+                smp += add.Value(jacks);
 
 
-            smp = bias.Value + (smp * gain.Value);
+            smp = bias.Value(jacks) + (smp * gain.Value(jacks));
 
-            output.Value = smp;
+            output.Value(jacks, smp);
             return smp;
         }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
