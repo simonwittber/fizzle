@@ -56,18 +56,6 @@ namespace Fizzle
             freeJackID.AddRange(from i in Enumerable.Range(0, 128) select (uint)i);
         }
 
-        // IEnumerator Start()
-        // {
-        //     var data = new float[Mathf.FloorToInt(44100 * 2 * Time.deltaTime)];
-        //     while (true)
-        //     {
-        //         enableProfile = true;
-        //         ReadAudio(data);
-        //         enableProfile = false;
-        //         yield return null;
-        //     }
-        // }
-
         [ContextMenu("Benchmark")]
         void _Benchmark()
         {
@@ -187,6 +175,8 @@ namespace Fizzle
             // s.Sample(sample);
             for (var i = 0; i < oscillators.Length; i++)
                 oscillators[i].Sample(jacks, sample);
+            for (var i = 0; i < karplusStrongModules.Length; i++)
+                karplusStrongModules[i].Sample(jacks, sample);
             for (var i = 0; i < crossFaders.Length; i++)
                 crossFaders[i].Sample(jacks, sample);
             for (var i = 0; i < delays.Length; i++)

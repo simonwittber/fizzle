@@ -45,7 +45,7 @@ namespace Fizzle
         public bool superSample = true;
 
 
-
+        int noiseIndex = 0;
         float[] xv = new float[2], yv = new float[2];
 
         float ph;
@@ -60,6 +60,7 @@ namespace Fizzle
             yv[1] = (xv[0] + xv[1]) + (-0.9998575343f * yv[0]);
             return yv[1];
         }
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public virtual float Sample(float[] jacks, int t)
         {
@@ -96,6 +97,7 @@ namespace Fizzle
             output.Value((jacks), smp);
             return smp;
         }
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected float _Sample(float phase)
         {
@@ -123,8 +125,7 @@ namespace Fizzle
                     else
                         return 3f - (2 * 1f / Mathf.PI) * phase;
                 case OscType.Noise:
-                    var index = (int)((phase / TWOPI) * noiseBuffer.Length);
-                    return noiseBuffer[index % noiseBuffer.Length];
+                    return noiseBuffer[(noiseIndex++) % noiseBuffer.Length];
                 default:
                     return 0;
             }
@@ -132,7 +133,7 @@ namespace Fizzle
 
         public void Init()
         {
-            noiseBuffer = new float[SAMPLERATE];
+            noiseBuffer = new float[SAMPLERATE * 10];
             for (var i = 0; i < noiseBuffer.Length; i++)
                 noiseBuffer[i] = Mathf.Lerp(-1, 1, Random.value);
             isReady = true;

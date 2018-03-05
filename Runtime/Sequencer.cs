@@ -103,6 +103,7 @@ namespace Fizzle
         {
             var N = (phase / Osc.TWOPI);
             outputEnvelope.Value(jacks, envelope.Evaluate(N));
+            if (pitches.Length == 0) return 0;
             var f = pitches[index % pitches.Length];
             if (transpose.Value(jacks) != 0)
             {
@@ -125,7 +126,7 @@ namespace Fizzle
             while (n > 1)
             {
                 n--;
-                int k = (int)(Entropy.Next * (n + 1));
+                int k = (int)(Entropy.Next() * (n + 1));
                 var value = pitches[k];
                 pitches[k] = pitches[n];
                 pitches[n] = value;

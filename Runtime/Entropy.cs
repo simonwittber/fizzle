@@ -8,14 +8,11 @@ namespace Fizzle
         static float[] values;
         [ThreadStatic] static int index = 0;
 
-        public static float Next
+        public static float Next()
         {
-            get
-            {
-                index++;
-                if (index >= values.Length) index = 0;
-                return values[index];
-            }
+            index++;
+            if (index >= values.Length) index = 0;
+            return values[index];
         }
 
         public static float Gradient(float t)
@@ -31,7 +28,7 @@ namespace Fizzle
             var rnd = new System.Random(1024);
             values = new float[8 * 1024];
             for (var i = 0; i < values.Length; i++)
-                values[i] = rnd.Next() / int.MaxValue;
+                values[i] = (rnd.Next() / int.MaxValue);
         }
 
 

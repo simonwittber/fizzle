@@ -9,7 +9,17 @@ namespace Fizzle
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
             position.width -= DrawOutputJacks(position, property);
-            DrawInputProperties(position, property, "input", "gate", "pulseDecay", "delay", "feedback", "cutoff", "q");
+            DrawInputProperties(position, property, "input", "inputGate", "frequency");
+        }
+    }
+
+    [CustomPropertyDrawer(typeof(KarplusStrong))]
+    public class KarplusStrongDrawer : FizzleDrawer
+    {
+        public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+        {
+            position.width -= DrawOutputJacks(position, property);
+            DrawInputProperties(position, property, "input", "inputGate", "frequency");
         }
     }
 }
