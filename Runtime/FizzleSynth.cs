@@ -2,12 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Profiling;
 
 namespace Fizzle
 {
-
     [ExecuteInEditMode]
     [RequireComponent(typeof(AudioSource))]
     public class FizzleSynth : MonoBehaviour
@@ -35,7 +35,7 @@ namespace Fizzle
         new AudioSource audio;
 
         public List<uint> freeJackID;
-        float[] sharedValues;
+        float[] jacks;
         bool enableProfile = false;
 
         public uint TakeJackID()
@@ -56,17 +56,17 @@ namespace Fizzle
             freeJackID.AddRange(from i in Enumerable.Range(0, 128) select (uint)i);
         }
 
-        IEnumerator Start()
-        {
-            var data = new float[Mathf.FloorToInt(44100 * 2 * Time.deltaTime)];
-            while (true)
-            {
-                enableProfile = true;
-                ReadAudio(data);
-                enableProfile = false;
-                yield return null;
-            }
-        }
+        // IEnumerator Start()
+        // {
+        //     var data = new float[Mathf.FloorToInt(44100 * 2 * Time.deltaTime)];
+        //     while (true)
+        //     {
+        //         enableProfile = true;
+        //         ReadAudio(data);
+        //         enableProfile = false;
+        //         yield return null;
+        //     }
+        // }
 
         [ContextMenu("Benchmark")]
         void _Benchmark()
@@ -107,7 +107,7 @@ namespace Fizzle
 
         public void Init()
         {
-            sharedValues = new float[256];
+            jacks = new float[256];
             foreach (var o in oscillators)
                 o.Init();
             foreach (var e in envelopes)
@@ -146,69 +146,57 @@ namespace Fizzle
         System.Diagnostics.Stopwatch clock = new System.Diagnostics.Stopwatch();
         void ReadAudio(float[] data)
         {
-            lock (this)
+            if (abort) return;
+            if (enableProfile) Profiler.BeginSample("ReadAudio");
+            try
             {
                 clock.Reset();
                 clock.Start();
-                if (abort) return;
-                if (enableProfile) Profiler.BeginSample("ReadAudio");
-                try
+                for (var i = 0; i < data.Length; i += 2)
                 {
-                    // Jack.values = sharedValues;
-                    for (var i = 0; i < data.Length; i += 2)
-                    {
-                        sample++;
-                        foreach (var s in sequencers)
-                            if (s != null)
-                                s.Sample(sharedValues, sample);
-                        foreach (var e in envelopes)
-                            if (e != null)
-                                e.Sample(sharedValues, sample);
-                        foreach (var s in samplers)
-                            if (s != null)
-                            {
-                                s.channels = sampleChannels[s.sampleIndex];
-                                s.data = sampleData[s.sampleIndex];
-                                // s.Sample(sample);
-                            }
-                        foreach (var o in oscillators)
-                            if (o != null)
-                                o.Sample(sharedValues, sample);
-                        // foreach (var o in karplusStrongModules)
-                        //     if (o != null)
-                        //         o.Sample(sample);
-                        foreach (var c in crossFaders)
-                            if (c != null)
-                                c.Sample(sharedValues, sample);
-                        foreach (var d in delays)
-                            if (d != null)
-                                d.Update(sharedValues);
-                        foreach (var f in filters)
-                            if (f != null)
-                                f.Update(sharedValues);
-                        foreach (var m in mixers)
-                            if (m != null)
-                                m.Update(sharedValues);
-                        data[i] = inputAudio.left.Value(sharedValues);
-                        data[i + 1] = inputAudio.right.Value(sharedValues);
-                    }
-                    // Jack.values = null;
+                    ProcessAudio();
+                    data[i] = inputAudio.left.Value(jacks);
+                    data[i + 1] = inputAudio.right.Value(jacks);
                 }
-
-                catch (System.Exception e)
-                {
-                    Debug.LogException(e);
-                    abort = true;
-                }
+                clock.Stop();
+                var maxTime = ((data.Length / 2) * 0.02267573696f);
+                cpuTime = Mathf.Round(((clock.ElapsedMilliseconds) / maxTime) * 1000) / 10;
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogException(e);
+                abort = true;
             }
             if (enableProfile) Profiler.EndSample();
-            clock.Stop();
-
-
-            var maxTime = ((data.Length / 2) * 0.02267573696f);
-
-            cpuTime = Mathf.Round(((clock.ElapsedMilliseconds) / maxTime) * 1000) / 10;
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        void ProcessAudio()
+        {
+            sample++;
+            for (var i = 0; i < sequencers.Length; i++)
+                sequencers[i].Sample(jacks, sample);
+            for (var i = 0; i < envelopes.Length; i++)
+                envelopes[i].Sample(jacks, sample);
+            for (var i = 0; i < samplers.Length; i++)
+            {
+                var s = samplers[i];
+                s.channels = sampleChannels[s.sampleIndex];
+                s.data = sampleData[s.sampleIndex];
+            }
+            // s.Sample(sample);
+            for (var i = 0; i < oscillators.Length; i++)
+                oscillators[i].Sample(jacks, sample);
+            for (var i = 0; i < crossFaders.Length; i++)
+                crossFaders[i].Sample(jacks, sample);
+            for (var i = 0; i < delays.Length; i++)
+                delays[i].Update(jacks);
+            for (var i = 0; i < filters.Length; i++)
+                filters[i].Update(jacks);
+            for (var i = 0; i < mixers.Length; i++)
+                mixers[i].Update(jacks);
+        }
+
         bool abort = false;
         int sample = 0;
     }
