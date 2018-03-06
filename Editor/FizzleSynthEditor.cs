@@ -19,6 +19,8 @@ namespace Fizzle
 
         // Oscilloscope oscilloscope = new Oscilloscope();
 
+        public override bool RequiresConstantRepaint() => true;
+
         void OnEnable()
         {
             EditorApplication.update -= Update;
@@ -42,6 +44,7 @@ namespace Fizzle
             {
                 JackDrawer.BeginJackDrawers();
                 DrawRack(ref fa.sequencers, serializedObject.FindProperty("sequencers"), Color.white);
+                DrawRack(ref fa.ladders, serializedObject.FindProperty("ladders"), Color.white);
                 DrawRack(ref fa.envelopes, serializedObject.FindProperty("envelopes"), Color.cyan);
                 DrawRack(ref fa.samplers, serializedObject.FindProperty("samplers"), Color.magenta);
                 DrawRack(ref fa.oscillators, serializedObject.FindProperty("oscillators"), Color.green);
@@ -76,6 +79,7 @@ namespace Fizzle
 
         private void DrawRack<T>(ref T[] items, SerializedProperty property, Color c) where T : new()
         {
+            var fa = target as FizzleSynth;
             var height = (items.Length * 18) + 18;
             var position = GUILayoutUtility.GetRect(EditorGUIUtility.fieldWidth, height);
             c.a = 0.025f;
@@ -121,12 +125,9 @@ namespace Fizzle
             }
             if (toRemove >= 0)
             {
-                var guidItem = items[toRemove] as IHasGUID;
-                if (guidItem != null)
-                {
-                    var fa = target as FizzleSynth;
-                    fa.FreeJackID(guidItem.ID);
-                }
+                var cItem = items[toRemove] as IRackItem;
+                if (cItem != null)
+                    cItem.OnRemoveFromRack(fa);
                 property.DeleteArrayElementAtIndex(toRemove);
                 property.serializedObject.ApplyModifiedProperties();
             }
@@ -142,9 +143,9 @@ namespace Fizzle
         {
             Undo.RecordObject(property.serializedObject.targetObject, "Add");
             var fa = target as FizzleSynth;
-            var guidItem = item as IHasGUID;
-            if (guidItem != null)
-                guidItem.ID = fa.TakeJackID();
+            var cItem = item as IRackItem;
+            if (cItem != null)
+                cItem.OnAddToRack(fa);
             var initItem = item as IHasInit;
             if (initItem != null)
                 initItem.Init();

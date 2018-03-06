@@ -5,7 +5,7 @@ namespace Fizzle
 {
 
     [System.Serializable]
-    public class Sequencer : IHasGUID
+    public class Sequencer : IRackItem
     {
         public enum SequencerType
         {
@@ -16,7 +16,8 @@ namespace Fizzle
         }
 
         public SequencerType type;
-        public JackIn bpm = new JackIn() { localValue = 120 };
+        public JackSignal gate = new JackSignal();
+        public JackIn gateLength = new JackIn() { localValue = 0.5f };
         public AnimationCurve envelope = AnimationCurve.Constant(0, 1, 1);
         public JackIn glide = new JackIn() { localValue = 1f };
         public JackIn frequencyMultiply = new JackIn() { localValue = 1f };
@@ -25,21 +26,24 @@ namespace Fizzle
         public JackOut outputEnvelope = new JackOut();
         public JackOut output = new JackOut();
 
-        public uint ID
+        public void OnAddToRack(FizzleSynth fs)
         {
-            set
-            {
-                output.id = value;
-                outputEnvelope.id = value + 128;
-            }
-            get { return output.id; }
+            output.id = fs.TakeJackID();
+            outputEnvelope.id = fs.TakeJackID();
+        }
+
+        public void OnRemoveFromRack(FizzleSynth fs)
+        {
+            fs.FreeJackID(output.id);
+            fs.FreeJackID(outputEnvelope.id);
         }
 
         float[] pitches;
-        float phase;
+
         string lastCode;
         SequencerType lastType;
         [System.NonSerialized] int index;
+        [System.NonSerialized] float lastGate, position, outputFreq = 0f;
 
         void Parse()
         {
@@ -61,26 +65,27 @@ namespace Fizzle
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void Sample(float[] jacks, int sample)
         {
-            if (bpm.Value(jacks) == 0)
-            {
-                output.Value(jacks, 0);
-                return;
-            }
             if (pitches == null || lastCode != code || lastType != type)
                 Parse();
-            var smp = _Sample(jacks, phase);
-            var bpmF = bpm.Value(jacks) / 60f;
-            phase = phase + ((Osc.TWOPI * bpmF) / Osc.SAMPLERATE);
-            if (phase > Osc.TWOPI)
+
+            var gateValue = gate.Value(jacks);
+            if (gateValue > 0 && lastGate < 0)
             {
+                position = 0;
                 index++;
                 if (index >= pitches.Length)
                 {
                     index = 0;
                     ChangePitchPattern();
                 }
-                phase = phase - Osc.TWOPI;
             }
+            else
+            {
+                position += (1f / Osc.SAMPLERATE);
+            }
+            lastGate = gateValue;
+
+            var smp = _Sample(jacks);
             smp = transpose.Value(jacks) + (smp * frequencyMultiply.Value(jacks));
             output.Value(jacks, smp);
         }
@@ -99,11 +104,10 @@ namespace Fizzle
             }
         }
 
-        float outputFreq = 0f;
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        float _Sample(float[] jacks, float phase)
+        float _Sample(float[] jacks)
         {
-            var N = (phase / Osc.TWOPI);
+            var N = position / gateLength.Value(jacks);
             outputEnvelope.Value(jacks, envelope.Evaluate(N));
             if (pitches.Length == 0) return 0;
             var f = pitches[index % pitches.Length];
@@ -116,11 +120,13 @@ namespace Fizzle
             outputFreq = Mathf.Lerp(outputFreq, f, glide.Value(jacks));
             return outputFreq;
         }
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         void Reverse()
         {
             System.Array.Reverse(pitches);
         }
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         void Shuffle()
         {

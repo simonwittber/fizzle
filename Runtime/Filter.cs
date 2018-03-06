@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Fizzle
 {
     [System.Serializable]
-    public class Filter : IHasGUID
+    public class Filter : IRackItem
     {
         public enum FilterType
         {
@@ -33,7 +33,16 @@ namespace Fizzle
         float lastC, lastQ;
         FilterType lastType;
 
-        public uint ID { get { return output.id; } set { output.id = value; } }
+        public void OnAddToRack(FizzleSynth fs)
+        {
+            output.id = fs.TakeJackID();
+        }
+
+        public void OnRemoveFromRack(FizzleSynth fs)
+        {
+            fs.FreeJackID(output.id);
+        }
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public float Update(float[] jacks)
         {

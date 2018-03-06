@@ -93,7 +93,7 @@ namespace Fizzle
                     width -= 64;
                     count--;
                 }
-                if (p.name.StartsWith("input") || p.name.StartsWith("output"))
+                if (p.name.StartsWith("input") || p.name.StartsWith("output") || p.name.StartsWith("gate"))
                 {
                     width -= 16;
                     count--;
@@ -119,7 +119,7 @@ namespace Fizzle
                     EditorGUIUtility.labelWidth = 16;
                     label = new GUIContent(p.displayName.ToUpper().Substring(0, 1), p.displayName);
                 }
-                else if (p.name.StartsWith("input") || p.name.StartsWith("output"))
+                else if (p.name.StartsWith("input") || p.name.StartsWith("output") || p.name.StartsWith("gate"))
                 {
                     rect.width = 16;
                     label = GUIContent.none;

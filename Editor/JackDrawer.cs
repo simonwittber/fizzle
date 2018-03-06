@@ -107,6 +107,8 @@ namespace Fizzle
                 GUI.color = Color.blue;
             else if (property.name.StartsWith("output"))
                 GUI.color = Color.cyan;
+            else if (property.name.StartsWith("gate"))
+                GUI.color = Color.green;
             else
                 GUI.color = Color.white;
             if (DrawJackButton(rect, idProperty.intValue, property))

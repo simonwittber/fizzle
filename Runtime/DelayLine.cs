@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Fizzle
 {
     [System.Serializable]
-    public class DelayLine : IHasGUID
+    public class DelayLine : IRackItem
     {
         public JackSignal input = new JackSignal();
         public JackIn delay = new JackIn() { localValue = 0.5f };
@@ -15,10 +15,18 @@ namespace Fizzle
         public JackSignal add = new JackSignal();
         public JackOut output = new JackOut();
 
-        public uint ID { get { return output.id; } set { output.id = value; } }
-
         int position = 0;
         float[] buffer = new float[1];
+
+        public void OnAddToRack(FizzleSynth fs)
+        {
+            output.id = fs.TakeJackID();
+        }
+
+        public void OnRemoveFromRack(FizzleSynth fs)
+        {
+            fs.FreeJackID(output.id);
+        }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public float Update(float[] jacks)

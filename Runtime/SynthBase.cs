@@ -5,12 +5,12 @@ using UnityEngine;
 namespace Fizzle
 {
     [System.Serializable]
-    public class SynthBase : IHasGUID
+    public class SynthBase : IRackItem
     {
         public const float TWOPI = Mathf.PI * 2;
         public const int SAMPLERATE = 44100;
 
-        public JackSignal inputGate = new JackSignal();
+        public JackSignal gate = new JackSignal();
 
         public JackIn gain = new JackIn() { localValue = 0.5f };
         public JackIn bias = new JackIn();
@@ -19,15 +19,18 @@ namespace Fizzle
         public JackSignal add = new JackSignal();
         public JackOut output = new JackOut();
 
-        public uint ID { get { return output.id; } set { output.id = value; } }
-
         protected float position = 0;
         protected int sampleIndex = 0;
         float lastGate = 0;
 
-        protected bool Active(float[] jacks)
+        public void OnAddToRack(FizzleSynth fs)
         {
-            return inputGate.Value(jacks) > 0;
+            output.id = fs.TakeJackID();
+        }
+
+        public void OnRemoveFromRack(FizzleSynth fs)
+        {
+            fs.FreeJackID(output.id);
         }
 
         protected virtual void OnGate()
@@ -38,7 +41,7 @@ namespace Fizzle
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public virtual float Sample(float[] jacks, int t)
         {
-            var gateValue = inputGate.Value(jacks);
+            var gateValue = gate.Value(jacks);
             if (gateValue > 0 && lastGate < 0)
             {
                 position = 0;

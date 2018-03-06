@@ -5,7 +5,7 @@ namespace Fizzle
 {
 
     [System.Serializable]
-    public class Sampler : IHasGUID
+    public class Sampler : IRackItem
     {
         public int sampleIndex;
         public JackSignal multiply = new JackSignal();
@@ -14,11 +14,21 @@ namespace Fizzle
         public JackIn bias = new JackIn();
         public JackOut output = new JackOut();
 
-        public uint ID { get { return output.id; } set { output.id = value; } }
+
         public int channel;
 
         internal float[] data;
         public int channels;
+
+        public void OnAddToRack(FizzleSynth fs)
+        {
+            output.id = fs.TakeJackID();
+        }
+
+        public void OnRemoveFromRack(FizzleSynth fs)
+        {
+            fs.FreeJackID(output.id);
+        }
 
         public float Sample(float[] jacks, int sample)
         {

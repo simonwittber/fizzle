@@ -6,7 +6,7 @@ namespace Fizzle
 {
 
     [System.Serializable]
-    public class Osc : IHasGUID, IHasInit
+    public class Osc : IRackItem, IHasInit
     {
         public const float TWOPI = Mathf.PI * 2;
         public const int SAMPLERATE = 44100;
@@ -35,8 +35,6 @@ namespace Fizzle
         public JackSignal add = new JackSignal();
         public JackOut output = new JackOut();
 
-        public uint ID { get { return output.id; } set { output.id = value; } }
-
         float[] noiseBuffer;
         protected bool isReady = false;
         protected float phase;
@@ -49,6 +47,16 @@ namespace Fizzle
         float[] xv = new float[2], yv = new float[2];
 
         float ph;
+
+        public void OnAddToRack(FizzleSynth fs)
+        {
+            output.id = fs.TakeJackID();
+        }
+
+        public void OnRemoveFromRack(FizzleSynth fs)
+        {
+            fs.FreeJackID(output.id);
+        }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         float BandLimit(float smp)

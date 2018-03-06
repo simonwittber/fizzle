@@ -6,7 +6,7 @@ namespace Fizzle
 {
 
     [System.Serializable]
-    public class Mixer : IHasGUID
+    public class Mixer : IRackItem
     {
         public JackSignal inputA = new JackSignal();
         public JackSignal inputB = new JackSignal();
@@ -24,7 +24,15 @@ namespace Fizzle
         public JackSignal add = new JackSignal();
         public JackOut output = new JackOut();
 
-        public uint ID { get { return output.id; } set { output.id = value; } }
+        public void OnAddToRack(FizzleSynth fs)
+        {
+            output.id = fs.TakeJackID();
+        }
+
+        public void OnRemoveFromRack(FizzleSynth fs)
+        {
+            fs.FreeJackID(output.id);
+        }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public float Update(float[] jacks)

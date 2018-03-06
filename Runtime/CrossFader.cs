@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Fizzle
 {
     [System.Serializable]
-    public class CrossFader : IHasGUID
+    public class CrossFader : IRackItem
     {
         public JackIn position = new JackIn();
         public JackIn gain = new JackIn() { localValue = 0.5f };
@@ -24,7 +24,16 @@ namespace Fizzle
         public JackSignal add = new JackSignal();
         public JackOut output = new JackOut();
 
-        public uint ID { get { return output.id; } set { output.id = value; } }
+        public void OnAddToRack(FizzleSynth fs)
+        {
+            output.id = fs.TakeJackID();
+        }
+
+        public void OnRemoveFromRack(FizzleSynth fs)
+        {
+            fs.FreeJackID(output.id);
+        }
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public float Sample(float[] jacks, int t)
         {

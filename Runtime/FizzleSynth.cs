@@ -25,6 +25,7 @@ namespace Fizzle
         public Filter[] filters = new Filter[0];
         public DelayLine[] delays = new DelayLine[0];
         public Mixer[] mixers = new Mixer[0];
+        public Ladder[] ladders = new Ladder[0];
 
         public AudioOut inputAudio = new AudioOut();
         public int[] activeJackOuts;
@@ -162,6 +163,8 @@ namespace Fizzle
         void ProcessAudio()
         {
             sample++;
+            for (var i = 0; i < ladders.Length; i++)
+                ladders[i].Sample(jacks, sample);
             for (var i = 0; i < sequencers.Length; i++)
                 sequencers[i].Sample(jacks, sample);
             for (var i = 0; i < envelopes.Length; i++)

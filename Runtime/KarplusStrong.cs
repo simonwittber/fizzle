@@ -7,7 +7,6 @@ namespace Fizzle
     public class KarplusStrong : SynthBase
     {
 
-        public JackSignal input = new JackSignal();
         public JackIn frequency = new JackIn() { localValue = 440 };
 
         int period = 0;
@@ -31,7 +30,7 @@ namespace Fizzle
             var smp = 0f;
             if (sampleIndex < period)
             {
-                smp += input.Value(jacks);
+                smp = (Entropy.Next() * 2) - 1;
                 wave[activeString, si] += smp;
                 doFilter = false;
             }
