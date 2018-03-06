@@ -26,9 +26,11 @@ namespace Fizzle
         static Entropy()
         {
             var rnd = new System.Random(1024);
-            values = new float[8 * 1024];
+            values = new float[8192];
             for (var i = 0; i < values.Length; i++)
-                values[i] = (rnd.Next() / int.MaxValue);
+            {
+                values[i] = ((float)rnd.Next() / int.MaxValue);
+            }
         }
 
 

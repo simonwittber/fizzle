@@ -39,7 +39,7 @@ namespace Fizzle
         float phase;
         string lastCode;
         SequencerType lastType;
-        int index;
+        [System.NonSerialized] int index;
 
         void Parse()
         {
@@ -57,6 +57,7 @@ namespace Fizzle
             lastCode = code;
             lastType = type;
         }
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void Sample(float[] jacks, int sample)
         {
@@ -73,7 +74,7 @@ namespace Fizzle
             if (phase > Osc.TWOPI)
             {
                 index++;
-                if (index == pitches.Length)
+                if (index >= pitches.Length)
                 {
                     index = 0;
                     ChangePitchPattern();
@@ -83,6 +84,7 @@ namespace Fizzle
             smp = transpose.Value(jacks) + (smp * frequencyMultiply.Value(jacks));
             output.Value(jacks, smp);
         }
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         void ChangePitchPattern()
         {
@@ -131,6 +133,7 @@ namespace Fizzle
                 pitches[k] = pitches[n];
                 pitches[n] = value;
             }
+
         }
 
     }

@@ -30,6 +30,11 @@ namespace Fizzle
             return inputGate.Value(jacks) > 0;
         }
 
+        protected virtual void OnGate()
+        {
+
+        }
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public virtual float Sample(float[] jacks, int t)
         {
@@ -38,6 +43,7 @@ namespace Fizzle
             {
                 position = 0;
                 sampleIndex = 0;
+                OnGate();
             }
             else
             {
