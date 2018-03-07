@@ -42,5 +42,12 @@ namespace Fizzle
             output.Value(jacks, smp);
             return smp;
         }
+
+        public void OnAudioStart(FizzleSynth fs)
+        {
+
+            channels = fs.sampleChannels[sampleIndex];
+            data = fs.sampleData[sampleIndex];
+        }
     }
 }

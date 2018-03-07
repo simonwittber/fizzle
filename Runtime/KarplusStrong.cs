@@ -22,8 +22,11 @@ namespace Fizzle
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected override float GetSample(float[] jacks)
         {
+            var freq = frequency.Value(jacks);
+            if (Mathf.Approximately(freq, 0)) return 0;
+
             period = (int)(Osc.SAMPLERATE / (Mathf.Epsilon + frequency.Value(jacks)));
-            if (period <= 0 || period >= 44100) period = 1;
+
             var si = sampleIndex % period;
 
             var doFilter = true;
@@ -43,7 +46,6 @@ namespace Fizzle
 
             return smp;
         }
-
 
     }
 

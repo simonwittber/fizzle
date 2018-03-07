@@ -17,8 +17,6 @@ namespace Fizzle
         protected static Dictionary<int, Rect> jackOuts = new Dictionary<int, Rect>();
         protected static Dictionary<Rect, int> jackRects = new Dictionary<Rect, int>();
 
-        static HashSet<int> outputsInUse = new HashSet<int>();
-
         protected void Expire(int id)
         {
             // foreach (var i in JackIn.instances)
@@ -33,9 +31,8 @@ namespace Fizzle
             jackRects.Clear();
         }
 
-        public static int[] EndJackDrawers()
+        public static void EndJackDrawers()
         {
-            outputsInUse.Clear();
             foreach (var kv in jackRects)
             {
                 var rect = kv.Key;
@@ -43,7 +40,6 @@ namespace Fizzle
                 Rect src;
                 if (jackOuts.TryGetValue(id, out src))
                 {
-                    outputsInUse.Add(id);
                     var distance = (10) + ((rect.center - src.center).magnitude * 0.1f);
                     Handles.DrawBezier(rect.center, src.center, rect.center + Vector2.down * distance, src.center + Vector2.up * distance, Color.black * 0.75f, null, 5);
                     var patchColor = PatchCableColor.GetColor(id);
@@ -65,7 +61,6 @@ namespace Fizzle
             }
             jackOuts.Clear();
             jackRects.Clear();
-            return outputsInUse.ToArray();
         }
 
         protected virtual void OnReset(SerializedProperty property)

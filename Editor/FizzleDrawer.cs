@@ -88,7 +88,7 @@ namespace Fizzle
                     width -= 32;
                     count--;
                 }
-                if (p.propertyType == SerializedPropertyType.Float)
+                if (p.propertyType == SerializedPropertyType.Float || p.propertyType == SerializedPropertyType.Integer)
                 {
                     width -= 64;
                     count--;
@@ -124,7 +124,7 @@ namespace Fizzle
                     rect.width = 16;
                     label = GUIContent.none;
                 }
-                else if (p.propertyType == SerializedPropertyType.Float)
+                else if (p.propertyType == SerializedPropertyType.Float || p.propertyType == SerializedPropertyType.Integer)
                 {
                     rect.width = 64;
                     EditorGUIUtility.labelWidth = 16;

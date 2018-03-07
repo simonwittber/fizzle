@@ -1,3 +1,4 @@
+using System;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
@@ -6,7 +7,7 @@ namespace Fizzle
 {
 
     [System.Serializable]
-    public class Osc : IRackItem, IHasInit
+    public class Osc : IRackItem
     {
         public const float TWOPI = Mathf.PI * 2;
         public const int SAMPLERATE = 44100;
@@ -27,6 +28,7 @@ namespace Fizzle
 
         public OscType type;
         public AnimationCurve shape = new AnimationCurve();
+        public float phaseOffset = 0;
         public JackIn detune = new JackIn();
         public JackIn frequency = new JackIn();
         public JackIn gain = new JackIn() { localValue = 0.5f };
@@ -35,9 +37,9 @@ namespace Fizzle
         public JackSignal add = new JackSignal();
         public JackOut output = new JackOut();
 
-        float[] noiseBuffer;
-        protected bool isReady = false;
-        protected float phase;
+        [NonSerialized] float[] noiseBuffer;
+        [NonSerialized] protected bool isReady = false;
+        [NonSerialized] protected float phase;
 
         public bool bandlimited = true;
         public bool superSample = true;
@@ -139,11 +141,13 @@ namespace Fizzle
             }
         }
 
-        public void Init()
+        public void OnAudioStart(FizzleSynth fs)
         {
             noiseBuffer = new float[SAMPLERATE * 10];
             for (var i = 0; i < noiseBuffer.Length; i++)
-                noiseBuffer[i] = Mathf.Lerp(-1, 1, Random.value);
+                noiseBuffer[i] = Mathf.Lerp(-1, 1, UnityEngine.Random.value);
+            phase = phaseOffset * TWOPI;
+            ph = phase;
             isReady = true;
         }
 

@@ -29,6 +29,10 @@ namespace Fizzle
             output.id = fs.TakeJackID();
         }
 
+        public void OnAudioStart(FizzleSynth fs)
+        {
+        }
+
         public void OnRemoveFromRack(FizzleSynth fs)
         {
             fs.FreeJackID(output.id);

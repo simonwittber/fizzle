@@ -13,6 +13,7 @@ namespace Fizzle
 
         float a0, a1, a2, a3, a4;
         float x1 = 0, x2 = 0, y1 = 0, y2 = 0;
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public float Update(float v)
         {
@@ -23,6 +24,7 @@ namespace Fizzle
             y1 = float.IsNaN(smp) ? 0 : smp;
             return y1;
         }
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         void SetCoeff(float aa0, float aa1, float aa2, float b0, float b1, float b2)
         {
@@ -32,6 +34,7 @@ namespace Fizzle
             a3 = aa1 / aa0;
             a4 = aa2 / aa0;
         }
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void SetLowPass(float freq, float q)
         {
@@ -48,6 +51,7 @@ namespace Fizzle
             var aa2 = 1 - alpha;
             SetCoeff(aa0, aa1, aa2, b0, b1, b2);
         }
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void SetHighPass(float freq, float q)
         {
@@ -65,6 +69,7 @@ namespace Fizzle
             var aa2 = 1 - alpha;
             SetCoeff(aa0, aa1, aa2, b0, b1, b2);
         }
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void SetBandPass(float freq, float q)
         {
@@ -82,6 +87,7 @@ namespace Fizzle
             var a2 = 1 - alpha;
             SetCoeff(a0, a1, a2, b0, b1, b2);
         }
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void SetBandStop(float freq, float q)
         {
@@ -100,6 +106,7 @@ namespace Fizzle
             var a2 = 1 - alpha;
             SetCoeff(a0, a1, a2, b0, b1, b2);
         }
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void SetAllPass(float freq, float q)
         {

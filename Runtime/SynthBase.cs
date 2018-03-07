@@ -72,6 +72,10 @@ namespace Fizzle
             return 0;
         }
 
+        public virtual void OnAudioStart(FizzleSynth fs)
+        {
+
+        }
     }
 
 }

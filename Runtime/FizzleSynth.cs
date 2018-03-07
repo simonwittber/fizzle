@@ -21,23 +21,26 @@ namespace Fizzle
         public Sampler[] samplers = new Sampler[0];
         public Osc[] oscillators = new Osc[0];
         public KarplusStrong[] karplusStrongModules = new KarplusStrong[0];
+        public Perc[] percModules = new Perc[0];
         public CrossFader[] crossFaders = new CrossFader[0];
         public Filter[] filters = new Filter[0];
         public DelayLine[] delays = new DelayLine[0];
         public Mixer[] mixers = new Mixer[0];
         public Ladder[] ladders = new Ladder[0];
+        public GateSequence[] gateSequences = new GateSequence[0];
 
         public AudioOut inputAudio = new AudioOut();
-        public int[] activeJackOuts;
         public float cpuTime;
 
-        Dictionary<int, float[]> sampleData = new Dictionary<int, float[]>();
-        int[] sampleChannels;
+        internal Dictionary<int, float[]> sampleData = new Dictionary<int, float[]>();
+        internal int[] sampleChannels;
         new AudioSource audio;
 
         public List<uint> freeJackID;
         float[] jacks;
         bool enableProfile = false;
+
+        IRackItem[] activeRacksItems = new IRackItem[0];
 
         public uint TakeJackID()
         {
@@ -76,11 +79,7 @@ namespace Fizzle
         [ContextMenu("Play")]
         public void Play()
         {
-            audio = GetComponent<AudioSource>();
-            sample = 0;
             Init();
-            audio.clip = Generate();
-            abort = false;
             audio.Play();
         }
 
@@ -96,11 +95,11 @@ namespace Fizzle
 
         public void Init()
         {
+            audio = GetComponent<AudioSource>();
+            sample = 0;
             jacks = new float[256];
-            foreach (var o in oscillators)
-                o.Init();
-            foreach (var e in envelopes)
-                e.Init();
+            audio.clip = Generate();
+            abort = false;
             sampleChannels = new int[sampleBank.Length];
             for (var i = 0; i < sampleBank.Length; i++)
             {
@@ -109,6 +108,38 @@ namespace Fizzle
                 sampleBank[i].GetData(data, 0);
                 sampleChannels[i] = sampleBank[i].channels;
             }
+
+            var items = new List<IRackItem>();
+
+            for (var i = 0; i < ladders.Length; i++)
+                items.Add(ladders[i]);
+            for (var i = 0; i < gateSequences.Length; i++)
+                items.Add(gateSequences[i]);
+            for (var i = 0; i < sequencers.Length; i++)
+                items.Add(sequencers[i]);
+            for (var i = 0; i < envelopes.Length; i++)
+                items.Add(envelopes[i]);
+            for (var i = 0; i < samplers.Length; i++)
+                items.Add(samplers[i]);
+            for (var i = 0; i < oscillators.Length; i++)
+                items.Add(oscillators[i]);
+            for (var i = 0; i < karplusStrongModules.Length; i++)
+                items.Add(karplusStrongModules[i]);
+            for (var i = 0; i < percModules.Length; i++)
+                items.Add(percModules[i]);
+            for (var i = 0; i < crossFaders.Length; i++)
+                items.Add(crossFaders[i]);
+            for (var i = 0; i < delays.Length; i++)
+                items.Add(delays[i]);
+            for (var i = 0; i < filters.Length; i++)
+                items.Add(filters[i]);
+            for (var i = 0; i < mixers.Length; i++)
+                items.Add(mixers[i]);
+
+            foreach (var i in items)
+                i.OnAudioStart(this);
+            activeRacksItems = items.ToArray();
+
             audio = GetComponent<AudioSource>();
         }
 
@@ -123,13 +154,6 @@ namespace Fizzle
         public AudioClip Generate()
         {
             return AudioClip.Create("Fizzle", (int)(sampleRate * duration), 2, sampleRate, true, ReadAudio);
-        }
-
-        bool JackOutIsUsed(uint index)
-        {
-            if (activeJackOuts == null) return false;
-            foreach (var i in activeJackOuts) if (i == index) return true;
-            return false;
         }
 
         System.Diagnostics.Stopwatch clock = new System.Diagnostics.Stopwatch();
@@ -163,31 +187,8 @@ namespace Fizzle
         void ProcessAudio()
         {
             sample++;
-            for (var i = 0; i < ladders.Length; i++)
-                ladders[i].Sample(jacks, sample);
-            for (var i = 0; i < sequencers.Length; i++)
-                sequencers[i].Sample(jacks, sample);
-            for (var i = 0; i < envelopes.Length; i++)
-                envelopes[i].Sample(jacks, sample);
-            for (var i = 0; i < samplers.Length; i++)
-            {
-                var s = samplers[i];
-                s.channels = sampleChannels[s.sampleIndex];
-                s.data = sampleData[s.sampleIndex];
-            }
-            // s.Sample(sample);
-            for (var i = 0; i < oscillators.Length; i++)
-                oscillators[i].Sample(jacks, sample);
-            for (var i = 0; i < karplusStrongModules.Length; i++)
-                karplusStrongModules[i].Sample(jacks, sample);
-            for (var i = 0; i < crossFaders.Length; i++)
-                crossFaders[i].Sample(jacks, sample);
-            for (var i = 0; i < delays.Length; i++)
-                delays[i].Update(jacks);
-            for (var i = 0; i < filters.Length; i++)
-                filters[i].Update(jacks);
-            for (var i = 0; i < mixers.Length; i++)
-                mixers[i].Update(jacks);
+            for (int i = 0, count = activeRacksItems.Length; i < count; i++)
+                activeRacksItems[i].Sample(jacks, sample);
         }
 
         bool abort = false;

@@ -15,7 +15,7 @@ namespace Fizzle
             EditorGUIUtility.labelWidth = 16;
             EditorGUI.PropertyField(rect, property.FindPropertyRelative("code"), new GUIContent("S", "Sequence"));
             rect.x -= rect.width;
-            DrawInputProperties(rect, property, "type", "envelope", "gate", "glide", "frequencyMultiply", "transpose", "outputEnvelope");
+            DrawInputProperties(rect, property, "type", "envelope", "gate", "beatLength", "glide", "frequencyMultiply", "transpose", "outputEnvelope");
         }
     }
 }

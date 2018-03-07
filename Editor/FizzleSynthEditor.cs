@@ -45,16 +45,18 @@ namespace Fizzle
                 JackDrawer.BeginJackDrawers();
                 DrawRack(ref fa.sequencers, serializedObject.FindProperty("sequencers"), Color.white);
                 DrawRack(ref fa.ladders, serializedObject.FindProperty("ladders"), Color.white);
+                DrawRack(ref fa.gateSequences, serializedObject.FindProperty("gateSequences"), Color.white);
                 DrawRack(ref fa.envelopes, serializedObject.FindProperty("envelopes"), Color.cyan);
                 DrawRack(ref fa.samplers, serializedObject.FindProperty("samplers"), Color.magenta);
                 DrawRack(ref fa.oscillators, serializedObject.FindProperty("oscillators"), Color.green);
                 DrawRack(ref fa.karplusStrongModules, serializedObject.FindProperty("karplusStrongModules"), Color.green);
+                DrawRack(ref fa.percModules, serializedObject.FindProperty("percModules"), Color.green);
                 DrawRack(ref fa.crossFaders, serializedObject.FindProperty("crossFaders"), Color.gray);
                 DrawRack(ref fa.filters, serializedObject.FindProperty("filters"), Color.red);
                 DrawRack(ref fa.delays, serializedObject.FindProperty("delays"), Color.blue);
                 DrawRack(ref fa.mixers, serializedObject.FindProperty("mixers"), Color.black);
                 EditorGUILayout.PropertyField(serializedObject.FindProperty("inputAudio"), new GUIContent("Audio Out"));
-                fa.activeJackOuts = JackDrawer.EndJackDrawers();
+                JackDrawer.EndJackDrawers();
             }
             if (EditorGUI.EndChangeCheck())
             {

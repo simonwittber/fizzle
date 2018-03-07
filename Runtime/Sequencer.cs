@@ -17,7 +17,7 @@ namespace Fizzle
 
         public SequencerType type;
         public JackSignal gate = new JackSignal();
-        public JackIn gateLength = new JackIn() { localValue = 0.5f };
+        public JackIn beatLength = new JackIn() { localValue = 0.5f };
         public AnimationCurve envelope = AnimationCurve.Constant(0, 1, 1);
         public JackIn glide = new JackIn() { localValue = 1f };
         public JackIn frequencyMultiply = new JackIn() { localValue = 1f };
@@ -63,7 +63,7 @@ namespace Fizzle
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void Sample(float[] jacks, int sample)
+        public float Sample(float[] jacks, int sample)
         {
             if (pitches == null || lastCode != code || lastType != type)
                 Parse();
@@ -86,8 +86,9 @@ namespace Fizzle
             lastGate = gateValue;
 
             var smp = _Sample(jacks);
-            smp = transpose.Value(jacks) + (smp * frequencyMultiply.Value(jacks));
+            smp = (smp * frequencyMultiply.Value(jacks));
             output.Value(jacks, smp);
+            return smp;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -107,10 +108,15 @@ namespace Fizzle
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         float _Sample(float[] jacks)
         {
-            var N = position / gateLength.Value(jacks);
-            outputEnvelope.Value(jacks, envelope.Evaluate(N));
             if (pitches.Length == 0) return 0;
             var f = pitches[index % pitches.Length];
+            if (f <= 0)
+            {
+                outputEnvelope.Value(jacks, 0);
+                return 0;
+            }
+            var N = position / beatLength.Value(jacks);
+            outputEnvelope.Value(jacks, envelope.Evaluate(N));
             if (transpose.Value(jacks) != 0)
             {
                 var number = Note.Number(f);
@@ -142,5 +148,9 @@ namespace Fizzle
 
         }
 
+        public void OnAudioStart(FizzleSynth fs)
+        {
+
+        }
     }
 }

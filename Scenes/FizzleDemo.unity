@@ -113,6 +113,33 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!83 &88380690
+AudioClip:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Fizzle
+  m_LoadType: 0
+  m_Channels: 2
+  m_Frequency: 44100
+  m_BitsPerSample: 32
+  m_Length: 0
+  m_IsTrackerFormat: 0
+  m_Ambisonic: 0
+  m_SubsoundIndex: 0
+  m_PreloadAudioData: 1
+  m_LoadInBackground: 0
+  m_Legacy3D: 0
+  m_Resource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_CompressionFormat: 0
+  m_EditorResource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_EditorCompressionFormat: 0
 --- !u!1 &143085700
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,8 +247,9 @@ AudioSource:
   m_GameObject: {fileID: 268081885}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 876940307}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: e3a1b82634afa4f2e9142507c9942e09,
+    type: 2}
+  m_audioClip: {fileID: 88380690}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -319,24 +347,254 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   realtime: 1
-  duration: 120
+  duration: 5
   sampleBank: []
-  sequencers:
-  - type: 0
-    gate:
+  sequencers: []
+  envelopes:
+  - type: 1
+    shape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    phaseOffset: 0
+    detune:
+      connectedId: 0
+      localValue: 0
       oneMinusX: 0
       xMulMinusOne: 0
       attenuate: 0
       amplify: 0
-      connectedId: 17
-    gateLength:
+    frequency:
+      connectedId: 0
+      localValue: 0.125
+      oneMinusX: 0
+      xMulMinusOne: 0
+      attenuate: 0
+      amplify: 0
+    gain:
       connectedId: 0
       localValue: 0.5
       oneMinusX: 0
       xMulMinusOne: 0
       attenuate: 0
       amplify: 0
-    envelope:
+    bias:
+      connectedId: 0
+      localValue: 0
+      oneMinusX: 0
+      xMulMinusOne: 0
+      attenuate: 0
+      amplify: 0
+    multiply:
+      oneMinusX: 0
+      xMulMinusOne: 0
+      attenuate: 0
+      amplify: 0
+      connectedId: 0
+    add:
+      oneMinusX: 0
+      xMulMinusOne: 0
+      attenuate: 0
+      amplify: 0
+      connectedId: 0
+    output:
+      id: 123
+    bandlimited: 1
+    superSample: 1
+  samplers: []
+  oscillators: []
+  karplusStrongModules:
+  - gate:
+      oneMinusX: 0
+      xMulMinusOne: 0
+      attenuate: 0
+      amplify: 0
+      connectedId: 126
+    gain:
+      connectedId: 125
+      localValue: 0.5
+      oneMinusX: 0
+      xMulMinusOne: 0
+      attenuate: 0
+      amplify: 0
+    bias:
+      connectedId: 0
+      localValue: 0
+      oneMinusX: 0
+      xMulMinusOne: 0
+      attenuate: 0
+      amplify: 0
+    multiply:
+      oneMinusX: 0
+      xMulMinusOne: 0
+      attenuate: 0
+      amplify: 0
+      connectedId: 0
+    add:
+      oneMinusX: 0
+      xMulMinusOne: 0
+      attenuate: 0
+      amplify: 0
+      connectedId: 0
+    output:
+      id: 127
+    frequency:
+      connectedId: 0
+      localValue: 440
+      oneMinusX: 0
+      xMulMinusOne: 0
+      attenuate: 0
+      amplify: 0
+  - gate:
+      oneMinusX: 0
+      xMulMinusOne: 0
+      attenuate: 0
+      amplify: 0
+      connectedId: 121
+    gain:
+      connectedId: 120
+      localValue: 0.5
+      oneMinusX: 0
+      xMulMinusOne: 0
+      attenuate: 0
+      amplify: 0
+    bias:
+      connectedId: 0
+      localValue: 0
+      oneMinusX: 0
+      xMulMinusOne: 0
+      attenuate: 0
+      amplify: 0
+    multiply:
+      oneMinusX: 0
+      xMulMinusOne: 0
+      attenuate: 0
+      amplify: 0
+      connectedId: 0
+    add:
+      oneMinusX: 0
+      xMulMinusOne: 0
+      attenuate: 0
+      amplify: 0
+      connectedId: 0
+    output:
+      id: 122
+    frequency:
+      connectedId: 0
+      localValue: 490
+      oneMinusX: 0
+      xMulMinusOne: 0
+      attenuate: 0
+      amplify: 0
+  percModules:
+  - gate:
+      oneMinusX: 0
+      xMulMinusOne: 0
+      attenuate: 0
+      amplify: 0
+      connectedId: 121
+    gain:
+      connectedId: 0
+      localValue: 0.5
+      oneMinusX: 0
+      xMulMinusOne: 0
+      attenuate: 0
+      amplify: 0
+    bias:
+      connectedId: 0
+      localValue: 0
+      oneMinusX: 0
+      xMulMinusOne: 0
+      attenuate: 0
+      amplify: 0
+    multiply:
+      oneMinusX: 0
+      xMulMinusOne: 0
+      attenuate: 0
+      amplify: 0
+      connectedId: 0
+    add:
+      oneMinusX: 0
+      xMulMinusOne: 0
+      attenuate: 0
+      amplify: 0
+      connectedId: 0
+    output:
+      id: 119
+    frequency:
+      connectedId: 0
+      localValue: 440
+      oneMinusX: 0
+      xMulMinusOne: 0
+      attenuate: 0
+      amplify: 0
+    noise:
+      connectedId: 0
+      localValue: 1
+      oneMinusX: 0
+      xMulMinusOne: 0
+      attenuate: 0
+      amplify: 0
+    noiseEnvelope:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    pitchEnvelope:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 4.217581
+        outSlope: 4.217581
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.017964073
+      - serializedVersion: 3
+        time: 0.02476721
+        value: 0.98551154
+        inSlope: -3.3164115
+        outSlope: -3.3164115
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 1
+        outWeight: 0.024952592
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: -1.5353464
+        outSlope: -1.5353464
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.15346164
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    amplitudeEnvelope:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
@@ -378,426 +636,15 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    glide:
-      connectedId: 0
-      localValue: 1
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-    frequencyMultiply:
-      connectedId: 0
-      localValue: 0.5
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-    transpose:
-      connectedId: 0
-      localValue: 0
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-    code: A4,C4,E4,A2
-    outputEnvelope:
-      id: 251
-    output:
-      id: 123
-  - type: 0
-    gate:
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-      connectedId: 12
-    gateLength:
-      connectedId: 0
-      localValue: 0.5
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-    envelope:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.0032958984
-        value: -0.004272461
-        inSlope: 1.0075934
-        outSlope: 1.0075934
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 1.0075934
-        outSlope: 1.0075934
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    glide:
-      connectedId: 0
-      localValue: 1
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-    frequencyMultiply:
-      connectedId: 0
-      localValue: 1
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-    transpose:
-      connectedId: 0
-      localValue: 0
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-    code: 1,0.5,1
-    outputEnvelope:
-      id: 249
-    output:
-      id: 121
-  - type: 0
-    gate:
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-      connectedId: 8
-    gateLength:
-      connectedId: 0
-      localValue: 0.5
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-    envelope:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    glide:
-      connectedId: 0
-      localValue: 1
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-    frequencyMultiply:
-      connectedId: 0
-      localValue: 1
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-    transpose:
-      connectedId: 0
-      localValue: 0
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-    code: 1,2,-1,2,0,0
-    outputEnvelope:
-      id: 247
-    output:
-      id: 119
-  envelopes:
-  - type: 1
-    shape:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    detune:
-      connectedId: 0
-      localValue: 0
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-    frequency:
-      connectedId: 99
-      localValue: 0.25
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-    gain:
-      connectedId: 0
-      localValue: 0.5
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-    bias:
-      connectedId: 0
-      localValue: 0
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-    multiply:
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-      connectedId: 0
-    add:
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-      connectedId: 0
-    output:
-      id: 124
-    bandlimited: 1
-    superSample: 1
-  - type: 1
-    shape:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    detune:
-      connectedId: 0
-      localValue: 0
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-    frequency:
-      connectedId: 0
-      localValue: 60
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-    gain:
-      connectedId: 0
-      localValue: 0.1
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-    bias:
-      connectedId: 0
-      localValue: 0.25
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-    multiply:
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-      connectedId: 0
-    add:
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-      connectedId: 0
-    output:
-      id: 99
-    bandlimited: 1
-    superSample: 1
-  samplers: []
-  oscillators:
-  - type: 3
-    shape:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    detune:
-      connectedId: 0
-      localValue: 0
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-    frequency:
-      connectedId: 0
-      localValue: 440
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-    gain:
-      connectedId: 0
-      localValue: 1
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-    bias:
-      connectedId: 0
-      localValue: 0
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-    multiply:
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-      connectedId: 0
-    add:
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-      connectedId: 0
-    output:
-      id: 126
-    bandlimited: 1
-    superSample: 1
-  - type: 3
-    shape:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    detune:
-      connectedId: 0
-      localValue: 0
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-    frequency:
-      connectedId: 0
-      localValue: 111
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-    gain:
-      connectedId: 0
-      localValue: 1
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-    bias:
-      connectedId: 0
-      localValue: 0
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-    multiply:
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-      connectedId: 0
-    add:
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-      connectedId: 0
-    output:
-      id: 125
-    bandlimited: 1
-    superSample: 1
-  karplusStrongModules:
-  - gate:
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-      connectedId: 124
-    gain:
-      connectedId: 251
-      localValue: 0.5
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-    bias:
-      connectedId: 0
-      localValue: 0
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-    multiply:
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-      connectedId: 0
-    add:
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-      connectedId: 0
-    output:
-      id: 127
-    frequency:
-      connectedId: 123
-      localValue: 440
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-  crossFaders: []
-  filters:
-  - type: 3
-    input:
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-      connectedId: 127
+    type: 0
     waveshaper:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0
+        value: -1
         inSlope: 0
-        outSlope: 1
+        outSlope: 2
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
@@ -805,7 +652,7 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 1
         value: 1
-        inSlope: 1
+        inSlope: 2
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -816,99 +663,126 @@ MonoBehaviour:
       m_RotationOrder: 4
     cutoff:
       connectedId: 0
-      localValue: 880
+      localValue: 22049
       oneMinusX: 0
       xMulMinusOne: 0
       attenuate: 0
       amplify: 0
     q:
       connectedId: 0
-      localValue: 1
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-    gain:
-      connectedId: 0
-      localValue: 0.5
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-    bias:
-      connectedId: 0
       localValue: 0
       oneMinusX: 0
       xMulMinusOne: 0
       attenuate: 0
       amplify: 0
-    multiply:
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-      connectedId: 0
-    add:
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-      connectedId: 0
-    output:
-      id: 120
+  crossFaders: []
+  filters: []
   delays: []
   mixers: []
-  ladders:
-  - type: 0
-    gate:
+  ladders: []
+  gateSequences:
+  - gate:
       oneMinusX: 0
       xMulMinusOne: 0
       attenuate: 0
       amplify: 0
-      connectedId: 124
-    ladder:
-      bank:
-      - id: 16
-      - id: 15
-      - id: 14
-      - id: 13
-      - id: 12
-      - id: 11
-      - id: 10
-      - id: 9
-      - id: 8
-      - id: 7
-      - id: 6
-      - id: 5
-      - id: 4
-      - id: 3
-      - id: 2
-      - id: 1
-      index: 9
+      connectedId: 123
+    length: 16
+    code: 8,8
+    envelope:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 4.217581
+        outSlope: 4.217581
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.017964073
+      - serializedVersion: 3
+        time: 0.0037253406
+        value: 0.9868047
+        inSlope: -3.3164115
+        outSlope: -3.3164115
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 1
+        outWeight: 0.024952592
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: -1.5353464
+        outSlope: -1.5353464
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.15346164
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    outputEnvelope:
+      id: 125
     output:
-      id: 17
+      id: 126
+  - gate:
+      oneMinusX: 0
+      xMulMinusOne: 0
+      attenuate: 0
+      amplify: 0
+      connectedId: 123
+    length: 16
+    code: 4,8,1,2
+    envelope:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: -4.448452
+        outSlope: -4.448452
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.02004008
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: -1
+        outSlope: -1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    outputEnvelope:
+      id: 120
+    output:
+      id: 121
   inputAudio:
     left:
       oneMinusX: 0
       xMulMinusOne: 0
       attenuate: 0
       amplify: 0
-      connectedId: 120
+      connectedId: 119
     right:
       oneMinusX: 0
       xMulMinusOne: 0
       attenuate: 0
       amplify: 0
-      connectedId: 120
+      connectedId: 122
     monitor:
       oneMinusX: 0
       xMulMinusOne: 0
       attenuate: 0
       amplify: 0
       connectedId: 0
-  activeJackOuts: 110000000c000000080000007c00000063000000fb0000007b0000007f00000078000000
   cpuTime: 7
-  freeJackID: 
+  freeJackID: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e0000001f000000200000002100000022000000230000002400000025000000260000002700000028000000290000002a0000002b0000002c0000002d0000002e0000002f000000300000003100000032000000330000003400000035000000360000003700000038000000390000003a0000003b0000003c0000003d0000003e0000003f000000400000004100000042000000430000004400000045000000460000004700000048000000490000004a0000004b0000004c0000004d0000004e0000004f000000500000005100000052000000530000005400000055000000560000005700000058000000590000005a0000005b0000005c0000005d0000005e0000005f000000600000006100000062000000630000006400000065000000660000006700000068000000690000006a0000006b0000006c0000006d0000006e0000006f00000070000000710000007200000073000000740000007500000076000000
 --- !u!4 &268081888
 Transform:
   m_ObjectHideFlags: 0
@@ -928,49 +802,22 @@ AudioReverbFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 268081885}
-  m_Enabled: 1
+  m_Enabled: 0
   m_DryLevel: 0
   m_Room: -1000
-  m_RoomHF: -500
-  m_DecayTime: 3.92
-  m_DecayHFRatio: 0.7
-  m_ReflectionsLevel: -1230
-  m_ReverbLevel: -2
-  m_ReverbDelay: 0.029
+  m_RoomHF: 0
+  m_DecayTime: 8.39
+  m_DecayHFRatio: 1.39
+  m_ReflectionsLevel: -115
+  m_ReverbLevel: 985
+  m_ReverbDelay: 0.03
   m_Diffusion: 100
   m_Density: 100
   m_HFReference: 5000
   m_RoomLF: 0
   m_LFReference: 250
   m_ReflectionsDelay: 0
-  m_ReverbPreset: 8
---- !u!83 &876940307
-AudioClip:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Fizzle
-  m_LoadType: 0
-  m_Channels: 2
-  m_Frequency: 44100
-  m_BitsPerSample: 32
-  m_Length: 0
-  m_IsTrackerFormat: 0
-  m_Ambisonic: 0
-  m_SubsoundIndex: 0
-  m_PreloadAudioData: 1
-  m_LoadInBackground: 0
-  m_Legacy3D: 0
-  m_Resource:
-    m_Source: 
-    m_Offset: 0
-    m_Size: 0
-  m_CompressionFormat: 0
-  m_EditorResource:
-    m_Source: 
-    m_Offset: 0
-    m_Size: 0
-  m_EditorCompressionFormat: 0
+  m_ReverbPreset: 24
 --- !u!1 &1138821202
 GameObject:
   m_ObjectHideFlags: 0

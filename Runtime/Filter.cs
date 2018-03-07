@@ -20,7 +20,7 @@ namespace Fizzle
 
         public FilterType type;
         public JackSignal input = new JackSignal();
-        public AnimationCurve waveshaper = AnimationCurve.Linear(0, 0, 1, 1);
+        public AnimationCurve waveshaper = AnimationCurve.Linear(0, -1, 1, 1);
         public JackIn cutoff = new JackIn() { localValue = 22049 };
         public JackIn q = new JackIn();
         public JackIn gain = new JackIn() { localValue = 0.5f };
@@ -44,7 +44,7 @@ namespace Fizzle
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public float Update(float[] jacks)
+        public float Sample(float[] jacks, int t)
         {
             if (input.connectedId == 0)
             {
@@ -101,6 +101,11 @@ namespace Fizzle
                     return waveshaper.Evaluate(smp);
             }
             return 0f;
+        }
+
+        public void OnAudioStart(FizzleSynth fs)
+        {
+
         }
     }
 }

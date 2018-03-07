@@ -34,11 +34,9 @@ namespace Fizzle
         }
 
         [System.NonSerialized] float lastGate, position;
-        [System.NonSerialized] JackOut[] outs;
-
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void Sample(float[] jacks, int sample)
+        public float Sample(float[] jacks, int sample)
         {
             var gateValue = gate.Value(jacks);
             var crossedZero = false;
@@ -52,9 +50,16 @@ namespace Fizzle
             lastGate = gateValue;
             for (var i = 0; i < 16; i++)
                 ladder.bank[i].Value(jacks, i == ladder.index ? 1 : -1);
-
-            output.Value(jacks, crossedZero ? 1 : -1);
+            var smp = crossedZero ? 1 : -1;
+            output.Value(jacks, smp);
+            return smp;
         }
 
+
+
+        public void OnAudioStart(FizzleSynth fs)
+        {
+
+        }
     }
 }

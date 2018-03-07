@@ -23,13 +23,18 @@ namespace Fizzle
             output.id = fs.TakeJackID();
         }
 
+        public void OnAudioStart(FizzleSynth fs)
+        {
+
+        }
+
         public void OnRemoveFromRack(FizzleSynth fs)
         {
             fs.FreeJackID(output.id);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public float Update(float[] jacks)
+        public float Sample(float[] jacks, int t)
         {
             if (input.connectedId == 0)
             {

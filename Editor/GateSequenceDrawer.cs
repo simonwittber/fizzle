@@ -3,13 +3,13 @@ using UnityEngine;
 
 namespace Fizzle
 {
-    [CustomPropertyDrawer(typeof(Envelope))]
-    public class EnvelopeDrawer : FizzleDrawer
+    [CustomPropertyDrawer(typeof(GateSequence))]
+    public class GateSequenceDrawer : FizzleDrawer
     {
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
             position.width -= DrawOutputJacks(position, property);
-            DrawInputProperties(position, property, "type", "shape", "phaseOffset", "frequency", "detune");
+            DrawInputProperties(position, property, "gate", "length", "envelope", "code", "outputEnvelope");
         }
     }
 }
