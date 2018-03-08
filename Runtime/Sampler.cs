@@ -5,7 +5,7 @@ namespace Fizzle
 {
 
     [System.Serializable]
-    public class Sampler : IRackItem
+    public class Sampler : RackItem, IRackItem
     {
         public int sampleIndex;
         public JackSignal multiply = new JackSignal();

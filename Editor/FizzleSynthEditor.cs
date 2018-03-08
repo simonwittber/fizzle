@@ -32,6 +32,20 @@ namespace Fizzle
             EditorApplication.update -= Update;
         }
 
+        List<SerializedProperty> GetRackItems(SerializedProperty property)
+        {
+            var items = new List<SerializedProperty>();
+            for (var i = 0; i < property.arraySize; i++)
+                items.Add(property.GetArrayElementAtIndex(i));
+            return items;
+        }
+
+        void AllItems(SerializedProperty property)
+        {
+
+
+        }
+
         public override void OnInspectorGUI()
         {
             var fa = target as FizzleSynth;
@@ -58,10 +72,8 @@ namespace Fizzle
                 EditorGUILayout.PropertyField(serializedObject.FindProperty("inputAudio"), new GUIContent("Audio Out"));
                 JackDrawer.EndJackDrawers();
             }
-            if (EditorGUI.EndChangeCheck())
-            {
 
-            }
+
             GUILayout.BeginHorizontal();
             if (GUILayout.Button("Play"))
                 play = true;
@@ -105,6 +117,7 @@ namespace Fizzle
             {
                 var brect = rect;
                 brect.width = 16;
+                brect.x -= 8;
                 GUI.color = Color.red;
                 if (GUI.Button(brect, new GUIContent("", "Right click to remove, Left click to duplicate"), "radio"))
                 {
@@ -144,13 +157,13 @@ namespace Fizzle
         private T AddRackItem<T>(ref T[] items, SerializedProperty property, T item) where T : new()
         {
             Undo.RecordObject(property.serializedObject.targetObject, "Add");
-            var fa = target as FizzleSynth;
+            var fs = target as FizzleSynth;
             var cItem = item as IRackItem;
             if (cItem != null)
-                cItem.OnAddToRack(fa);
-            var initItem = item as IHasInit;
-            if (initItem != null)
-                initItem.Init();
+            {
+                cItem.OnAddToRack(fs);
+                cItem.OnAudioStart(fs);
+            }
             System.Array.Resize(ref items, Mathf.Max(1, items.Length + 1));
             items[items.Length - 1] = item;
             property.serializedObject.Update();

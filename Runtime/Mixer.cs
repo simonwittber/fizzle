@@ -6,7 +6,7 @@ namespace Fizzle
 {
 
     [System.Serializable]
-    public class Mixer : IRackItem
+    public class Mixer : RackItem, IRackItem
     {
         public JackSignal inputA = new JackSignal();
         public JackSignal inputB = new JackSignal();

@@ -40,7 +40,7 @@ namespace Fizzle
         float[] jacks;
         bool enableProfile = false;
 
-        IRackItem[] activeRacksItems = new IRackItem[0];
+        public IRackItem[] activeRackItems = new IRackItem[0];
 
         public uint TakeJackID()
         {
@@ -138,7 +138,7 @@ namespace Fizzle
 
             foreach (var i in items)
                 i.OnAudioStart(this);
-            activeRacksItems = items.ToArray();
+            activeRackItems = items.ToArray();
 
             audio = GetComponent<AudioSource>();
         }
@@ -187,8 +187,8 @@ namespace Fizzle
         void ProcessAudio()
         {
             sample++;
-            for (int i = 0, count = activeRacksItems.Length; i < count; i++)
-                activeRacksItems[i].Sample(jacks, sample);
+            for (int i = 0, count = activeRackItems.Length; i < count; i++)
+                activeRackItems[i].Sample(jacks, sample);
         }
 
         bool abort = false;

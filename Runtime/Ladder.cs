@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Fizzle
 {
     [System.Serializable]
-    public class Ladder : IRackItem
+    public class Ladder : RackItem, IRackItem
     {
         public enum SequencerType
         {

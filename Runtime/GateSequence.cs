@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Fizzle
 {
     [System.Serializable]
-    public class GateSequence : IRackItem
+    public class GateSequence : RackItem, IRackItem
     {
 
         public JackSignal gate = new JackSignal();

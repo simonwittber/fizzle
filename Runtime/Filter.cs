@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Fizzle
 {
     [System.Serializable]
-    public class Filter : IRackItem
+    public class Filter : RackItem, IRackItem
     {
         public enum FilterType
         {

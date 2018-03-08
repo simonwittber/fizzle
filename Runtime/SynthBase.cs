@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Fizzle
 {
     [System.Serializable]
-    public class SynthBase : IRackItem
+    public class SynthBase : RackItem, IRackItem
     {
         public const float TWOPI = Mathf.PI * 2;
         public const int SAMPLERATE = 44100;

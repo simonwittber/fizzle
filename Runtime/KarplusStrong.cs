@@ -10,13 +10,15 @@ namespace Fizzle
         public JackIn frequency = new JackIn() { localValue = 440 };
 
         int period = 0;
-
+        [System.NonSerialized] int loopCount = 0;
         [System.NonSerialized] float[,] wave = new float[6, 44100];
+
         int activeString = 0;
 
         protected override void OnGate()
         {
             activeString = (activeString + 1) % 6;
+            loopCount = 0;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -28,7 +30,7 @@ namespace Fizzle
             period = (int)(Osc.SAMPLERATE / (Mathf.Epsilon + frequency.Value(jacks)));
 
             var si = sampleIndex % period;
-
+            if (si == 0) loopCount++;
             var doFilter = true;
             var smp = 0f;
             if (sampleIndex < period)

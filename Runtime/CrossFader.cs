@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Fizzle
 {
     [System.Serializable]
-    public class CrossFader : IRackItem
+    public class CrossFader : RackItem, IRackItem
     {
         public JackIn position = new JackIn();
         public JackIn gain = new JackIn() { localValue = 0.5f };

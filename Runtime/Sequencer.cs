@@ -5,7 +5,7 @@ namespace Fizzle
 {
 
     [System.Serializable]
-    public class Sequencer : IRackItem
+    public class Sequencer : RackItem, IRackItem
     {
         public enum SequencerType
         {

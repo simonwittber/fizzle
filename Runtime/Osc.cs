@@ -7,7 +7,7 @@ namespace Fizzle
 {
 
     [System.Serializable]
-    public class Osc : IRackItem
+    public class Osc : RackItem, IRackItem
     {
         public const float TWOPI = Mathf.PI * 2;
         public const int SAMPLERATE = 44100;

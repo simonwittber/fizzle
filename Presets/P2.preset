@@ -1,0 +1,3950 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!181963792 &2655988077585873504
+Preset:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: P2
+  m_TargetType:
+    m_NativeTypeID: 114
+    m_ManagedTypePPtr: {fileID: 11500000, guid: a9d6bfe2154904187802065a46f3448e,
+      type: 3}
+    m_ManagedTypeFallback: 
+  m_Properties:
+  - target: {fileID: 0}
+    propertyPath: m_Enabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorHideFlags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_Name
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorClassIdentifier
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: realtime
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: duration
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sampleBank.Array.size
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.size
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].type
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].gate.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].gate.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].gate.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].gate.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].gate.connectedId
+    value: 114
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].beatLength.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].beatLength.localValue
+    value: 0.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].beatLength.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].beatLength.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].beatLength.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].beatLength.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.size
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[0].time
+    value: -0.031563833
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[0].value
+    value: 0.49793798
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[0].inSlope
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[0].outSlope
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[0].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[0].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[0].inWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[0].outWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[1].time
+    value: 2.124705
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[1].value
+    value: 0.99165344
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[1].inSlope
+    value: 0.0024800852
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[1].outSlope
+    value: 0.0024800852
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[1].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[1].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[1].inWeight
+    value: 0.10462776
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[1].outWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[2].time
+    value: 4.8031006
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[2].value
+    value: 0.5003052
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[2].inSlope
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[2].outSlope
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[2].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[2].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[2].inWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_Curve.Array.data[2].outWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_PreInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_PostInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].envelope.m_RotationOrder
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].glide.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].glide.localValue
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].glide.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].glide.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].glide.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].glide.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].frequencyMultiply.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].frequencyMultiply.localValue
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].frequencyMultiply.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].frequencyMultiply.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].frequencyMultiply.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].frequencyMultiply.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].transpose.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].transpose.localValue
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].transpose.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].transpose.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].transpose.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].transpose.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].code
+    value: A1,E2,C2,A1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].outputEnvelope.id
+    value: 115
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[0].output.id
+    value: 116
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].type
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].gate.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].gate.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].gate.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].gate.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].gate.connectedId
+    value: 109
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].beatLength.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].beatLength.localValue
+    value: 0.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].beatLength.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].beatLength.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].beatLength.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].beatLength.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_Curve.Array.size
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_Curve.Array.data[0].time
+    value: -0.012023926
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_Curve.Array.data[0].value
+    value: 0.37597656
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_Curve.Array.data[0].inSlope
+    value: 1.8293934
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_Curve.Array.data[0].outSlope
+    value: 1.8293934
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_Curve.Array.data[0].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_Curve.Array.data[0].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_Curve.Array.data[0].inWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_Curve.Array.data[0].outWeight
+    value: 0.117118225
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_Curve.Array.data[1].time
+    value: 0.9669913
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_Curve.Array.data[1].value
+    value: 0.99873525
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_Curve.Array.data[1].inSlope
+    value: 0.07645476
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_Curve.Array.data[1].outSlope
+    value: 0.07645476
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_Curve.Array.data[1].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_Curve.Array.data[1].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_Curve.Array.data[1].inWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_Curve.Array.data[1].outWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_Curve.Array.data[2].time
+    value: 1.0019939
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_Curve.Array.data[2].value
+    value: 0.18216868
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_Curve.Array.data[2].inSlope
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_Curve.Array.data[2].outSlope
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_Curve.Array.data[2].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_Curve.Array.data[2].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_Curve.Array.data[2].inWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_Curve.Array.data[2].outWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_PreInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_PostInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].envelope.m_RotationOrder
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].glide.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].glide.localValue
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].glide.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].glide.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].glide.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].glide.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].frequencyMultiply.connectedId
+    value: 106
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].frequencyMultiply.localValue
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].frequencyMultiply.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].frequencyMultiply.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].frequencyMultiply.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].frequencyMultiply.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].transpose.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].transpose.localValue
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].transpose.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].transpose.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].transpose.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].transpose.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].code
+    value: A4,C4,E3,A2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].outputEnvelope.id
+    value: 107
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[1].output.id
+    value: 108
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].type
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].gate.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].gate.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].gate.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].gate.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].gate.connectedId
+    value: 104
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].beatLength.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].beatLength.localValue
+    value: 0.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].beatLength.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].beatLength.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].beatLength.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].beatLength.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].envelope.m_Curve.Array.size
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].envelope.m_Curve.Array.data[0].time
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].envelope.m_Curve.Array.data[0].value
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].envelope.m_Curve.Array.data[0].inSlope
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].envelope.m_Curve.Array.data[0].outSlope
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].envelope.m_Curve.Array.data[0].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].envelope.m_Curve.Array.data[0].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].envelope.m_Curve.Array.data[0].inWeight
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].envelope.m_Curve.Array.data[0].outWeight
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].envelope.m_Curve.Array.data[1].time
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].envelope.m_Curve.Array.data[1].value
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].envelope.m_Curve.Array.data[1].inSlope
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].envelope.m_Curve.Array.data[1].outSlope
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].envelope.m_Curve.Array.data[1].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].envelope.m_Curve.Array.data[1].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].envelope.m_Curve.Array.data[1].inWeight
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].envelope.m_Curve.Array.data[1].outWeight
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].envelope.m_PreInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].envelope.m_PostInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].envelope.m_RotationOrder
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].glide.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].glide.localValue
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].glide.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].glide.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].glide.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].glide.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].frequencyMultiply.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].frequencyMultiply.localValue
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].frequencyMultiply.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].frequencyMultiply.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].frequencyMultiply.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].frequencyMultiply.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].transpose.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].transpose.localValue
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].transpose.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].transpose.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].transpose.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].transpose.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].code
+    value: 1,3,0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].outputEnvelope.id
+    value: 105
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequencers.Array.data[2].output.id
+    value: 106
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.size
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].type
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].shape.m_Curve.Array.size
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].shape.m_PreInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].shape.m_PostInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].shape.m_RotationOrder
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].phaseOffset
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].detune.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].detune.localValue
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].detune.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].detune.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].detune.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].detune.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].frequency.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].frequency.localValue
+    value: 25
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].frequency.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].frequency.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].frequency.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].frequency.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].gain.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].gain.localValue
+    value: 145
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].gain.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].gain.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].gain.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].gain.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].bias.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].bias.localValue
+    value: 200
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].bias.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].bias.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].bias.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].bias.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].multiply.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].multiply.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].multiply.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].multiply.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].multiply.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].add.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].add.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].add.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].add.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].add.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].output.id
+    value: 117
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].bandlimited
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[0].superSample
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[1].type
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[1].shape.m_Curve.Array.size
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[1].shape.m_PreInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[1].shape.m_PostInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[1].shape.m_RotationOrder
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[1].phaseOffset
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[1].detune.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[1].detune.localValue
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[1].detune.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[1].detune.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[1].detune.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[1].detune.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[1].frequency.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[1].frequency.localValue
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[1].frequency.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[1].frequency.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[1].frequency.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[1].frequency.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[1].gain.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[1].gain.localValue
+    value: 0.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[1].gain.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[1].gain.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[1].gain.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[1].gain.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[1].bias.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[1].bias.localValue
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[1].bias.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[1].bias.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[1].bias.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[1].bias.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[1].multiply.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[1].multiply.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[1].multiply.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[1].multiply.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[1].multiply.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[1].add.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[1].add.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[1].add.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[1].add.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[1].add.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[1].output.id
+    value: 114
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[1].bandlimited
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[1].superSample
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[2].type
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[2].shape.m_Curve.Array.size
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[2].shape.m_PreInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[2].shape.m_PostInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[2].shape.m_RotationOrder
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[2].phaseOffset
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[2].detune.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[2].detune.localValue
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[2].detune.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[2].detune.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[2].detune.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[2].detune.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[2].frequency.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[2].frequency.localValue
+    value: 0.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[2].frequency.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[2].frequency.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[2].frequency.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[2].frequency.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[2].gain.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[2].gain.localValue
+    value: 0.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[2].gain.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[2].gain.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[2].gain.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[2].gain.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[2].bias.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[2].bias.localValue
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[2].bias.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[2].bias.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[2].bias.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[2].bias.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[2].multiply.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[2].multiply.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[2].multiply.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[2].multiply.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[2].multiply.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[2].add.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[2].add.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[2].add.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[2].add.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[2].add.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[2].output.id
+    value: 109
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[2].bandlimited
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[2].superSample
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[3].type
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[3].shape.m_Curve.Array.size
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[3].shape.m_PreInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[3].shape.m_PostInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[3].shape.m_RotationOrder
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[3].phaseOffset
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[3].detune.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[3].detune.localValue
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[3].detune.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[3].detune.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[3].detune.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[3].detune.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[3].frequency.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[3].frequency.localValue
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[3].frequency.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[3].frequency.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[3].frequency.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[3].frequency.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[3].gain.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[3].gain.localValue
+    value: 0.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[3].gain.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[3].gain.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[3].gain.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[3].gain.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[3].bias.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[3].bias.localValue
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[3].bias.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[3].bias.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[3].bias.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[3].bias.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[3].multiply.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[3].multiply.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[3].multiply.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[3].multiply.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[3].multiply.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[3].add.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[3].add.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[3].add.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[3].add.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[3].add.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[3].output.id
+    value: 104
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[3].bandlimited
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: envelopes.Array.data[3].superSample
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: samplers.Array.size
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.size
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].type
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].shape.m_Curve.Array.size
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].shape.m_PreInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].shape.m_PostInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].shape.m_RotationOrder
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].phaseOffset
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].detune.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].detune.localValue
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].detune.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].detune.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].detune.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].detune.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].frequency.connectedId
+    value: 116
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].frequency.localValue
+    value: 55
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].frequency.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].frequency.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].frequency.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].frequency.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].gain.connectedId
+    value: 115
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].gain.localValue
+    value: 0.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].gain.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].gain.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].gain.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].gain.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].bias.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].bias.localValue
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].bias.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].bias.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].bias.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].bias.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].multiply.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].multiply.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].multiply.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].multiply.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].multiply.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].add.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].add.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].add.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].add.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].add.connectedId
+    value: 124
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].output.id
+    value: 126
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].bandlimited
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[0].superSample
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[1].type
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[1].shape.m_Curve.Array.size
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[1].shape.m_PreInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[1].shape.m_PostInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[1].shape.m_RotationOrder
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[1].phaseOffset
+    value: 0.25
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[1].detune.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[1].detune.localValue
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[1].detune.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[1].detune.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[1].detune.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[1].detune.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[1].frequency.connectedId
+    value: 116
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[1].frequency.localValue
+    value: 55
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[1].frequency.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[1].frequency.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[1].frequency.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[1].frequency.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[1].gain.connectedId
+    value: 115
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[1].gain.localValue
+    value: 0.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[1].gain.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[1].gain.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[1].gain.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[1].gain.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[1].bias.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[1].bias.localValue
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[1].bias.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[1].bias.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[1].bias.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[1].bias.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[1].multiply.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[1].multiply.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[1].multiply.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[1].multiply.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[1].multiply.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[1].add.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[1].add.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[1].add.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[1].add.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[1].add.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[1].output.id
+    value: 124
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[1].bandlimited
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oscillators.Array.data[1].superSample
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: karplusStrongModules.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: karplusStrongModules.Array.data[0].gate.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: karplusStrongModules.Array.data[0].gate.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: karplusStrongModules.Array.data[0].gate.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: karplusStrongModules.Array.data[0].gate.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: karplusStrongModules.Array.data[0].gate.connectedId
+    value: 109
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: karplusStrongModules.Array.data[0].gain.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: karplusStrongModules.Array.data[0].gain.localValue
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: karplusStrongModules.Array.data[0].gain.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: karplusStrongModules.Array.data[0].gain.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: karplusStrongModules.Array.data[0].gain.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: karplusStrongModules.Array.data[0].gain.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: karplusStrongModules.Array.data[0].bias.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: karplusStrongModules.Array.data[0].bias.localValue
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: karplusStrongModules.Array.data[0].bias.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: karplusStrongModules.Array.data[0].bias.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: karplusStrongModules.Array.data[0].bias.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: karplusStrongModules.Array.data[0].bias.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: karplusStrongModules.Array.data[0].multiply.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: karplusStrongModules.Array.data[0].multiply.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: karplusStrongModules.Array.data[0].multiply.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: karplusStrongModules.Array.data[0].multiply.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: karplusStrongModules.Array.data[0].multiply.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: karplusStrongModules.Array.data[0].add.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: karplusStrongModules.Array.data[0].add.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: karplusStrongModules.Array.data[0].add.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: karplusStrongModules.Array.data[0].add.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: karplusStrongModules.Array.data[0].add.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: karplusStrongModules.Array.data[0].output.id
+    value: 110
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: karplusStrongModules.Array.data[0].frequency.connectedId
+    value: 108
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: karplusStrongModules.Array.data[0].frequency.localValue
+    value: 55
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: karplusStrongModules.Array.data[0].frequency.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: karplusStrongModules.Array.data[0].frequency.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: karplusStrongModules.Array.data[0].frequency.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: karplusStrongModules.Array.data[0].frequency.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].gate.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].gate.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].gate.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].gate.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].gate.connectedId
+    value: 113
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].gain.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].gain.localValue
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].gain.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].gain.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].gain.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].gain.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].bias.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].bias.localValue
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].bias.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].bias.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].bias.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].bias.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].multiply.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].multiply.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].multiply.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].multiply.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].multiply.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].add.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].add.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].add.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].add.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].add.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].output.id
+    value: 111
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].frequency.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].frequency.localValue
+    value: 100
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].frequency.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].frequency.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].frequency.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].frequency.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].noise.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].noise.localValue
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].noise.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].noise.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].noise.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].noise.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].noiseEnvelope.m_Curve.Array.size
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].noiseEnvelope.m_Curve.Array.data[0].time
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].noiseEnvelope.m_Curve.Array.data[0].value
+    value: 0.010314941
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].noiseEnvelope.m_Curve.Array.data[0].inSlope
+    value: 4.217581
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].noiseEnvelope.m_Curve.Array.data[0].outSlope
+    value: 4.217581
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].noiseEnvelope.m_Curve.Array.data[0].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].noiseEnvelope.m_Curve.Array.data[0].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].noiseEnvelope.m_Curve.Array.data[0].inWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].noiseEnvelope.m_Curve.Array.data[0].outWeight
+    value: 0.017964073
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].noiseEnvelope.m_Curve.Array.data[1].time
+    value: 0.02476721
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].noiseEnvelope.m_Curve.Array.data[1].value
+    value: 0.9958265
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].noiseEnvelope.m_Curve.Array.data[1].inSlope
+    value: -3.4618354
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].noiseEnvelope.m_Curve.Array.data[1].outSlope
+    value: -3.4618354
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].noiseEnvelope.m_Curve.Array.data[1].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].noiseEnvelope.m_Curve.Array.data[1].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].noiseEnvelope.m_Curve.Array.data[1].inWeight
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].noiseEnvelope.m_Curve.Array.data[1].outWeight
+    value: 0.019811645
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].noiseEnvelope.m_Curve.Array.data[2].time
+    value: 0.29162598
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].noiseEnvelope.m_Curve.Array.data[2].value
+    value: 0.01550293
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].noiseEnvelope.m_Curve.Array.data[2].inSlope
+    value: -0.09343517
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].noiseEnvelope.m_Curve.Array.data[2].outSlope
+    value: -0.09343517
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].noiseEnvelope.m_Curve.Array.data[2].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].noiseEnvelope.m_Curve.Array.data[2].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].noiseEnvelope.m_Curve.Array.data[2].inWeight
+    value: 0.07089414
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].noiseEnvelope.m_Curve.Array.data[2].outWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].noiseEnvelope.m_PreInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].noiseEnvelope.m_PostInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].noiseEnvelope.m_RotationOrder
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].pitchEnvelope.m_Curve.Array.size
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].pitchEnvelope.m_Curve.Array.data[0].time
+    value: -0.014026642
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].pitchEnvelope.m_Curve.Array.data[0].value
+    value: 0.9638672
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].pitchEnvelope.m_Curve.Array.data[0].inSlope
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].pitchEnvelope.m_Curve.Array.data[0].outSlope
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].pitchEnvelope.m_Curve.Array.data[0].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].pitchEnvelope.m_Curve.Array.data[0].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].pitchEnvelope.m_Curve.Array.data[0].inWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].pitchEnvelope.m_Curve.Array.data[0].outWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].pitchEnvelope.m_Curve.Array.data[1].time
+    value: 0.024560962
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].pitchEnvelope.m_Curve.Array.data[1].value
+    value: 0.990926
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].pitchEnvelope.m_Curve.Array.data[1].inSlope
+    value: -0.9272713
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].pitchEnvelope.m_Curve.Array.data[1].outSlope
+    value: -0.9272713
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].pitchEnvelope.m_Curve.Array.data[1].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].pitchEnvelope.m_Curve.Array.data[1].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].pitchEnvelope.m_Curve.Array.data[1].inWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].pitchEnvelope.m_Curve.Array.data[1].outWeight
+    value: 0.06675225
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].pitchEnvelope.m_Curve.Array.data[2].time
+    value: 0.06284203
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].pitchEnvelope.m_Curve.Array.data[2].value
+    value: 0.11784595
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].pitchEnvelope.m_Curve.Array.data[2].inSlope
+    value: -0.3503231
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].pitchEnvelope.m_Curve.Array.data[2].outSlope
+    value: -0.3503231
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].pitchEnvelope.m_Curve.Array.data[2].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].pitchEnvelope.m_Curve.Array.data[2].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].pitchEnvelope.m_Curve.Array.data[2].inWeight
+    value: 0.66517776
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].pitchEnvelope.m_Curve.Array.data[2].outWeight
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].pitchEnvelope.m_Curve.Array.data[3].time
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].pitchEnvelope.m_Curve.Array.data[3].value
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].pitchEnvelope.m_Curve.Array.data[3].inSlope
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].pitchEnvelope.m_Curve.Array.data[3].outSlope
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].pitchEnvelope.m_Curve.Array.data[3].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].pitchEnvelope.m_Curve.Array.data[3].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].pitchEnvelope.m_Curve.Array.data[3].inWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].pitchEnvelope.m_Curve.Array.data[3].outWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].pitchEnvelope.m_PreInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].pitchEnvelope.m_PostInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].pitchEnvelope.m_RotationOrder
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].amplitudeEnvelope.m_Curve.Array.size
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].amplitudeEnvelope.m_Curve.Array.data[0].time
+    value: 0.0013275146
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].amplitudeEnvelope.m_Curve.Array.data[0].value
+    value: 0.0015716553
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].amplitudeEnvelope.m_Curve.Array.data[0].inSlope
+    value: 28.749638
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].amplitudeEnvelope.m_Curve.Array.data[0].outSlope
+    value: 28.749638
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].amplitudeEnvelope.m_Curve.Array.data[0].tangentMode
+    value: 34
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].amplitudeEnvelope.m_Curve.Array.data[0].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].amplitudeEnvelope.m_Curve.Array.data[0].inWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].amplitudeEnvelope.m_Curve.Array.data[0].outWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].amplitudeEnvelope.m_Curve.Array.data[1].time
+    value: 0.032369867
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].amplitudeEnvelope.m_Curve.Array.data[1].value
+    value: 0.894028
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].amplitudeEnvelope.m_Curve.Array.data[1].inSlope
+    value: -1.012077
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].amplitudeEnvelope.m_Curve.Array.data[1].outSlope
+    value: -1.012077
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].amplitudeEnvelope.m_Curve.Array.data[1].tangentMode
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].amplitudeEnvelope.m_Curve.Array.data[1].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].amplitudeEnvelope.m_Curve.Array.data[1].inWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].amplitudeEnvelope.m_Curve.Array.data[1].outWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].amplitudeEnvelope.m_Curve.Array.data[2].time
+    value: 0.9998937
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].amplitudeEnvelope.m_Curve.Array.data[2].value
+    value: 0.0015716404
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].amplitudeEnvelope.m_Curve.Array.data[2].inSlope
+    value: -0.30730477
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].amplitudeEnvelope.m_Curve.Array.data[2].outSlope
+    value: -0.30730477
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].amplitudeEnvelope.m_Curve.Array.data[2].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].amplitudeEnvelope.m_Curve.Array.data[2].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].amplitudeEnvelope.m_Curve.Array.data[2].inWeight
+    value: 0.12249773
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].amplitudeEnvelope.m_Curve.Array.data[2].outWeight
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].amplitudeEnvelope.m_PreInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].amplitudeEnvelope.m_PostInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].amplitudeEnvelope.m_RotationOrder
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].type
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].waveshaper.m_Curve.Array.size
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].waveshaper.m_Curve.Array.data[0].time
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].waveshaper.m_Curve.Array.data[0].value
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].waveshaper.m_Curve.Array.data[0].inSlope
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].waveshaper.m_Curve.Array.data[0].outSlope
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].waveshaper.m_Curve.Array.data[0].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].waveshaper.m_Curve.Array.data[0].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].waveshaper.m_Curve.Array.data[0].inWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].waveshaper.m_Curve.Array.data[0].outWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].waveshaper.m_Curve.Array.data[1].time
+    value: 0.023561511
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].waveshaper.m_Curve.Array.data[1].value
+    value: 0.99736905
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].waveshaper.m_Curve.Array.data[1].inSlope
+    value: -0.9272713
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].waveshaper.m_Curve.Array.data[1].outSlope
+    value: -0.9272713
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].waveshaper.m_Curve.Array.data[1].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].waveshaper.m_Curve.Array.data[1].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].waveshaper.m_Curve.Array.data[1].inWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].waveshaper.m_Curve.Array.data[1].outWeight
+    value: 0.06675225
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].waveshaper.m_Curve.Array.data[2].time
+    value: 0.80131775
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].waveshaper.m_Curve.Array.data[2].value
+    value: 0.29570097
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].waveshaper.m_Curve.Array.data[2].inSlope
+    value: -2.6311426
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].waveshaper.m_Curve.Array.data[2].outSlope
+    value: -2.6311426
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].waveshaper.m_Curve.Array.data[2].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].waveshaper.m_Curve.Array.data[2].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].waveshaper.m_Curve.Array.data[2].inWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].waveshaper.m_Curve.Array.data[2].outWeight
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].waveshaper.m_Curve.Array.data[3].time
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].waveshaper.m_Curve.Array.data[3].value
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].waveshaper.m_Curve.Array.data[3].inSlope
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].waveshaper.m_Curve.Array.data[3].outSlope
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].waveshaper.m_Curve.Array.data[3].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].waveshaper.m_Curve.Array.data[3].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].waveshaper.m_Curve.Array.data[3].inWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].waveshaper.m_Curve.Array.data[3].outWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].waveshaper.m_PreInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].waveshaper.m_PostInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].waveshaper.m_RotationOrder
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].cutoff.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].cutoff.localValue
+    value: 880
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].cutoff.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].cutoff.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].cutoff.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].cutoff.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].q.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].q.localValue
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].q.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].q.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].q.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: percModules.Array.data[0].q.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: crossFaders.Array.size
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].type
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].input.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].input.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].input.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].input.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].input.connectedId
+    value: 126
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].waveshaper.m_Curve.Array.size
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].waveshaper.m_Curve.Array.data[0].time
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].waveshaper.m_Curve.Array.data[0].value
+    value: -1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].waveshaper.m_Curve.Array.data[0].inSlope
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].waveshaper.m_Curve.Array.data[0].outSlope
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].waveshaper.m_Curve.Array.data[0].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].waveshaper.m_Curve.Array.data[0].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].waveshaper.m_Curve.Array.data[0].inWeight
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].waveshaper.m_Curve.Array.data[0].outWeight
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].waveshaper.m_Curve.Array.data[1].time
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].waveshaper.m_Curve.Array.data[1].value
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].waveshaper.m_Curve.Array.data[1].inSlope
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].waveshaper.m_Curve.Array.data[1].outSlope
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].waveshaper.m_Curve.Array.data[1].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].waveshaper.m_Curve.Array.data[1].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].waveshaper.m_Curve.Array.data[1].inWeight
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].waveshaper.m_Curve.Array.data[1].outWeight
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].waveshaper.m_PreInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].waveshaper.m_PostInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].waveshaper.m_RotationOrder
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].cutoff.connectedId
+    value: 117
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].cutoff.localValue
+    value: 55
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].cutoff.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].cutoff.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].cutoff.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].cutoff.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].q.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].q.localValue
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].q.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].q.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].q.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].q.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].gain.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].gain.localValue
+    value: 0.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].gain.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].gain.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].gain.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].gain.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].bias.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].bias.localValue
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].bias.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].bias.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].bias.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].bias.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].multiply.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].multiply.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].multiply.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].multiply.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].multiply.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].add.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].add.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].add.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].add.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].add.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters.Array.data[0].output.id
+    value: 123
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: delays.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: delays.Array.data[0].input.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: delays.Array.data[0].input.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: delays.Array.data[0].input.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: delays.Array.data[0].input.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: delays.Array.data[0].input.connectedId
+    value: 110
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: delays.Array.data[0].delay.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: delays.Array.data[0].delay.localValue
+    value: 0.75
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: delays.Array.data[0].delay.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: delays.Array.data[0].delay.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: delays.Array.data[0].delay.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: delays.Array.data[0].delay.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: delays.Array.data[0].feedback.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: delays.Array.data[0].feedback.localValue
+    value: 0.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: delays.Array.data[0].feedback.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: delays.Array.data[0].feedback.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: delays.Array.data[0].feedback.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: delays.Array.data[0].feedback.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: delays.Array.data[0].gain.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: delays.Array.data[0].gain.localValue
+    value: 0.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: delays.Array.data[0].gain.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: delays.Array.data[0].gain.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: delays.Array.data[0].gain.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: delays.Array.data[0].gain.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: delays.Array.data[0].bias.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: delays.Array.data[0].bias.localValue
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: delays.Array.data[0].bias.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: delays.Array.data[0].bias.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: delays.Array.data[0].bias.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: delays.Array.data[0].bias.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: delays.Array.data[0].multiply.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: delays.Array.data[0].multiply.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: delays.Array.data[0].multiply.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: delays.Array.data[0].multiply.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: delays.Array.data[0].multiply.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: delays.Array.data[0].add.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: delays.Array.data[0].add.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: delays.Array.data[0].add.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: delays.Array.data[0].add.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: delays.Array.data[0].add.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: delays.Array.data[0].output.id
+    value: 103
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].inputA.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].inputA.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].inputA.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].inputA.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].inputA.connectedId
+    value: 123
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].inputB.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].inputB.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].inputB.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].inputB.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].inputB.connectedId
+    value: 111
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].inputC.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].inputC.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].inputC.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].inputC.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].inputC.connectedId
+    value: 103
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].inputD.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].inputD.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].inputD.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].inputD.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].inputD.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].gainA.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].gainA.localValue
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].gainA.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].gainA.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].gainA.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].gainA.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].gainB.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].gainB.localValue
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].gainB.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].gainB.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].gainB.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].gainB.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].gainC.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].gainC.localValue
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].gainC.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].gainC.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].gainC.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].gainC.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].gainD.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].gainD.localValue
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].gainD.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].gainD.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].gainD.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].gainD.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].gain.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].gain.localValue
+    value: 0.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].gain.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].gain.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].gain.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].gain.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].bias.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].bias.localValue
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].bias.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].bias.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].bias.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].bias.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].multiply.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].multiply.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].multiply.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].multiply.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].multiply.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].add.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].add.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].add.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].add.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].add.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mixers.Array.data[0].output.id
+    value: 119
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: ladders.Array.size
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gateSequences.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gateSequences.Array.data[0].gate.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gateSequences.Array.data[0].gate.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gateSequences.Array.data[0].gate.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gateSequences.Array.data[0].gate.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gateSequences.Array.data[0].gate.connectedId
+    value: 114
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gateSequences.Array.data[0].length
+    value: 8
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gateSequences.Array.data[0].code
+    value: 2,2,2,2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gateSequences.Array.data[0].envelope.m_Curve.Array.size
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gateSequences.Array.data[0].envelope.m_Curve.Array.data[0].time
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gateSequences.Array.data[0].envelope.m_Curve.Array.data[0].value
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gateSequences.Array.data[0].envelope.m_Curve.Array.data[0].inSlope
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gateSequences.Array.data[0].envelope.m_Curve.Array.data[0].outSlope
+    value: -1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gateSequences.Array.data[0].envelope.m_Curve.Array.data[0].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gateSequences.Array.data[0].envelope.m_Curve.Array.data[0].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gateSequences.Array.data[0].envelope.m_Curve.Array.data[0].inWeight
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gateSequences.Array.data[0].envelope.m_Curve.Array.data[0].outWeight
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gateSequences.Array.data[0].envelope.m_Curve.Array.data[1].time
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gateSequences.Array.data[0].envelope.m_Curve.Array.data[1].value
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gateSequences.Array.data[0].envelope.m_Curve.Array.data[1].inSlope
+    value: -1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gateSequences.Array.data[0].envelope.m_Curve.Array.data[1].outSlope
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gateSequences.Array.data[0].envelope.m_Curve.Array.data[1].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gateSequences.Array.data[0].envelope.m_Curve.Array.data[1].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gateSequences.Array.data[0].envelope.m_Curve.Array.data[1].inWeight
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gateSequences.Array.data[0].envelope.m_Curve.Array.data[1].outWeight
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gateSequences.Array.data[0].envelope.m_PreInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gateSequences.Array.data[0].envelope.m_PostInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gateSequences.Array.data[0].envelope.m_RotationOrder
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gateSequences.Array.data[0].outputEnvelope.id
+    value: 112
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gateSequences.Array.data[0].output.id
+    value: 113
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputAudio.left.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputAudio.left.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputAudio.left.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputAudio.left.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputAudio.left.connectedId
+    value: 119
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputAudio.right.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputAudio.right.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputAudio.right.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputAudio.right.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputAudio.right.connectedId
+    value: 119
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputAudio.monitor.oneMinusX
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputAudio.monitor.xMulMinusOne
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputAudio.monitor.attenuate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputAudio.monitor.amplify
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputAudio.monitor.connectedId
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: cpuTime
+    value: 10.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.size
+    value: 103
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[0]
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[1]
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[2]
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[3]
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[4]
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[5]
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[6]
+    value: 6
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[7]
+    value: 7
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[8]
+    value: 8
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[9]
+    value: 9
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[10]
+    value: 10
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[11]
+    value: 11
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[12]
+    value: 12
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[13]
+    value: 13
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[14]
+    value: 14
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[15]
+    value: 15
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[16]
+    value: 16
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[17]
+    value: 17
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[18]
+    value: 18
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[19]
+    value: 19
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[20]
+    value: 20
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[21]
+    value: 21
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[22]
+    value: 22
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[23]
+    value: 23
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[24]
+    value: 24
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[25]
+    value: 25
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[26]
+    value: 26
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[27]
+    value: 27
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[28]
+    value: 28
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[29]
+    value: 29
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[30]
+    value: 30
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[31]
+    value: 31
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[32]
+    value: 32
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[33]
+    value: 33
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[34]
+    value: 34
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[35]
+    value: 35
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[36]
+    value: 36
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[37]
+    value: 37
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[38]
+    value: 38
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[39]
+    value: 39
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[40]
+    value: 40
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[41]
+    value: 41
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[42]
+    value: 42
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[43]
+    value: 43
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[44]
+    value: 44
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[45]
+    value: 45
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[46]
+    value: 46
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[47]
+    value: 47
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[48]
+    value: 48
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[49]
+    value: 49
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[50]
+    value: 50
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[51]
+    value: 51
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[52]
+    value: 52
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[53]
+    value: 53
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[54]
+    value: 54
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[55]
+    value: 55
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[56]
+    value: 56
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[57]
+    value: 57
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[58]
+    value: 58
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[59]
+    value: 59
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[60]
+    value: 60
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[61]
+    value: 61
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[62]
+    value: 62
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[63]
+    value: 63
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[64]
+    value: 64
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[65]
+    value: 65
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[66]
+    value: 66
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[67]
+    value: 67
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[68]
+    value: 68
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[69]
+    value: 69
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[70]
+    value: 70
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[71]
+    value: 71
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[72]
+    value: 72
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[73]
+    value: 73
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[74]
+    value: 74
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[75]
+    value: 75
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[76]
+    value: 76
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[77]
+    value: 77
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[78]
+    value: 78
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[79]
+    value: 79
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[80]
+    value: 80
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[81]
+    value: 81
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[82]
+    value: 82
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[83]
+    value: 83
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[84]
+    value: 84
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[85]
+    value: 85
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[86]
+    value: 86
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[87]
+    value: 87
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[88]
+    value: 88
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[89]
+    value: 89
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[90]
+    value: 90
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[91]
+    value: 91
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[92]
+    value: 92
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[93]
+    value: 93
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[94]
+    value: 94
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[95]
+    value: 95
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[96]
+    value: 96
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[97]
+    value: 97
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[98]
+    value: 98
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[99]
+    value: 99
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[100]
+    value: 100
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[101]
+    value: 101
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: freeJackID.Array.data[102]
+    value: 102
+    objectReference: {fileID: 0}
