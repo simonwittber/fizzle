@@ -13,7 +13,7 @@ namespace Fizzle
         {
             if (!isReady) return 0;
             if (frequency.Value(jacks) == 0) return 0;
-            var smp = _Sample(phase);
+            var smp = _Sample(jacks, phase);
             phase = phase + ((TWOPI * (1f / frequency.Value(jacks))) / SAMPLERATE);
             if (phase > TWOPI)
                 phase = phase - TWOPI;

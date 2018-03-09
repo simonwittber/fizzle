@@ -159,28 +159,31 @@ namespace Fizzle
         System.Diagnostics.Stopwatch clock = new System.Diagnostics.Stopwatch();
         void ReadAudio(float[] data)
         {
-            if (abort) return;
-            if (enableProfile) Profiler.BeginSample("ReadAudio");
-            try
+            lock (this)
             {
-                clock.Reset();
-                clock.Start();
-                for (var i = 0; i < data.Length; i += 2)
+                if (abort) return;
+                if (enableProfile) Profiler.BeginSample("ReadAudio");
+                try
                 {
-                    ProcessAudio();
-                    data[i] = inputAudio.left.Value(jacks);
-                    data[i + 1] = inputAudio.right.Value(jacks);
+                    clock.Reset();
+                    clock.Start();
+                    for (var i = 0; i < data.Length; i += 2)
+                    {
+                        ProcessAudio();
+                        data[i] = inputAudio.left.Value(jacks);
+                        data[i + 1] = inputAudio.right.Value(jacks);
+                    }
+                    clock.Stop();
+                    var maxTime = ((data.Length / 2) * 0.02267573696f);
+                    cpuTime = Mathf.Round(((clock.ElapsedMilliseconds) / maxTime) * 1000) / 10;
                 }
-                clock.Stop();
-                var maxTime = ((data.Length / 2) * 0.02267573696f);
-                cpuTime = Mathf.Round(((clock.ElapsedMilliseconds) / maxTime) * 1000) / 10;
+                catch (System.Exception e)
+                {
+                    Debug.LogException(e);
+                    abort = true;
+                }
+                if (enableProfile) Profiler.EndSample();
             }
-            catch (System.Exception e)
-            {
-                Debug.LogException(e);
-                abort = true;
-            }
-            if (enableProfile) Profiler.EndSample();
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

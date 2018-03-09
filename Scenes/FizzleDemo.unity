@@ -221,9 +221,8 @@ AudioSource:
   m_GameObject: {fileID: 268081885}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: e3a1b82634afa4f2e9142507c9942e09,
-    type: 2}
-  m_audioClip: {fileID: 1918161635}
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 1662390056}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -323,7 +322,76 @@ MonoBehaviour:
   realtime: 1
   duration: 5
   sampleBank: []
-  sequencers: []
+  sequencers:
+  - sortOrder: 0
+    type: 0
+    gate:
+      oneMinusX: 0
+      xMulMinusOne: 0
+      attenuate: 0
+      amplify: 0
+      connectedId: 124
+    envelope:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 4.217581
+        outSlope: 4.217581
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.017964073
+      - serializedVersion: 3
+        time: 0.02476721
+        value: 0.98551154
+        inSlope: -3.3164115
+        outSlope: -3.3164115
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 1
+        outWeight: 0.024952592
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: -1.5353464
+        outSlope: -1.5353464
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.15346164
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    glide:
+      connectedId: 0
+      localValue: 1
+      oneMinusX: 0
+      xMulMinusOne: 0
+      attenuate: 0
+      amplify: 0
+    frequencyMultiply:
+      connectedId: 0
+      localValue: 1
+      oneMinusX: 0
+      xMulMinusOne: 0
+      attenuate: 0
+      amplify: 0
+    transpose:
+      connectedId: 0
+      localValue: 0
+      oneMinusX: 0
+      xMulMinusOne: 0
+      attenuate: 0
+      amplify: 0
+    code: A3:2:0.25, C3:1:0.5, E3:1:.5
+    outputEnvelope:
+      id: 116
+    outputTrigger:
+      id: 117
+    output:
+      id: 118
   envelopes:
   - sortOrder: 0
     type: 1
@@ -343,64 +411,18 @@ MonoBehaviour:
       amplify: 0
     frequency:
       connectedId: 0
-      localValue: 0.5
+      localValue: 0.25
       oneMinusX: 0
       xMulMinusOne: 0
       attenuate: 0
       amplify: 0
-    gain:
-      connectedId: 0
-      localValue: 0.001
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-    bias:
-      connectedId: 0
-      localValue: 0.1
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-    multiply:
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-      connectedId: 0
-    add:
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-      connectedId: 0
-    output:
-      id: 125
-    bandlimited: 1
-    superSample: 1
-  - sortOrder: 0
-    type: 4
-    shape:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    phaseOffset: 0
-    detune:
+    duty:
       connectedId: 0
       localValue: 0
       oneMinusX: 0
       xMulMinusOne: 0
       attenuate: 0
       amplify: 0
-    frequency:
-      connectedId: 0
-      localValue: 0.5
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
     gain:
       connectedId: 0
       localValue: 0.5
@@ -410,7 +432,7 @@ MonoBehaviour:
       amplify: 0
     bias:
       connectedId: 0
-      localValue: 0.5
+      localValue: 0
       oneMinusX: 0
       xMulMinusOne: 0
       attenuate: 0
@@ -434,7 +456,7 @@ MonoBehaviour:
   samplers: []
   oscillators:
   - sortOrder: 0
-    type: 5
+    type: 2
     shape:
       serializedVersion: 2
       m_Curve: []
@@ -450,62 +472,13 @@ MonoBehaviour:
       attenuate: 0
       amplify: 0
     frequency:
-      connectedId: 0
-      localValue: 440
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-    gain:
-      connectedId: 0
-      localValue: 0.25
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-    bias:
-      connectedId: 0
+      connectedId: 118
       localValue: 0
       oneMinusX: 0
       xMulMinusOne: 0
       attenuate: 0
       amplify: 0
-    multiply:
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-      connectedId: 0
-    add:
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-      connectedId: 0
-    output:
-      id: 127
-    bandlimited: 1
-    superSample: 1
-  karplusStrongModules: []
-  percModules: []
-  crossFaders: []
-  filters: []
-  delays:
-  - sortOrder: 0
-    input:
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-      connectedId: 127
-    delay:
-      connectedId: 125
-      localValue: 1
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-    feedback:
+    duty:
       connectedId: 0
       localValue: 0
       oneMinusX: 0
@@ -513,89 +486,7 @@ MonoBehaviour:
       attenuate: 0
       amplify: 0
     gain:
-      connectedId: 0
-      localValue: 2
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-    bias:
-      connectedId: 0
-      localValue: 0
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-    multiply:
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-      connectedId: 0
-    add:
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-      connectedId: 0
-    output:
-      id: 121
-  mixers:
-  - sortOrder: 0
-    inputA:
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-      connectedId: 121
-    inputB:
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-      connectedId: 127
-    inputC:
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-      connectedId: 0
-    inputD:
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-      connectedId: 0
-    gainA:
-      connectedId: 0
-      localValue: 1
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-    gainB:
-      connectedId: 0
-      localValue: 1
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-    gainC:
-      connectedId: 0
-      localValue: 1
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-    gainD:
-      connectedId: 0
-      localValue: 1
-      oneMinusX: 0
-      xMulMinusOne: 0
-      attenuate: 0
-      amplify: 0
-    gain:
-      connectedId: 0
+      connectedId: 116
       localValue: 0.5
       oneMinusX: 0
       xMulMinusOne: 0
@@ -621,7 +512,64 @@ MonoBehaviour:
       amplify: 0
       connectedId: 0
     output:
-      id: 120
+      id: 123
+    bandlimited: 1
+    superSample: 1
+  karplusStrongModules:
+  - sortOrder: 0
+    gate:
+      oneMinusX: 0
+      xMulMinusOne: 0
+      attenuate: 0
+      amplify: 0
+      connectedId: 117
+    gain:
+      connectedId: 116
+      localValue: 0.5
+      oneMinusX: 0
+      xMulMinusOne: 0
+      attenuate: 0
+      amplify: 0
+    bias:
+      connectedId: 0
+      localValue: 0
+      oneMinusX: 0
+      xMulMinusOne: 0
+      attenuate: 0
+      amplify: 0
+    multiply:
+      oneMinusX: 0
+      xMulMinusOne: 0
+      attenuate: 0
+      amplify: 0
+      connectedId: 0
+    add:
+      oneMinusX: 0
+      xMulMinusOne: 0
+      attenuate: 0
+      amplify: 0
+      connectedId: 0
+    output:
+      id: 122
+    frequency:
+      connectedId: 118
+      localValue: 440
+      oneMinusX: 0
+      xMulMinusOne: 0
+      attenuate: 0
+      amplify: 0
+    decay:
+      connectedId: 0
+      localValue: 10
+      oneMinusX: 0
+      xMulMinusOne: 0
+      attenuate: 0
+      amplify: 0
+  percModules: []
+  crossFaders: []
+  filters: []
+  delays: []
+  mixers: []
   ladders: []
   gateSequences: []
   inputAudio:
@@ -630,21 +578,21 @@ MonoBehaviour:
       xMulMinusOne: 0
       attenuate: 0
       amplify: 0
-      connectedId: 120
+      connectedId: 0
     right:
       oneMinusX: 0
       xMulMinusOne: 0
       attenuate: 0
       amplify: 0
-      connectedId: 120
+      connectedId: 122
     monitor:
       oneMinusX: 0
       xMulMinusOne: 0
       attenuate: 0
       amplify: 0
       connectedId: 0
-  cpuTime: 3.5
-  freeJackID: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e0000001f000000200000002100000022000000230000002400000025000000260000002700000028000000290000002a0000002b0000002c0000002d0000002e0000002f000000300000003100000032000000330000003400000035000000360000003700000038000000390000003a0000003b0000003c0000003d0000003e0000003f000000400000004100000042000000430000004400000045000000460000004700000048000000490000004a0000004b0000004c0000004d0000004e0000004f000000500000005100000052000000530000005400000055000000560000005700000058000000590000005a0000005b0000005c0000005d0000005e0000005f000000600000006100000062000000630000006400000065000000660000006700000068000000690000006a0000006b0000006c0000006d0000006e0000006f0000007000000071000000720000007300000074000000750000007600000077000000
+  cpuTime: 7
+  freeJackID: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e0000001f000000200000002100000022000000230000002400000025000000260000002700000028000000290000002a0000002b0000002c0000002d0000002e0000002f000000300000003100000032000000330000003400000035000000360000003700000038000000390000003a0000003b0000003c0000003d0000003e0000003f000000400000004100000042000000430000004400000045000000460000004700000048000000490000004a0000004b0000004c0000004d0000004e0000004f000000500000005100000052000000530000005400000055000000560000005700000058000000590000005a0000005b0000005c0000005d0000005e0000005f000000600000006100000062000000630000006400000065000000660000006700000068000000690000006a0000006b0000006c0000006d0000006e0000006f00000070000000710000007200000073000000
 --- !u!4 &268081888
 Transform:
   m_ObjectHideFlags: 0
@@ -759,7 +707,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!83 &1918161635
+--- !u!83 &1662390056
 AudioClip:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}

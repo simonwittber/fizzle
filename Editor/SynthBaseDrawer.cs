@@ -19,7 +19,7 @@ namespace Fizzle
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
             position.width -= DrawOutputJacks(position, property);
-            DrawInputProperties(position, property, "gate", "frequency");
+            DrawInputProperties(position, property, "gate", "frequency", "decay", "burstPeriod");
         }
     }
 

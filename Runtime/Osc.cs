@@ -21,9 +21,7 @@ namespace Fizzle
             Square,
             Saw,
             Triangle,
-            PWM1,
-            PWM2,
-            PWM3
+            PWM
         }
 
         public OscType type;
@@ -31,6 +29,7 @@ namespace Fizzle
         public float phaseOffset = 0;
         public JackIn detune = new JackIn();
         public JackIn frequency = new JackIn();
+        public JackIn duty = new JackIn();
         public JackIn gain = new JackIn() { localValue = 0.5f };
         public JackIn bias = new JackIn();
         public JackSignal multiply = new JackSignal();
@@ -83,7 +82,7 @@ namespace Fizzle
                 var p = ph;
                 for (var i = 0; i < 8; i++)
                 {
-                    smp += _Sample(p);
+                    smp += _Sample(jacks, p);
                     p += s;
                     if (p > TWOPI)
                         p -= TWOPI;
@@ -91,7 +90,7 @@ namespace Fizzle
                 smp /= 8;
             }
             else
-                smp = _Sample(phase);
+                smp = _Sample(jacks, phase);
             if (bandlimited) smp = BandLimit(smp);
 
             if (multiply.connectedId != 0)
@@ -102,14 +101,14 @@ namespace Fizzle
             phase = phase + ((TWOPI * (frequency.Value(jacks) + detune.Value(jacks))) / SAMPLERATE);
             if (phase > TWOPI)
                 phase -= TWOPI;
-            smp = bias.Value(jacks) + (smp * gain.Value(jacks));
+            smp = bias.Value(jacks) + (smp * RampedGain(jacks, gain));
 
             output.Value((jacks), smp);
             return smp;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        protected float _Sample(float phase)
+        protected float _Sample(float[] jacks, float phase)
         {
             switch (type)
             {
@@ -119,12 +118,8 @@ namespace Fizzle
                     return shape.Evaluate(phase / TWOPI);
                 case OscType.Square:
                     return phase < Mathf.PI ? 1f : -1f;
-                case OscType.PWM1:
-                    return phase < Mathf.PI / 2 ? 1f : -1f;
-                case OscType.PWM2:
-                    return phase < Mathf.PI / 4 ? 1f : -1f;
-                case OscType.PWM3:
-                    return phase < Mathf.PI / 8 ? 1f : -1f;
+                case OscType.PWM:
+                    return phase < Mathf.PI * duty.Value(jacks) ? 1f : -1f;
                 case OscType.Tan:
                     return Mathf.Clamp(Mathf.Tan(phase / 2), -1, 1);
                 case OscType.Saw:

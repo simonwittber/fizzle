@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 namespace Fizzle
@@ -8,6 +9,7 @@ namespace Fizzle
         static float[] values;
         [ThreadStatic] static int index = 0;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float Next()
         {
             index++;
@@ -15,6 +17,7 @@ namespace Fizzle
             return values[index];
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float Gradient(float t)
         {
             var firstIndex = (int)(t * (values.Length - 1)) % values.Length;

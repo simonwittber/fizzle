@@ -8,6 +8,8 @@ namespace Fizzle
     {
 
         public JackIn frequency = new JackIn() { localValue = 440 };
+        public JackIn burstPeriod = new JackIn() { localValue = 1 };
+        public JackIn decay = new JackIn() { localValue = 1 };
 
         int period = 0;
         [System.NonSerialized] int loopCount = 0;
@@ -21,6 +23,8 @@ namespace Fizzle
             loopCount = 0;
         }
 
+
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected override float GetSample(float[] jacks)
         {
@@ -31,19 +35,28 @@ namespace Fizzle
 
             var si = sampleIndex % period;
             if (si == 0) loopCount++;
-            var doFilter = true;
+
             var smp = 0f;
             if (sampleIndex < period)
             {
                 smp = (Entropy.Next() * 2) - 1;
                 wave[activeString, si] += smp;
-                doFilter = false;
             }
 
+            var doFilter = sampleIndex > period;
             for (var i = 0; i < 6; i++)
             {
                 if (!(doFilter && activeString == i))
-                    smp += wave[i, si] = ((si > 0 ? wave[i, si - 1] : 0) + wave[i, si]) * 0.5f;
+                {
+                    var prev = (si > 0 ? wave[i, si - 1] : 0);
+                    var mustFilter = sampleIndex < (period * burstPeriod.Value(jacks));
+                    var mightFilter = false;
+                    if (mustFilter)
+                        mightFilter = (Entropy.Next() < (1f / decay.Value(jacks)));
+                    if (mustFilter || mightFilter)
+                        wave[i, si] = (prev + wave[i, si]) * 0.5f;
+                    smp += wave[i, si];
+                }
             }
 
             return smp;

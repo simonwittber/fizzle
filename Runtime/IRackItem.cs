@@ -8,9 +8,4 @@ namespace Fizzle
         void OnAudioStart(FizzleSynth fs);
     }
 
-    public abstract class RackItem
-    {
-        public int sortOrder = 0;
-    }
-
 }

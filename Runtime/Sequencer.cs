@@ -1,4 +1,6 @@
+using System.Linq;
 using System.Runtime.CompilerServices;
+using DifferentMethods.Extensions.Collections;
 using UnityEngine;
 
 namespace Fizzle
@@ -15,46 +17,92 @@ namespace Fizzle
             PingPong
         }
 
+        public struct NoteTrigger : System.IComparable<NoteTrigger>
+        {
+            public float hz;
+            public float volume;
+            public int duration;
+            public int beat;
+            public int noteNumber;
+
+            public int CompareTo(NoteTrigger other)
+            {
+                return beat.CompareTo(other.beat);
+            }
+
+            public override string ToString()
+            {
+                return $"B{beat} - {hz}:{duration}:{volume}";
+            }
+        }
+
         public SequencerType type;
         public JackSignal gate = new JackSignal();
-        public JackIn beatLength = new JackIn() { localValue = 0.5f };
         public AnimationCurve envelope = AnimationCurve.Constant(0, 1, 1);
         public JackIn glide = new JackIn() { localValue = 1f };
         public JackIn frequencyMultiply = new JackIn() { localValue = 1f };
         public JackIn transpose = new JackIn();
+
         public string code = "";
         public JackOut outputEnvelope = new JackOut();
+        public JackOut outputTrigger = new JackOut();
         public JackOut output = new JackOut();
 
         public void OnAddToRack(FizzleSynth fs)
         {
             output.id = fs.TakeJackID();
+            outputTrigger.id = fs.TakeJackID();
             outputEnvelope.id = fs.TakeJackID();
         }
 
         public void OnRemoveFromRack(FizzleSynth fs)
         {
             fs.FreeJackID(output.id);
+            fs.FreeJackID(outputTrigger.id);
             fs.FreeJackID(outputEnvelope.id);
         }
 
-        float[] pitches;
-
+        NoteTrigger[] sequence;
         string lastCode;
         SequencerType lastType;
-        [System.NonSerialized] int index;
-        [System.NonSerialized] float lastGate, position, outputFreq = 0f;
+        int index, beatIndex, beatDuration, lastBeat, position;
+        float lastGate, outputFreq = 0f;
+
+        PriorityQueue<NoteTrigger> notes = new PriorityQueue<NoteTrigger>();
+        NoteTrigger activeNote;
 
         void Parse()
         {
-            var parts = code.Split(',');
-            pitches = new float[parts.Length];
+            var parts = (from i in code.Split(',') select i.Trim()).ToArray();
+            sequence = new NoteTrigger[parts.Length];
             for (var i = 0; i < parts.Length; i++)
             {
-                float hz;
-                if (!float.TryParse(parts[i], out hz))
-                    hz = Note.Frequency(parts[i]);
-                pitches[i] = hz;
+                var noteTrigger = new NoteTrigger() { duration = 1, volume = 0.9f };
+                var pda = (from x in parts[i].Split(':') select x.Trim()).ToArray();
+                if (pda.Length >= 1)
+                {
+                    float hz;
+                    if (float.TryParse(pda[0], out hz))
+                        noteTrigger.hz = hz;
+                    else
+                    {
+                        noteTrigger.hz = Note.Frequency(pda[0]);
+                        noteTrigger.noteNumber = Note.Number(noteTrigger.hz);
+                    }
+                }
+                if (pda.Length >= 2)
+                {
+                    int duration;
+                    if (int.TryParse(pda[1], out duration))
+                        noteTrigger.duration = duration;
+                }
+                if (pda.Length >= 3)
+                {
+                    float volume;
+                    if (float.TryParse(pda[2], out volume))
+                        noteTrigger.volume = volume;
+                }
+                sequence[i] = noteTrigger;
             }
             if (type == SequencerType.Down)
                 Reverse();
@@ -65,34 +113,71 @@ namespace Fizzle
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public float Sample(float[] jacks, int sample)
         {
-            if (pitches == null || lastCode != code || lastType != type)
+            if (sequence == null || lastCode != code || lastType != type)
+            {
                 Parse();
-
+                ScheduleNoteTriggers(0);
+            }
+            position++;
             var gateValue = gate.Value(jacks);
+            outputTrigger.Value(jacks, -1);
             if (gateValue > 0 && lastGate < 0)
             {
-                position = 0;
-                index++;
-                if (index >= pitches.Length)
-                {
-                    index = 0;
-                    ChangePitchPattern();
-                }
+                beatDuration = (sample - lastBeat);
+                lastBeat = sample;
+                NextBeat(jacks);
             }
-            else
-            {
-                position += (1f / Osc.SAMPLERATE);
-            }
-            lastGate = gateValue;
+            var hz = activeNote.hz;
+            var tr = (int)transpose.Value(jacks);
+            if (tr != 0 && activeNote.noteNumber >= 0)
+                hz = Note.Frequency(activeNote.noteNumber + tr);
 
-            var smp = _Sample(jacks);
-            smp = (smp * frequencyMultiply.Value(jacks));
-            output.Value(jacks, smp);
-            return smp;
+            hz *= frequencyMultiply.Value(jacks);
+            var N = position * 1f / (beatDuration * activeNote.duration);
+            lastGate = gateValue;
+            output.Value(jacks, hz);
+            var e = beatDuration > 0 ? envelope.Evaluate(N) : 1;
+            outputEnvelope.Value(jacks, activeNote.volume * e);
+            return activeNote.hz;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        void ChangePitchPattern()
+        void NextBeat(float[] jacks)
+        {
+            beatIndex++;
+            if (!notes.IsEmpty)
+            {
+                var note = notes.Peek();
+                if (note.beat <= beatIndex)
+                {
+                    position = 0;
+                    outputTrigger.Value(jacks, 1);
+                    activeNote = notes.Pop();
+                }
+            }
+            if (notes.IsEmpty)
+            {
+                ChangeNoteTriggerPattern();
+                ScheduleNoteTriggers(beatIndex + activeNote.duration);
+            }
+        }
+
+        void ScheduleNoteTriggers(int startBeat)
+        {
+            var b = startBeat;
+            notes.Clear();
+            for (var i = 0; i < sequence.Length; i++)
+            {
+                var n = sequence[i];
+                n.beat = b;
+                // Debug.Log($"SCHEDULED: {n}");
+                notes.Push(n);
+                b += n.duration;
+            }
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        void ChangeNoteTriggerPattern()
         {
             switch (type)
             {
@@ -106,51 +191,31 @@ namespace Fizzle
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        float _Sample(float[] jacks)
-        {
-            if (pitches.Length == 0) return 0;
-            var f = pitches[index % pitches.Length];
-            if (f <= 0)
-            {
-                outputEnvelope.Value(jacks, 0);
-                return 0;
-            }
-            var N = position / beatLength.Value(jacks);
-            outputEnvelope.Value(jacks, envelope.Evaluate(N));
-            if (transpose.Value(jacks) != 0)
-            {
-                var number = Note.Number(f);
-                if (number > 0)
-                    f = Note.Frequency(number + (int)(transpose.Value(jacks)));
-            }
-            outputFreq = Mathf.Lerp(outputFreq, f, glide.Value(jacks));
-            return outputFreq;
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         void Reverse()
         {
-            System.Array.Reverse(pitches);
+            System.Array.Reverse(sequence);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         void Shuffle()
         {
-            int n = pitches.Length;
+            int n = sequence.Length;
             while (n > 1)
             {
                 n--;
                 int k = (int)(Entropy.Next() * (n + 1));
-                var value = pitches[k];
-                pitches[k] = pitches[n];
-                pitches[n] = value;
+                var value = sequence[k];
+                sequence[k] = sequence[n];
+                sequence[n] = value;
             }
 
         }
 
         public void OnAudioStart(FizzleSynth fs)
         {
-
+            beatIndex = -1;
+            Parse();
+            ScheduleNoteTriggers(0);
         }
     }
 }

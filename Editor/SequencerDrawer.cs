@@ -8,14 +8,12 @@ namespace Fizzle
     {
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
-            position.width -= DrawOutputJacks(position, property);
+            position.width -= DrawOutputJacks(position, property, "outputEnvelope", "outputTrigger");
             var rect = position;
             rect.width /= 2;
+            DrawInputProperties(rect, property, "type", "envelope", "gate", "glide", "frequencyMultiply", "transpose");
             rect.x += rect.width;
-            EditorGUIUtility.labelWidth = 16;
-            EditorGUI.PropertyField(rect, property.FindPropertyRelative("code"), new GUIContent("S", "Sequence"));
-            rect.x -= rect.width;
-            DrawInputProperties(rect, property, "type", "envelope", "gate", "beatLength", "glide", "frequencyMultiply", "transpose", "outputEnvelope");
+            DrawInputProperties(rect, property, "code");
         }
     }
 }
