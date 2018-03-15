@@ -8,6 +8,7 @@ using UnityEngine.Profiling;
 
 namespace Fizzle
 {
+
     [ExecuteInEditMode]
     [RequireComponent(typeof(AudioSource))]
     public class FizzleSynth : MonoBehaviour
@@ -21,6 +22,7 @@ namespace Fizzle
         public Sampler[] samplers = new Sampler[0];
         public Osc[] oscillators = new Osc[0];
         public KarplusStrong[] karplusStrongModules = new KarplusStrong[0];
+        public StringModule[] stringModules = new StringModule[0];
         public Perc[] percModules = new Perc[0];
         public CrossFader[] crossFaders = new CrossFader[0];
         public Filter[] filters = new Filter[0];
@@ -30,17 +32,18 @@ namespace Fizzle
         public GateSequence[] gateSequences = new GateSequence[0];
 
         public AudioOut inputAudio = new AudioOut();
-        public float cpuTime;
 
+        [System.NonSerialized] public float cpuTime, bufferReady;
         internal Dictionary<int, float[]> sampleData = new Dictionary<int, float[]>();
         internal int[] sampleChannels;
         new AudioSource audio;
 
         public List<uint> freeJackID;
-        float[] jacks;
+        [System.NonSerialized] float[] jacks;
         bool enableProfile = false;
 
         public IRackItem[] activeRackItems = new IRackItem[0];
+        AudioQueue audioQueue = new AudioQueue(44100 * 5);
 
         public uint TakeJackID()
         {
@@ -69,7 +72,7 @@ namespace Fizzle
             for (var i = 0; i < 10; i++)
             {
                 clock.Start();
-                ReadAudio(data);
+                OnAudioFilterRead(data, 2);
                 clock.Stop();
             }
             enableProfile = false;
@@ -80,7 +83,7 @@ namespace Fizzle
         public void Play()
         {
             Init();
-            audio.Play();
+            // audio.Play();
         }
 
         public void Stop()
@@ -93,12 +96,17 @@ namespace Fizzle
             Init();
         }
 
+        void Update()
+        {
+            ReadAudioAndQueue();
+        }
+
         public void Init()
         {
             audio = GetComponent<AudioSource>();
             sample = 0;
+            audioQueue.Clear();
             jacks = new float[256];
-            audio.clip = Generate();
             abort = false;
             sampleChannels = new int[sampleBank.Length];
             for (var i = 0; i < sampleBank.Length; i++)
@@ -125,6 +133,8 @@ namespace Fizzle
                 items.Add(oscillators[i]);
             for (var i = 0; i < karplusStrongModules.Length; i++)
                 items.Add(karplusStrongModules[i]);
+            for (var i = 0; i < stringModules.Length; i++)
+                items.Add(stringModules[i]);
             for (var i = 0; i < percModules.Length; i++)
                 items.Add(percModules[i]);
             for (var i = 0; i < crossFaders.Length; i++)
@@ -139,51 +149,66 @@ namespace Fizzle
             foreach (var i in items)
                 i.OnAudioStart(this);
             activeRackItems = items.ToArray();
-
             audio = GetComponent<AudioSource>();
+            ReadAudioAndQueue();
         }
 
         public float[] GetData()
         {
             var lengthSamples = (int)(sampleRate * duration);
             var data = new float[lengthSamples * 2];
-            ReadAudio(data);
+            OnAudioFilterRead(data, 2);
             return data;
         }
 
-        public AudioClip Generate()
-        {
-            return AudioClip.Create("Fizzle", (int)(sampleRate * duration), 2, sampleRate, true, ReadAudio);
-        }
+        // public AudioClip Generate()
+        // {
+        //     // return AudioClip.Create("Fizzle", (int)(sampleRate * duration), 2, sampleRate, true, ReadAudio);
+        // }
 
         System.Diagnostics.Stopwatch clock = new System.Diagnostics.Stopwatch();
-        void ReadAudio(float[] data)
+        void OnAudioFilterRead(float[] data, int channels)
         {
-            lock (this)
+            audioQueue.ReadInto(data);
+        }
+
+        void ReadAudioAndQueue()
+        {
+
+            if (abort) return;
+            Profiler.BeginSample("ReadAudio");
+            try
             {
-                if (abort) return;
-                if (enableProfile) Profiler.BeginSample("ReadAudio");
-                try
+                clock.Reset();
+                clock.Start();
+                var dataCount = audioQueue.AvailableToWrite / 2;
+                for (var i = 0; i < dataCount; i += 2)
                 {
-                    clock.Reset();
-                    clock.Start();
-                    for (var i = 0; i < data.Length; i += 2)
-                    {
-                        ProcessAudio();
-                        data[i] = inputAudio.left.Value(jacks);
-                        data[i + 1] = inputAudio.right.Value(jacks);
-                    }
-                    clock.Stop();
-                    var maxTime = ((data.Length / 2) * 0.02267573696f);
+                    ProcessAudio();
+                    var left = inputAudio.left.Value(jacks);
+                    var right = inputAudio.right.Value(jacks);
+                    audioQueue.Enqueue(left);
+                    audioQueue.Enqueue(right);
+                }
+                clock.Stop();
+                if (dataCount != 0)
+                {
+                    var maxTime = (dataCount * 0.02267573696f);
                     cpuTime = Mathf.Round(((clock.ElapsedMilliseconds) / maxTime) * 1000) / 10;
                 }
-                catch (System.Exception e)
+                else
                 {
-                    Debug.LogException(e);
-                    abort = true;
+                    cpuTime = 0;
                 }
-                if (enableProfile) Profiler.EndSample();
+                bufferReady = (1f * audioQueue.AvailableToRead / audioQueue.bufferSize);
             }
+            catch (System.Exception e)
+            {
+                Debug.LogException(e);
+                abort = true;
+            }
+            Profiler.EndSample();
+
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -198,3 +223,4 @@ namespace Fizzle
         int sample = 0;
     }
 }
+

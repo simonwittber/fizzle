@@ -18,8 +18,6 @@ namespace Fizzle
         public JackIn q = new JackIn();
 
         [System.NonSerialized] BQFilter bqFilter = new BQFilter();
-
-        int period = 0;
         [System.NonSerialized] float phase = 0, lastC, lastQ;
         [System.NonSerialized] Filter.FilterType lastType;
 
@@ -30,8 +28,6 @@ namespace Fizzle
             var amp = amplitudeEnvelope.Evaluate(position);
             smp = Mathf.Sin(phase) * amp;
             var n = ((Entropy.Next() * 2) - 1) * noise.Value(jacks) * noiseEnvelope.Evaluate(position);
-            var c = cutoff.Value(jacks);
-            var r = q.Value(jacks);
             smp += UpdateFilter(jacks, n);
             phase = phase + ((TWOPI * (pitchEnvelope.Evaluate(position) * frequency.Value(jacks))) / SAMPLERATE);
             if (phase > TWOPI)

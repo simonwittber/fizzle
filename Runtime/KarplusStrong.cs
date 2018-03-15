@@ -8,8 +8,8 @@ namespace Fizzle
     {
 
         public JackIn frequency = new JackIn() { localValue = 440 };
-        public JackIn burstPeriod = new JackIn() { localValue = 1 };
-        public JackIn decay = new JackIn() { localValue = 1 };
+        public JackIn minDecayCycles = new JackIn() { localValue = 1 };
+        public JackIn decayProbability = new JackIn() { localValue = 1 };
 
         int period = 0;
         [System.NonSerialized] int loopCount = 0;
@@ -23,15 +23,15 @@ namespace Fizzle
             loopCount = 0;
         }
 
-
-
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected override float GetSample(float[] jacks)
         {
             var freq = frequency.Value(jacks);
             if (Mathf.Approximately(freq, 0)) return 0;
 
-            period = (int)(Osc.SAMPLERATE / (Mathf.Epsilon + frequency.Value(jacks)));
+            var periodF = (Osc.SAMPLERATE / (Mathf.Epsilon + frequency.Value(jacks)));
+            period = (int)periodF;
+            var frac = periodF - period;
 
             var si = sampleIndex % period;
             if (si == 0) loopCount++;
@@ -49,16 +49,15 @@ namespace Fizzle
                 if (!(doFilter && activeString == i))
                 {
                     var prev = (si > 0 ? wave[i, si - 1] : 0);
-                    var mustFilter = sampleIndex < (period * burstPeriod.Value(jacks));
+                    var mustFilter = sampleIndex < (period * minDecayCycles.Value(jacks));
                     var mightFilter = false;
                     if (mustFilter)
-                        mightFilter = (Entropy.Next() < (1f / decay.Value(jacks)));
+                        mightFilter = (Entropy.Next() <= (1f / decayProbability.Value(jacks)));
                     if (mustFilter || mightFilter)
                         wave[i, si] = (prev + wave[i, si]) * 0.5f;
-                    smp += wave[i, si];
+                    smp += Lerp(wave[i, si], wave[i, (si + 1) % (period + 1)], frac);
                 }
             }
-
             return smp;
         }
 

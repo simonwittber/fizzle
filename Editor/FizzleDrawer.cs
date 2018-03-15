@@ -104,7 +104,7 @@ namespace Fizzle
                     sharedWidth -= 16;
                 }
             }
-
+            count++;
             sharedWidth /= count;
             foreach (var i in names)
             {

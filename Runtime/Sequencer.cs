@@ -66,10 +66,10 @@ namespace Fizzle
         string lastCode;
         SequencerType lastType;
         int index, beatIndex, beatDuration, lastBeat, position;
-        float lastGate, outputFreq = 0f;
+        float lastGate;
 
         PriorityQueue<NoteTrigger> notes = new PriorityQueue<NoteTrigger>();
-        NoteTrigger activeNote;
+        NoteTrigger activeNote, nextNote;
 
         void Parse()
         {
@@ -128,12 +128,13 @@ namespace Fizzle
                 NextBeat(jacks);
             }
             var hz = activeNote.hz;
-            var tr = (int)transpose.Value(jacks);
-            if (tr != 0 && activeNote.noteNumber >= 0)
-                hz = Note.Frequency(activeNote.noteNumber + tr);
 
-            hz *= frequencyMultiply.Value(jacks);
             var N = position * 1f / (beatDuration * activeNote.duration);
+            var glideStart = (1f - glide.Value(jacks));
+            if (N >= glideStart)
+            {
+                hz = Mathf.SmoothStep(activeNote.hz, nextNote.hz, Mathf.InverseLerp(glideStart, 1, N));
+            }
             lastGate = gateValue;
             output.Value(jacks, hz);
             var e = beatDuration > 0 ? envelope.Evaluate(N) : 1;
@@ -153,12 +154,20 @@ namespace Fizzle
                     position = 0;
                     outputTrigger.Value(jacks, 1);
                     activeNote = notes.Pop();
+                    var tr = (int)transpose.Value(jacks);
+                    if (tr != 0 && activeNote.noteNumber >= 0)
+                        activeNote.hz = Note.Frequency(activeNote.noteNumber + tr);
+                    activeNote.hz *= frequencyMultiply.Value(jacks);
+                    if (notes.IsEmpty)
+                    {
+                        ChangeNoteTriggerPattern();
+                        ScheduleNoteTriggers(beatIndex + activeNote.duration);
+                    }
+                    nextNote = notes.Peek();
+                    if (tr != 0 && nextNote.noteNumber >= 0)
+                        nextNote.hz = Note.Frequency(nextNote.noteNumber + tr);
+                    nextNote.hz *= frequencyMultiply.Value(jacks);
                 }
-            }
-            if (notes.IsEmpty)
-            {
-                ChangeNoteTriggerPattern();
-                ScheduleNoteTriggers(beatIndex + activeNote.duration);
             }
         }
 

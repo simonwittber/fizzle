@@ -19,8 +19,6 @@ namespace Fizzle
 
         // Oscilloscope oscilloscope = new Oscilloscope();
 
-        public override bool RequiresConstantRepaint() => true;
-
         void OnEnable()
         {
             EditorApplication.update -= Update;
@@ -64,6 +62,7 @@ namespace Fizzle
                 DrawRack(ref fa.samplers, serializedObject.FindProperty("samplers"), Color.magenta);
                 DrawRack(ref fa.oscillators, serializedObject.FindProperty("oscillators"), Color.green);
                 DrawRack(ref fa.karplusStrongModules, serializedObject.FindProperty("karplusStrongModules"), Color.green);
+                DrawRack(ref fa.stringModules, serializedObject.FindProperty("stringModules"), Color.green);
                 DrawRack(ref fa.percModules, serializedObject.FindProperty("percModules"), Color.green);
                 DrawRack(ref fa.crossFaders, serializedObject.FindProperty("crossFaders"), Color.gray);
                 DrawRack(ref fa.filters, serializedObject.FindProperty("filters"), Color.red);
@@ -84,6 +83,7 @@ namespace Fizzle
             GUILayout.EndHorizontal();
 
             GUILayout.Label($"CPU: {fa.cpuTime}%");
+            GUILayout.Label($"Buffer Ready: {fa.bufferReady}%");
 
             // var rect = GUILayoutUtility.GetRect(EditorGUIUtility.currentViewWidth - 32, 32);
             // oscilloscope.duration = fa.duration;

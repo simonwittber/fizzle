@@ -19,7 +19,17 @@ namespace Fizzle
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
             position.width -= DrawOutputJacks(position, property);
-            DrawInputProperties(position, property, "gate", "frequency", "decay", "burstPeriod");
+            DrawInputProperties(position, property, "gate", "frequency", "decayProbability", "minDecayCycles");
+        }
+    }
+
+    [CustomPropertyDrawer(typeof(StringModule))]
+    public class StringModuleDrawer : FizzleDrawer
+    {
+        public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+        {
+            position.width -= DrawOutputJacks(position, property);
+            DrawInputProperties(position, property, "gate", "frequency");
         }
     }
 
