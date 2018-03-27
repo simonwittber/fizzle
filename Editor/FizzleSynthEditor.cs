@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using UnityEditor;
 using UnityEditor.Callbacks;
 using UnityEngine;
@@ -16,9 +18,6 @@ namespace Fizzle
         bool play = false;
         bool stop = false;
 
-
-        // Oscilloscope oscilloscope = new Oscilloscope();
-
         void OnEnable()
         {
             EditorApplication.update -= Update;
@@ -30,40 +29,17 @@ namespace Fizzle
             EditorApplication.update -= Update;
         }
 
-        List<SerializedProperty> GetRackItems(SerializedProperty property)
-        {
-            var items = new List<SerializedProperty>();
-            for (var i = 0; i < property.arraySize; i++)
-                items.Add(property.GetArrayElementAtIndex(i));
-            return items;
-        }
-
-        void AllItems(SerializedProperty property)
-        {
-
-
-        }
-
         public override void OnInspectorGUI()
         {
             var fa = target as FizzleSynth;
             EditorGUI.BeginChangeCheck();
             EditorGUILayout.PropertyField(serializedObject.FindProperty("duration"));
-            EditorGUILayout.PropertyField(serializedObject.FindProperty("realtime"));
-            EditorGUILayout.PropertyField(serializedObject.FindProperty("sampleBank"), true);
             serializedObject.ApplyModifiedProperties();
             lock (typeof(JackDrawer))
             {
                 JackDrawer.BeginJackDrawers();
-                DrawRack(ref fa.sequencers, serializedObject.FindProperty("sequencers"), Color.white);
-                DrawRack(ref fa.ladders, serializedObject.FindProperty("ladders"), Color.white);
-                DrawRack(ref fa.gateSequences, serializedObject.FindProperty("gateSequences"), Color.white);
                 DrawRack(ref fa.envelopes, serializedObject.FindProperty("envelopes"), Color.cyan);
-                DrawRack(ref fa.samplers, serializedObject.FindProperty("samplers"), Color.magenta);
                 DrawRack(ref fa.oscillators, serializedObject.FindProperty("oscillators"), Color.green);
-                DrawRack(ref fa.karplusStrongModules, serializedObject.FindProperty("karplusStrongModules"), Color.green);
-                DrawRack(ref fa.stringModules, serializedObject.FindProperty("stringModules"), Color.green);
-                DrawRack(ref fa.percModules, serializedObject.FindProperty("percModules"), Color.green);
                 DrawRack(ref fa.crossFaders, serializedObject.FindProperty("crossFaders"), Color.gray);
                 DrawRack(ref fa.filters, serializedObject.FindProperty("filters"), Color.red);
                 DrawRack(ref fa.delays, serializedObject.FindProperty("delays"), Color.blue);
@@ -72,25 +48,36 @@ namespace Fizzle
                 JackDrawer.EndJackDrawers();
             }
 
-
             GUILayout.BeginHorizontal();
             if (GUILayout.Button("Play"))
                 play = true;
             if (GUILayout.Button("Stop"))
                 stop = true;
             if (GUILayout.Button("Save"))
-                AudioClipExporter.Save("Fizzle.wav", fa.GetData());
+            {
+                var activePath = (string)typeof(ProjectWindowUtil).GetMethod("GetActiveFolderPath", BindingFlags.Static | BindingFlags.NonPublic).Invoke(null, null);
+                var path = EditorUtility.SaveFilePanelInProject("Save clip as WAV", target.name, "wav", "", activePath);
+                if (path.Length != 0)
+                    AudioClipExporter.Save(path, fa.GetData());
+            }
             GUILayout.EndHorizontal();
-
-            GUILayout.Label($"CPU: {fa.cpuTime}%");
-            GUILayout.Label($"Buffer Ready: {fa.bufferReady}%");
-
-            // var rect = GUILayoutUtility.GetRect(EditorGUIUtility.currentViewWidth - 32, 32);
-            // oscilloscope.duration = fa.duration;
-            // if (fa.inputAudio.monitor.connectedId != 0)
-            //     oscilloscope.Update(rect, Color.white, fa.Monitor);
         }
 
+        public static string GetSelectedPathOrFallback()
+        {
+            string path = "Assets";
+            foreach (UnityEngine.Object obj in Selection.GetFiltered(typeof(UnityEngine.Object), SelectionMode.Assets))
+            {
+                Debug.Log(obj);
+                path = AssetDatabase.GetAssetPath(obj);
+                if (!string.IsNullOrEmpty(path) && File.Exists(path))
+                {
+                    path = Path.GetDirectoryName(path);
+                    break;
+                }
+            }
+            return path;
+        }
         private void DrawRack<T>(ref T[] items, SerializedProperty property, Color c) where T : new()
         {
             var fa = target as FizzleSynth;
@@ -112,17 +99,14 @@ namespace Fizzle
             rect.x = position.x;
             rect.y += rect.height;
             var toRemove = -1;
-            var toDuplicate = -1;
             for (var i = 0; i < items.Length; i++)
             {
                 var brect = rect;
                 brect.width = 16;
                 brect.x -= 8;
                 GUI.color = Color.red;
-                if (GUI.Button(brect, new GUIContent("", "Right click to remove, Left click to duplicate"), "radio"))
+                if (GUI.Button(brect, new GUIContent("", "Right click to remove"), "radio"))
                 {
-                    if (Event.current.button == 0)
-                        toDuplicate = i;
                     if (Event.current.button == 1)
                         toRemove = i;
                 }
@@ -146,11 +130,7 @@ namespace Fizzle
                 property.DeleteArrayElementAtIndex(toRemove);
                 property.serializedObject.ApplyModifiedProperties();
             }
-            if (toDuplicate >= 0)
-            {
-                // AddRackItem(ref items, property, items[toDuplicate]);
-                // property.serializedObject.ApplyModifiedProperties();
-            }
+
 
         }
 
