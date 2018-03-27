@@ -59,7 +59,7 @@ namespace Fizzle
             fs.FreeJackID(output.id);
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+
         float BandLimit(float smp)
         {
             //This is a LPF at 22049hz.
@@ -70,7 +70,7 @@ namespace Fizzle
             return yv[1];
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+
         public virtual float Sample(float[] jacks, int t)
         {
             if (!isReady) return 0;
@@ -107,7 +107,7 @@ namespace Fizzle
             return smp;
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+
         protected float _Sample(float[] jacks, float phase)
         {
             switch (type)

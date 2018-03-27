@@ -8,7 +8,7 @@ namespace Fizzle
     public class Envelope : Osc
     {
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+
         public override float Sample(float[] jacks, int t)
         {
             if (!isReady) return 0;

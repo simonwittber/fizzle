@@ -87,14 +87,19 @@ namespace Fizzle
             for (var i = 0; i < mixers.Length; i++)
                 mixers[i].OnAudioStart(this);
             audio = GetComponent<AudioSource>();
+            ProcessAudio();
         }
 
         public float[] GetData()
         {
-            var lengthSamples = (int)(sampleRate * duration);
-            var data = new float[lengthSamples * 2];
-            OnAudioFilterRead(data, 2);
-            return data;
+            lock (this)
+            {
+                Init();
+                var lengthSamples = (int)(sampleRate * duration);
+                var data = new float[lengthSamples * 2];
+                OnAudioFilterRead(data, 2);
+                return data;
+            }
         }
 
         public AudioClip Generate()
@@ -104,31 +109,28 @@ namespace Fizzle
             return clip;
         }
 
-        System.Diagnostics.Stopwatch clock = new System.Diagnostics.Stopwatch();
         void OnAudioFilterRead(float[] data, int channels)
         {
-            if (abort) return;
-            try
-            {
-                clock.Reset();
-                clock.Start();
-                for (var i = 0; i < data.Length; i += 2)
+            lock (this)
+                try
                 {
-                    ProcessAudio();
-                    var left = inputAudio.left.Value(jacks);
-                    var right = inputAudio.right.Value(jacks);
-                    data[i + 0] = left;
-                    data[i + 1] = right;
+                    for (var i = 0; i < data.Length; i += 2)
+                    {
+                        ProcessAudio();
+                        var left = inputAudio.left.Value(jacks);
+                        var right = inputAudio.right.Value(jacks);
+                        data[i + 0] = left;
+                        data[i + 1] = right;
+                    }
                 }
-            }
-            catch (System.Exception e)
-            {
-                Debug.LogException(e);
-                abort = true;
-            }
+                catch (System.Exception e)
+                {
+                    Debug.LogException(e);
+                    abort = true;
+                }
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+
         void ProcessAudio()
         {
             sample++;

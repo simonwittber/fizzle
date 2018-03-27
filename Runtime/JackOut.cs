@@ -9,7 +9,7 @@ namespace Fizzle
     {
         public uint id;
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+
         public void Value(float[] jacks, float value)
         {
             jacks[id] = value;

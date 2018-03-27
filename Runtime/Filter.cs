@@ -43,7 +43,7 @@ namespace Fizzle
             fs.FreeJackID(output.id);
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+
         public float Sample(float[] jacks, int t)
         {
             if (input.connectedId == 0)
@@ -60,32 +60,29 @@ namespace Fizzle
             output.Value(jacks, smp);
             return smp;
         }
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+
         float _Update(float[] jacks, float smp)
         {
             var c = cutoff.Value(jacks);
             var r = q.Value(jacks);
-            if (c != lastC || r != lastQ || type != lastType)
+
+            switch (type)
             {
-                lastC = c; lastQ = r; lastType = type;
-                switch (type)
-                {
-                    case FilterType.Lowpass:
-                        bqFilter.SetLowPass(c, r);
-                        break;
-                    case FilterType.Highpass:
-                        bqFilter.SetHighPass(c, r);
-                        break;
-                    case FilterType.Bandpass:
-                        bqFilter.SetBandPass(c, r);
-                        break;
-                    case FilterType.Bandstop:
-                        bqFilter.SetBandStop(c, r);
-                        break;
-                    case FilterType.Allpass:
-                        bqFilter.SetAllPass(c, r);
-                        break;
-                }
+                case FilterType.Lowpass:
+                    bqFilter.SetLowPass(c, r);
+                    break;
+                case FilterType.Highpass:
+                    bqFilter.SetHighPass(c, r);
+                    break;
+                case FilterType.Bandpass:
+                    bqFilter.SetBandPass(c, r);
+                    break;
+                case FilterType.Bandstop:
+                    bqFilter.SetBandStop(c, r);
+                    break;
+                case FilterType.Allpass:
+                    bqFilter.SetAllPass(c, r);
+                    break;
             }
 
             switch (type)

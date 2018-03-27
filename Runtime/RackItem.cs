@@ -13,7 +13,7 @@ namespace Fizzle
             return _gain;
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+
         public float Lerp(float start, float end, float t)
         {
             return end * t + start * (1f - t);

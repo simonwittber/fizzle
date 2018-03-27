@@ -14,7 +14,7 @@ namespace Fizzle
         public bool attenuate;
         public bool amplify;
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+
         public float Value(float[] jacks)
         {
             if (connectedId == 0) return localValue;
@@ -26,7 +26,7 @@ namespace Fizzle
             return value;
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+
         public void Value(float[] jacks, float value)
         {
             localValue = value;

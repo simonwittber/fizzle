@@ -38,7 +38,7 @@ namespace Fizzle
             fs.FreeJackID(output.id);
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+
         public float Sample(float[] jacks, int t)
         {
             var smp = 0f;

@@ -13,7 +13,7 @@ namespace Fizzle
 
         public uint connectedId;
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+
         public float Value(float[] jacks)
         {
 
