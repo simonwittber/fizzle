@@ -58,7 +58,12 @@ namespace Fizzle
                 var activePath = (string)typeof(ProjectWindowUtil).GetMethod("GetActiveFolderPath", BindingFlags.Static | BindingFlags.NonPublic).Invoke(null, null);
                 var path = EditorUtility.SaveFilePanelInProject("Save clip as WAV", target.name, "wav", "", activePath);
                 if (path.Length != 0)
+                {
+                    fa.Stop();
+                    fa.Init();
                     AudioClipExporter.Save(path, fa.GetData());
+                    AssetDatabase.Refresh();
+                }
             }
             GUILayout.EndHorizontal();
         }
@@ -78,7 +83,8 @@ namespace Fizzle
             }
             return path;
         }
-        private void DrawRack<T>(ref T[] items, SerializedProperty property, Color c) where T : new()
+
+        void DrawRack<T>(ref T[] items, SerializedProperty property, Color c) where T : new()
         {
             var fa = target as FizzleSynth;
             var height = (items.Length * 18) + 18;
@@ -130,8 +136,6 @@ namespace Fizzle
                 property.DeleteArrayElementAtIndex(toRemove);
                 property.serializedObject.ApplyModifiedProperties();
             }
-
-
         }
 
         private T AddRackItem<T>(ref T[] items, SerializedProperty property, T item) where T : new()
@@ -166,6 +170,6 @@ namespace Fizzle
             }
         }
 
-
     }
+
 }

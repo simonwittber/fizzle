@@ -97,10 +97,12 @@ namespace Fizzle
             return data;
         }
 
-        // public AudioClip Generate()
-        // {
-        //     // return AudioClip.Create("Fizzle", (int)(sampleRate * duration), 2, sampleRate, true, ReadAudio);
-        // }
+        public AudioClip Generate()
+        {
+            var clip = AudioClip.Create(this.name, (int)(sampleRate * duration), 2, sampleRate, false);
+            clip.SetData(GetData(), 0);
+            return clip;
+        }
 
         System.Diagnostics.Stopwatch clock = new System.Diagnostics.Stopwatch();
         void OnAudioFilterRead(float[] data, int channels)
