@@ -16,7 +16,9 @@ namespace Fizzle
         const int sampleRate = Osc.SAMPLERATE;
         public bool realtime = true;
         public float duration = 5;
-        public AudioClip[] sampleBank;
+        public Macros[] macros = new Macros[0];
+        public Sequencer[] sequencers = new Sequencer[0];
+        public KarplusStrong[] karplusStrongs = new KarplusStrong[0];
         public Envelope[] envelopes = new Envelope[0];
         public Osc[] oscillators = new Osc[0];
         public CrossFader[] crossFaders = new CrossFader[0];
@@ -74,6 +76,12 @@ namespace Fizzle
             sample = 0;
             jacks = new float[256];
             abort = false;
+            for (var i = 0; i < macros.Length; i++)
+                macros[i].OnAudioStart(this);
+            for (var i = 0; i < sequencers.Length; i++)
+                sequencers[i].OnAudioStart(this);
+            for (var i = 0; i < karplusStrongs.Length; i++)
+                karplusStrongs[i].OnAudioStart(this);
             for (var i = 0; i < envelopes.Length; i++)
                 envelopes[i].OnAudioStart(this);
             for (var i = 0; i < oscillators.Length; i++)
@@ -134,6 +142,12 @@ namespace Fizzle
         void ProcessAudio()
         {
             sample++;
+            for (var i = 0; i < macros.Length; i++)
+                macros[i].Sample(jacks, sample);
+            for (var i = 0; i < sequencers.Length; i++)
+                sequencers[i].Sample(jacks, sample);
+            for (var i = 0; i < karplusStrongs.Length; i++)
+                karplusStrongs[i].Sample(jacks, sample);
             for (var i = 0; i < envelopes.Length; i++)
                 envelopes[i].Sample(jacks, sample);
             for (var i = 0; i < oscillators.Length; i++)

@@ -102,6 +102,8 @@ namespace Fizzle
                 GUI.color = Color.blue;
             else if (property.name.StartsWith("output"))
                 GUI.color = Color.cyan;
+            else if (property.name.StartsWith("macro"))
+                GUI.color = Color.cyan;
             else if (property.name.StartsWith("gate"))
                 GUI.color = Color.green;
             else

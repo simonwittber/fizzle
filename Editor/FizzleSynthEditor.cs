@@ -38,8 +38,11 @@ namespace Fizzle
             lock (typeof(JackDrawer))
             {
                 JackDrawer.BeginJackDrawers();
+                DrawRack(ref fa.macros, serializedObject.FindProperty("macros"), Color.cyan);
+                DrawRack(ref fa.sequencers, serializedObject.FindProperty("sequencers"), Color.cyan);
                 DrawRack(ref fa.envelopes, serializedObject.FindProperty("envelopes"), Color.cyan);
                 DrawRack(ref fa.oscillators, serializedObject.FindProperty("oscillators"), Color.green);
+                DrawRack(ref fa.karplusStrongs, serializedObject.FindProperty("karplusStrongs"), Color.cyan);
                 DrawRack(ref fa.crossFaders, serializedObject.FindProperty("crossFaders"), Color.gray);
                 DrawRack(ref fa.filters, serializedObject.FindProperty("filters"), Color.red);
                 DrawRack(ref fa.delays, serializedObject.FindProperty("delays"), Color.blue);
@@ -65,6 +68,37 @@ namespace Fizzle
                     AssetDatabase.Refresh();
                 }
             }
+            // if (GUILayout.Button("Export Tones"))
+            // {
+            //     var activePath = (string)typeof(ProjectWindowUtil).GetMethod("GetActiveFolderPath", BindingFlags.Static | BindingFlags.NonPublic).Invoke(null, null);
+            //     var root = EditorUtility.SaveFolderPanel("Export Tones", target.name, target.name);
+            //     if (root.Length != 0)
+            //     {
+            //         try
+            //         {
+
+            //             EditorUtility.DisplayProgressBar("Export Tones", "", 0);
+            //             var m = fa.macros[0];
+            //             var progress = 0;
+            //             foreach (var i in new[] { "A1", "A2", "A3", "A4", "A5", "A6", "A7" })
+            //             {
+            //                 var path = System.IO.Path.Combine(root, $"{fa.name}_{i}.wav");
+            //                 fa.Stop();
+            //                 m.macroA.localValue = Note.Frequency(i);
+            //                 fa.Init();
+            //                 AudioClipExporter.Save(path, fa.GetData());
+            //                 if (EditorUtility.DisplayCancelableProgressBar("Export Tones", i, 1f * progress / 7))
+            //                     break;
+            //                 progress++;
+            //             }
+            //             AssetDatabase.Refresh();
+            //         }
+            //         finally
+            //         {
+            //             EditorUtility.ClearProgressBar();
+            //         }
+            //     }
+            // }
             GUILayout.EndHorizontal();
         }
 
