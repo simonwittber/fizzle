@@ -10,7 +10,7 @@ namespace Fizzle
 
         protected override void DrawSubProperties(Rect rect, SerializedProperty property)
         {
-            var idProperty = GetIdProperty(property);
+            // var idProperty = GetIdProperty(property);
             rect.width /= 2;
             EditorGUI.PropertyField(rect, property.FindPropertyRelative("name"), GUIContent.none);
             rect.x += rect.width;

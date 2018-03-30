@@ -101,7 +101,6 @@ namespace Fizzle
             audio = GetComponent<AudioSource>();
             sample = 0;
             jacks = new float[256];
-            abort = false;
             for (var i = 0; i < macros.Length; i++)
                 macros[i].OnAudioStart(this);
             for (var i = 0; i < sequencers.Length; i++)
@@ -160,7 +159,6 @@ namespace Fizzle
                 catch (System.Exception e)
                 {
                     Debug.LogException(e);
-                    abort = true;
                 }
         }
 
@@ -188,7 +186,6 @@ namespace Fizzle
                 mixers[i].Sample(jacks, sample);
         }
 
-        bool abort = false;
         int sample = 0;
     }
 }
