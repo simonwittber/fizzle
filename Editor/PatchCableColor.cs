@@ -4,7 +4,7 @@ namespace Fizzle
 {
     public static class PatchCableColor
     {
-        static float alpha = 0.5f;
+        static float alpha = 0.75f;
         static Vector3[] colorSet = new[] {
             new Vector3(230, 25, 75),
             new Vector3(60, 180, 75),

@@ -4,6 +4,7 @@ namespace Fizzle
     public struct JackMacro
     {
         public uint id;
+        public string name;
         public float localValue;
 
         public float Value(float[] jacks)

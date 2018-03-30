@@ -51,6 +51,32 @@ namespace Fizzle
         {
             freeJackID = new List<uint>();
             freeJackID.AddRange(from i in Enumerable.Range(0, 128) select (uint)i);
+            var m = AddRackItem(ref mixers, new Mixer());
+            Connect(ref inputAudio.left, ref m.output);
+            Connect(ref inputAudio.right, ref m.output);
+            var b = AddRackItem(ref envelopes, new Envelope());
+            var s = AddRackItem(ref sequencers, new Sequencer());
+            Connect(ref s.gate, ref b.output);
+            b.frequency.localValue = 1; b.gain.localValue = 1; b.bandlimited = false; b.type = Osc.OscType.Sin;
+            AddRackItem(ref oscillators, new Osc());
+        }
+
+        void Connect(ref JackSignal inp, ref JackOut outp)
+        {
+            inp.connectedId = outp.id;
+        }
+
+        private T AddRackItem<T>(ref T[] items, T item) where T : new()
+        {
+            var cItem = item as IRackItem;
+            if (cItem != null)
+            {
+                cItem.OnAddToRack(this);
+                cItem.OnAudioStart(this);
+            }
+            System.Array.Resize(ref items, Mathf.Max(1, items.Length + 1));
+            items[items.Length - 1] = item;
+            return item;
         }
 
         [ContextMenu("Play")]
